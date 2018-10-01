@@ -2,6 +2,12 @@
 include("script/campaign/libcampaign.js");
 include("script/campaign/templates.js");
 
+const SCAVS = 7;
+const SCAVENGER_RES = [
+	"R-Wpn-Flamer-Damage02", "R-Wpn-Flamer-Range01", "R-Wpn-Flamer-ROF01",
+	"R-Wpn-MG-Damage02", "R-Wpn-MG-ROF01",
+];
+
 function exposeNorthBase()
 {
 	camDetectEnemyBase("NorthGroup"); // no problem if already detected
@@ -25,7 +31,7 @@ function camArtifactPickup_ScavLab()
 		groupSize: 5,
 		maxSize: 9,
 		throttle: camChangeOnDiff(10000),
-		templates: [ cTempl.trike, cTempl.bloke, cTempl.buggy, cTempl.bjeep ]
+		templates: [ cTempl.trikeheavy, cTempl.blokeheavy, cTempl.buggyheavy, cTempl.bjeepheavy ]
 	});
 	camEnableFactory("WestFactory");
 }
@@ -80,6 +86,13 @@ function eventStartLevel()
 	startTransporterEntry(tent.x, tent.y, CAM_HUMAN_PLAYER);
 	setTransporterExit(text.x, text.y, CAM_HUMAN_PLAYER);
 
+	camCompleteRequiredResearch(SCAVENGER_RES, SCAVS);
+
+	camUpgradeOnMapTemplates(cTempl.bloke, cTempl.blokeheavy, SCAVS);
+	camUpgradeOnMapTemplates(cTempl.trike, cTempl.triketwin, SCAVS);
+	camUpgradeOnMapTemplates(cTempl.buggy, cTempl.buggytwin, SCAVS);
+	camUpgradeOnMapTemplates(cTempl.bjeep, cTempl.bjeeptwin, SCAVS);
+
 	camSetEnemyBases({
 		"NorthGroup": {
 			cleanup: "NorthBase",
@@ -102,8 +115,8 @@ function eventStartLevel()
 	camDetectEnemyBase("ScavLabGroup");
 
 	camSetArtifacts({
-		"ScavLab": { tech: "R-Wpn-Mortar01Lt" },
-		"NorthFactory": { tech: "R-Vehicle-Prop-Halftracks" },
+		"ScavLab": { tech: ["R-Wpn-Mortar01Lt", "R-Wpn-Flamer-Damage02"] },
+		"NorthFactory": { tech: ["R-Vehicle-Prop-Halftracks", "R-Wpn-Cannon1Mk1"] },
 	});
 
 	camSetFactories({
@@ -122,7 +135,7 @@ function eventStartLevel()
 			maxSize: 9,
 			throttle: camChangeOnDiff(15000),
 			group: camMakeGroup("NorthTankGroup"),
-			templates: [ cTempl.trike, cTempl.bloke, cTempl.buggy, cTempl.bjeep ]
+			templates: [ cTempl.trikeheavy, cTempl.blokeheavy, cTempl.buggyheavy, cTempl.bjeepheavy ]
 		},
 		"WestFactory": {
 			assembly: "WestAssembly",
@@ -138,7 +151,7 @@ function eventStartLevel()
 			groupSize: 5,
 			maxSize: 9,
 			throttle: camChangeOnDiff(10000),
-			templates: [ cTempl.trike, cTempl.bloke, cTempl.buggy, cTempl.bjeep ]
+			templates: [ cTempl.trikeheavy, cTempl.blokeheavy, cTempl.buggyheavy, cTempl.bjeepheavy ]
 		},
 	});
 

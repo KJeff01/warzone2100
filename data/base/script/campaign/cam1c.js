@@ -3,17 +3,16 @@ include("script/campaign/libcampaign.js");
 include("script/campaign/templates.js");
 
 const NEW_PARADIGM_RES = [
-	"R-Wpn-MG-Damage03", "R-Wpn-MG-ROF01", "R-Defense-WallUpgrade02",
-	"R-Struc-Materials02", "R-Struc-Factory-Upgrade01",
-	"R-Struc-Factory-Cyborg-Upgrade01", "R-Vehicle-Engine02",
-	"R-Vehicle-Metals01", "R-Cyborg-Metals01", "R-Wpn-Cannon-Damage02",
-	"R-Wpn-Flamer-Damage03", "R-Wpn-Flamer-ROF01",
-	"R-Wpn-Mortar-Damage01", "R-Wpn-Rocket-Accuracy02",
-	"R-Wpn-Rocket-Damage02", "R-Wpn-Rocket-ROF01",
-	"R-Wpn-RocketSlow-Damage01", "R-Struc-RprFac-Upgrade03",
+	"R-Wpn-MG1Mk1", "R-Vehicle-Body01", "R-Sys-Spade1Mk1", "R-Vehicle-Prop-Wheels",
+	"R-Sys-Engineering01", "R-Wpn-MG-Damage03", "R-Wpn-MG-ROF01", "R-Wpn-Cannon-Damage02",
+	"R-Wpn-Flamer-Damage03", "R-Wpn-Flamer-Range01", "R-Wpn-Flamer-ROF01",
+	"R-Defense-WallUpgrade02","R-Struc-Materials02", "R-Vehicle-Engine02",
+	"R-Struc-RprFac-Upgrade02", "R-Wpn-Rocket-Damage02", "R-Wpn-Rocket-ROF01",
+	"R-Vehicle-Metals01", "R-Wpn-Mortar-Damage01", "R-Wpn-Rocket-Accuracy02",
 ];
 const SCAVENGER_RES = [
-	"R-Wpn-MG-Damage02", "R-Wpn-Rocket-Damage02", "R-Wpn-Cannon-Damage01",
+	"R-Wpn-Flamer-Damage02", "R-Wpn-Flamer-Range01", "R-Wpn-Flamer-ROF01",
+	"R-Wpn-MG-Damage03", "R-Wpn-MG-ROF01", "R-Wpn-Rocket-Damage02", "R-Wpn-Cannon-Damage01",
 ];
 
 function sendRocketForce()
@@ -260,7 +259,7 @@ function eventStartLevel()
 	camPlayVideos(["MB1C_MSG", "MB1C2_MSG"]);
 
 	camSetArtifacts({
-		"ScavSouthFactory": { tech: "R-Wpn-Rocket05-MiniPod" },
+		"ScavSouthFactory": { tech: ["R-Wpn-Rocket05-MiniPod", "R-Wpn-Cannon2Mk1"] },
 		"NPResearchFacility": { tech: "R-Struc-Research-Module" },
 		"NPCentralFactory": { tech: "R-Vehicle-Prop-Tracks" },
 		"NPNorthFactory": { tech: "R-Vehicle-Engine01" },

@@ -3,6 +3,9 @@ include("script/campaign/libcampaign.js");
 include("script/campaign/templates.js");
 
 const SCAVS = 7; //Scav player number
+const SCAVENGER_RES = [
+	"R-Wpn-Flamer-Damage01", "R-Wpn-Flamer-Range01", "R-Wpn-MG-Damage02", "R-Wpn-MG-ROF01",
+];
 
 //Ambush player from scav base - triggered from middle path
 camAreaEvent("scavBaseTrigger", function()
@@ -58,12 +61,35 @@ function eventStartLevel()
 	startTransporterEntry(tent.x, tent.y, CAM_HUMAN_PLAYER);
 	setTransporterExit(text.x, text.y, CAM_HUMAN_PLAYER);
 
+	camCompleteRequiredResearch(SCAVENGER_RES, SCAVS);
+
+	camUpgradeOnMapTemplates(cTempl.bloke, cTempl.blokeheavy, SCAVS);
+	camUpgradeOnMapTemplates(cTempl.trike, cTempl.triketwin, SCAVS);
+	camUpgradeOnMapTemplates(cTempl.buggy, cTempl.buggytwin, SCAVS);
+	camUpgradeOnMapTemplates(cTempl.bjeep, cTempl.bjeeptwin, SCAVS);
+
 	//Get rid of the already existing crate and replace with another
 	camSafeRemoveObject("artifact1", false);
 	camSetArtifacts({
-		"artifactLocation": { tech: "R-Wpn-MG3Mk1" }, //Heavy machine gun
+		"scavFactory1": { tech: "R-Wpn-MG3Mk1" }, //Heavy machine gun
 	});
 
+	camSetFactories({
+		"scavFactory1": {
+			assembly: "Assembly",
+			order: CAM_ORDER_ATTACK,
+			data: {
+				regroup: false,
+				repair: 66,
+				count: -1,
+			},
+			groupSize: 4,
+			throttle: camChangeOnDiff(24000),
+			templates: [ cTempl.trikeheavy, cTempl.blokeheavy, cTempl.buggyheavy, cTempl.bjeepheavy ]
+		},
+	});
+
+	camEnableFactory("scavFactory1");
 	camPlayVideos("FLIGHT");
 	hackAddMessage("C1-1_OBJ1", PROX_MSG, CAM_HUMAN_PLAYER, true);
 
