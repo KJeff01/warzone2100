@@ -27,6 +27,10 @@
 		"label": "westScoutPos",
 		"pos": [1600, 2624]
 	},
+	"position_7": {
+		"label": "Assembly",
+		"pos": [2752, 2240]
+	},
 
 	"area_0": {
 		"label": "RTLZ",
@@ -60,16 +64,19 @@
 	},
 	"area_6": {
 		"label": "ambush1Trigger",
+		"subscriber": 0,
 		"pos1": [2816, 6272],
 		"pos2": [5504, 6600]
 	},
 	"area_7": {
 		"label": "ambush2Trigger",
+		"subscriber": 0,
 		"pos1": [1024, 7680],
 		"pos2": [1408, 8320]
 	},
 	"area_8": {
 		"label": "scavBaseTrigger",
+		"subscriber": 0,
 		"pos1": [2048, 3000],
 		"pos2": [5504, 3300]
 	},
@@ -78,5 +85,11 @@
 		"label": "artifact1",
 		"id": 160831,
 		"type": 2
+	},
+	"object_1": {
+		"label": "scavFactory1",
+		"id": 180,
+		"player": 7,
+		"type": 1
 	}
 }
