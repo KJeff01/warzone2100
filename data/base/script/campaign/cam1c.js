@@ -184,6 +184,11 @@ function eventStartLevel()
 	camCompleteRequiredResearch(NEW_PARADIGM_RES, NEW_PARADIGM);
 	camCompleteRequiredResearch(SCAVENGER_RES, 7);
 
+	camUpgradeOnMapTemplates(cTempl.bloke, cTempl.blokeheavy, 7);
+	camUpgradeOnMapTemplates(cTempl.trike, cTempl.trikeheavy, 7);
+	camUpgradeOnMapTemplates(cTempl.buggy, cTempl.buggyheavy, 7);
+	camUpgradeOnMapTemplates(cTempl.bjeep, cTempl.bjeepheavy, 7);
+
 	camSetEnemyBases({
 		"ScavSouthDerrickGroup": {
 			cleanup: "ScavSouthDerrick",
@@ -271,21 +276,21 @@ function eventStartLevel()
 			order: CAM_ORDER_ATTACK,
 			groupSize: 4,
 			throttle: camChangeOnDiff(20000),
-			templates: [ cTempl.buscan, cTempl.rbjeep, cTempl.trike, cTempl.buggy ]
+			templates: [ cTempl.buscan, cTempl.rbjeep, cTempl.trikeheavy, cTempl.buggyheavy ]
 		},
 		"ScavCentralFactory": {
 			assembly: "ScavCentralFactoryAssembly",
 			order: CAM_ORDER_ATTACK,
 			groupSize: 4,
 			throttle: camChangeOnDiff(20000),
-			templates: [ cTempl.firecan, cTempl.rbuggy, cTempl.bjeep, cTempl.bloke ]
+			templates: [ cTempl.firecan, cTempl.rbuggy, cTempl.bjeepheavy, cTempl.blokeheavy ]
 		},
 		"ScavNorthFactory": {
 			assembly: "ScavNorthFactoryAssembly",
 			order: CAM_ORDER_ATTACK,
 			groupSize: 4,
 			throttle: camChangeOnDiff(20000),
-			templates: [ cTempl.firecan, cTempl.rbuggy, cTempl.buscan, cTempl.trike ]
+			templates: [ cTempl.firecan, cTempl.rbuggy, cTempl.buscan, cTempl.trikeheavy ]
 		},
 		"NPCentralFactory": {
 			assembly: "NPCentralFactoryAssembly",
