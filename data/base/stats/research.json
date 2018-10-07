@@ -2003,8 +2003,7 @@
         "msgName": "RES_V_B04",
         "name": "Light Body - Bug",
         "requiredResearch": [
-            "R-Vehicle-Body01",
-            "R-Vehicle-Metals01"
+            "R-Vehicle-Body01"
         ],
         "researchPoints": 1200,
         "researchPower": 37,
