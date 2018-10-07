@@ -27,7 +27,7 @@ const ALPHA_RESEARCH_NEW = [
 	"R-Defense-Pillbox01", "R-Defense-Pillbox04", "R-Defense-Pillbox05",
 	"R-Defense-WallTower01", "R-Defense-WallTower02", "R-Defense-WallUpgrade01",
 	"R-Defense-WallUpgrade02", "R-Defense-WallUpgrade03", "R-Struc-Materials01",
-	"R-Struc-Materials02", "R-Struc-Materials03", "R-Vehicle-Body05",
+	"R-Struc-Materials02", "R-Struc-Materials03", "R-Vehicle-Body05", "R-Vehicle-Body04",
 
 	// 6
 	"R-Wpn-Cannon2Mk1", "R-Defense-WallTower03", "R-Wpn-Rocket05-MiniPod", "R-Struc-Research-Module",

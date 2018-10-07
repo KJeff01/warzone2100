@@ -249,7 +249,7 @@ function eventStartLevel()
 
 	camSetArtifacts({
 		"ScavFactory": { tech: "R-Wpn-Flamer-Damage03" },
-		"NPFactory": { tech: "R-Struc-Factory-Module" },
+		"NPFactory": { tech: ["R-Struc-Factory-Module", "R-Vehicle-Body04"] },
 		"NPLab": { tech: "R-Defense-HardcreteWall" },
 		"NPCRC": { tech: "R-Struc-CommandRelay" },
 	});
