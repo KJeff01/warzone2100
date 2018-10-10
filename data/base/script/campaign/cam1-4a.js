@@ -3,18 +3,19 @@ include("script/campaign/libcampaign.js");
 include("script/campaign/templates.js");
 
 const NEW_PARADIGM_RES = [
-	"R-Wpn-MG-Damage04", "R-Wpn-MG-ROF01", "R-Defense-WallUpgrade02",
-	"R-Struc-Materials02", "R-Struc-Factory-Upgrade02",
-	"R-Struc-Factory-Cyborg-Upgrade02", "R-Vehicle-Engine02",
-	"R-Vehicle-Metals02", "R-Cyborg-Metals02", "R-Wpn-Cannon-Damage03",
-	"R-Wpn-Flamer-Damage03", "R-Wpn-Flamer-ROF01",
-	"R-Wpn-Mortar-Damage02", "R-Wpn-Rocket-Accuracy01",
-	"R-Wpn-Rocket-Damage02", "R-Wpn-Rocket-ROF01",
-	"R-Wpn-RocketSlow-Damage02", "R-Struc-RprFac-Upgrade03",
+	"R-Wpn-MG1Mk1", "R-Vehicle-Body01", "R-Sys-Spade1Mk1", "R-Vehicle-Prop-Wheels",
+	"R-Sys-Engineering01", "R-Wpn-MG-Damage04", "R-Wpn-MG-ROF01", "R-Wpn-Cannon-Damage03",
+	"R-Wpn-Flamer-Damage03", "R-Wpn-Flamer-Range01", "R-Wpn-Flamer-ROF01",
+	"R-Defense-WallUpgrade02","R-Struc-Materials02", "R-Vehicle-Engine02",
+	"R-Struc-RprFac-Upgrade03", "R-Wpn-Rocket-Damage03", "R-Wpn-Rocket-ROF02",
+	"R-Vehicle-Metals02", "R-Wpn-Mortar-Damage02", "R-Wpn-Rocket-Accuracy02",
+	"R-Wpn-RocketSlow-Damage02", "R-Wpn-Mortar-ROF01",
 ];
-
 const SCAVENGER_RES = [
-	"R-Wpn-MG-Damage03", "R-Wpn-Rocket-Damage02",
+	"R-Wpn-Flamer-Damage03", "R-Wpn-Flamer-Range01", "R-Wpn-Flamer-ROF01",
+	"R-Wpn-MG-Damage04", "R-Wpn-MG-ROF01", "R-Wpn-Rocket-Damage02", "R-Wpn-Cannon-Damage02",
+	"R-Wpn-Rocket-Accuracy01", "R-Wpn-Rocket-ROF01", "R-Vehicle-Metals01",
+	"R-Defense-WallUpgrade01", "R-Struc-Materials01",
 ];
 
 //Pursue player when nearby but do not go too far away from defense zone.
@@ -132,6 +133,11 @@ function eventStartLevel()
 	camCompleteRequiredResearch(SCAVENGER_RES, SCAVS);
 	setAlliance(NEW_PARADIGM, SCAVS, true);
 
+	camUpgradeOnMapTemplates(cTempl.bloke, cTempl.blokeheavy, SCAVS);
+	camUpgradeOnMapTemplates(cTempl.trike, cTempl.trikeheavy, SCAVS);
+	camUpgradeOnMapTemplates(cTempl.buggy, cTempl.buggyheavy, SCAVS);
+	camUpgradeOnMapTemplates(cTempl.bjeep, cTempl.bjeepheavy, SCAVS);
+
 	camSetEnemyBases({
 		"SouthScavBaseGroup": {
 			cleanup: "SouthScavBase",
@@ -157,7 +163,7 @@ function eventStartLevel()
 
 	camSetArtifacts({
 		"NPCommandCenter": { tech: ["R-Vehicle-Metals01", "R-Wpn-Cannon-Damage03"] },
-		"NPResearchFacility": { tech: "R-Wpn-RocketSlow-Damage02" },
+		"NPResearchFacility": { tech: ["R-Wpn-MG-Damage04", "R-Wpn-RocketSlow-Damage02"] },
 		"MediumNPFactory": { tech: "R-Wpn-Rocket02-MRL" },
 	});
 
@@ -168,7 +174,7 @@ function eventStartLevel()
 			groupSize: 4,
 			maxSize: 6,
 			throttle: camChangeOnDiff(20000),
-			templates: [ cTempl.rbuggy, cTempl.bjeep, cTempl.buscan, cTempl.trike ]
+			templates: [ cTempl.rbuggy, cTempl.bjeepheavy, cTempl.buscan, cTempl.trikeheavy ]
 		},
 		"NorthScavFactory": {
 			assembly: "NorthScavFactoryAssembly",
@@ -180,7 +186,7 @@ function eventStartLevel()
 			groupSize: 4,
 			maxSize: 6,
 			throttle: camChangeOnDiff(20000),
-			templates: [ cTempl.firecan, cTempl.rbjeep, cTempl.bloke, cTempl.buggy ]
+			templates: [ cTempl.firecan, cTempl.rbjeep, cTempl.blokeheavy, cTempl.buggyheavy ]
 		},
 		"HeavyNPFactory": {
 			assembly: "HeavyNPFactoryAssembly",
