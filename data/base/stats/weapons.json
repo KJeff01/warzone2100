@@ -3398,7 +3398,7 @@
         "hitpoints": 5,
         "id": "Rocket-Pod",
         "lightWorld": 1,
-        "longHit": 30,
+        "longHit": 45,
         "longRange": 960,
         "maxElevation": 90,
         "minElevation": -60,

@@ -3070,6 +3070,7 @@
     "R-Wpn-Rocket-Damage03": {
         "iconID": "IMAGE_RES_WEAPONTECH",
         "id": "R-Wpn-Rocket-Damage03",
+        "keyTopic": 1,
         "name": "HE Mini-Rockets Mk3",
         "requiredResearch": [
             "R-Wpn-Rocket-Damage02"
@@ -3131,7 +3132,7 @@
         "name": "Fast Fire Mini-Rockets Mk2",
         "requiredResearch": [
             "R-Wpn-Rocket-ROF01",
-            "R-Wpn-Rocket-Damage03"
+            "R-Wpn-Rocket-Damage02"
         ],
         "researchPoints": 3600,
         "researchPower": 112,
