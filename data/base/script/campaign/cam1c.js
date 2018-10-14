@@ -296,7 +296,7 @@ function eventStartLevel()
 			assembly: "NPCentralFactoryAssembly",
 			order: CAM_ORDER_ATTACK,
 			groupSize: 4,
-			throttle: camChangeOnDiff(60000),
+			throttle: camChangeOnDiff(45000),
 			data: {
 				regroup: false,
 				repair: 40,

@@ -13,7 +13,7 @@ const NEW_PARADIGM_RES = [
 ];
 const SCAVENGER_RES = [
 	"R-Wpn-Flamer-Damage03", "R-Wpn-Flamer-Range01", "R-Wpn-Flamer-ROF01",
-	"R-Wpn-MG-Damage04", "R-Wpn-MG-ROF01", "R-Wpn-Rocket-Damage02", "R-Wpn-Cannon-Damage02",
+	"R-Wpn-MG-Damage04", "R-Wpn-MG-ROF02", "R-Wpn-Rocket-Damage02", "R-Wpn-Cannon-Damage02",
 	"R-Wpn-Rocket-Accuracy01", "R-Wpn-Rocket-ROF01", "R-Vehicle-Metals01",
 	"R-Defense-WallUpgrade01", "R-Struc-Materials01",
 ];

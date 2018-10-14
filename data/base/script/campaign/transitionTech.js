@@ -1,5 +1,4 @@
 //Contains the campaign transition technology definitions.
-//NOTE: Every empty line represents the research gained from one mission.
 
 const ALPHA_RESEARCH_NEW = [
 	// 1
@@ -39,8 +38,9 @@ const ALPHA_RESEARCH_NEW = [
 	// 7
 
 	// 8
-	"R-Wpn-Mortar02Hvy", "R-Wpn-Mortar-Damage03", "R-Wpn-Cannon-Damage03",
-	"R-Wpn-RocketSlow-Damage02",
+	"R-Vehicle-Metals01", "R-Vehicle-Metals02", "R-Wpn-MG-Damage04", "R-Wpn-Rocket02-MRL",
+	"R-Wpn-Rocket-Damage03", "R-Wpn-Mortar02Hvy", "R-Wpn-Mortar-Damage03", "R-Wpn-Cannon-Damage03",
+	"R-Wpn-RocketSlow-Damage02", "R-Vehicle-Body11", "R-Defense-MRL",
 
 	// 9
 	"R-Struc-Research-Upgrade01", "R-Struc-Research-Upgrade02", "R-Struc-Research-Upgrade03",
