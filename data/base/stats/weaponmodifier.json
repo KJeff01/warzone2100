@@ -1,11 +1,11 @@
 {
     "ALL ROUNDER": {
-        "Half-Tracked": 110,
-        "Hover": 120,
+        "Half-Tracked": 105,
+        "Hover": 115,
         "Legged": 60,
         "Lift": 40,
-        "Tracked": 105,
-        "Wheeled": 115
+        "Tracked": 100,
+        "Wheeled": 110
     },
     "ANTI PERSONNEL": {
         "Half-Tracked": 75,
