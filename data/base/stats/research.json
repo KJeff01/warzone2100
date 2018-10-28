@@ -2293,7 +2293,8 @@
         "keyTopic": 1,
         "name": "HEAT Cannon Shells Mk3",
         "requiredResearch": [
-            "R-Wpn-Cannon-Damage02"
+            "R-Wpn-Cannon-Damage02",
+            "R-Wpn-Rocket-Damage03"
         ],
         "researchPoints": 3600,
         "researchPower": 112,
@@ -3351,7 +3352,8 @@
         "keyTopic": 1,
         "name": "HEAT Rocket Warhead Mk2",
         "requiredResearch": [
-            "R-Wpn-RocketSlow-Damage01"
+            "R-Wpn-RocketSlow-Damage01",
+            "R-Wpn-Rocket-Damage03"
         ],
         "researchPoints": 3600,
         "researchPower": 112,
