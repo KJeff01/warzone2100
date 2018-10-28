@@ -3391,7 +3391,7 @@
         "explosionWav": "smlexpl.ogg",
         "faceInFlight": 1,
         "facePlayer": 1,
-        "firePause": 10,
+        "firePause": 12,
         "flightGfx": "FXMflare.PIE",
         "flightSpeed": 1500,
         "hitGfx": "FXMPExp.PIE",
