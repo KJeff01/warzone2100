@@ -2290,7 +2290,6 @@
     "R-Wpn-Cannon-Damage03": {
         "iconID": "IMAGE_RES_WEAPONTECH",
         "id": "R-Wpn-Cannon-Damage03",
-        "keyTopic": 1,
         "name": "HEAT Cannon Shells Mk3",
         "requiredResearch": [
             "R-Wpn-Cannon-Damage02",
@@ -3349,7 +3348,6 @@
     "R-Wpn-RocketSlow-Damage02": {
         "iconID": "IMAGE_RES_WEAPONTECH",
         "id": "R-Wpn-RocketSlow-Damage02",
-        "keyTopic": 1,
         "name": "HEAT Rocket Warhead Mk2",
         "requiredResearch": [
             "R-Wpn-RocketSlow-Damage01",
