@@ -3,7 +3,7 @@
         "Half-Tracked": 105,
         "Hover": 115,
         "Legged": 60,
-        "Lift": 40,
+        "Lift": 100,
         "Tracked": 100,
         "Wheeled": 110
     },
