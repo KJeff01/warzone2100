@@ -114,8 +114,8 @@
 	"area_9": {
 		"label": "NPBaseDetectTrigger",
 		"subscriber": 0,
-		"pos1": [3500, 4480],
-		"pos2": [5120, 5376]
+		"pos1": [1344, 1752],
+		"pos2": [5952, 4032]
 	},
 
 	"object_0": {
