@@ -2,10 +2,8 @@ include("script/campaign/libcampaign.js");
 include("script/campaign/templates.js");
 
 const COLLECTIVE_RES = [
-	"R-Defense-WallUpgrade05", "R-Struc-Materials06",
-	"R-Struc-Factory-Upgrade06", "R-Struc-Factory-Cyborg-Upgrade06",
-	"R-Struc-VTOLFactory-Upgrade03", "R-Struc-VTOLPad-Upgrade03",
-	"R-Vehicle-Engine05", "R-Vehicle-Metals05", "R-Cyborg-Metals06",
+	"R-Defense-WallUpgrade05", "R-Struc-Materials06", "R-Struc-Factory-Upgrade06",
+	"R-Struc-VTOLPad-Upgrade03", "R-Vehicle-Engine05", "R-Vehicle-Metals05", "R-Cyborg-Metals06",
 	"R-Vehicle-Armor-Heat02", "R-Cyborg-Armor-Heat02",
 	"R-Sys-Engineering02", "R-Wpn-Cannon-Accuracy02", "R-Wpn-Cannon-Damage05",
 	"R-Wpn-Cannon-ROF03", "R-Wpn-Flamer-Damage06", "R-Wpn-Flamer-ROF03",
