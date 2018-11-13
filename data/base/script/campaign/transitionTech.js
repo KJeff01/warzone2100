@@ -47,7 +47,8 @@ const ALPHA_RESEARCH_NEW = [
 	"R-Wpn-Mortar-Acc01", "R-Wpn-Rocket-Accuracy01", "R-Wpn-Rocket-Accuracy02",
 	"R-Wpn-RocketSlow-Accuracy01", "R-Wpn-Cannon-Accuracy01", "R-Struc-RprFac-Upgrade03",
 	"R-Comp-SynapticLink", "R-Vehicle-Body08", "R-Vehicle-Engine02", "R-Struc-Factory-Upgrade03",
-	"R-Struc-Factory-Cyborg",
+	"R-Struc-Factory-Cyborg", "R-Cyborg-Wpn-MG", "R-Cyborg-Metals01", "R-Cyborg-Metals02",
+	"R-Cyborg-Metals03", "R-Cyborg-Wpn-Cannon", "R-Cyborg-Wpn-Flamer", "R-Cyborg-Wpn-Rocket",
 
 	// 10
 
