@@ -46,6 +46,9 @@ const ALPHA_RESEARCH_NEW = [
 	"R-Struc-Research-Upgrade01", "R-Struc-Research-Upgrade02", "R-Struc-Research-Upgrade03",
 	"R-Wpn-Mortar-Acc01", "R-Wpn-Rocket-Accuracy01", "R-Wpn-Rocket-Accuracy02",
 	"R-Wpn-RocketSlow-Accuracy01", "R-Wpn-Cannon-Accuracy01", "R-Struc-RprFac-Upgrade03",
+	"R-Comp-SynapticLink", "R-Vehicle-Body08", "R-Vehicle-Engine02", "R-Struc-Factory-Upgrade03",
+	"R-Struc-Factory-Cyborg", "R-Struc-Factory-Cyborg-Upgrade01", "R-Struc-Factory-Cyborg-Upgrade02",
+	"R-Struc-Factory-Cyborg-Upgrade03",
 
 	// 10
 
