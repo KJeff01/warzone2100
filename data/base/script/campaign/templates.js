@@ -41,6 +41,7 @@ npmmct: { body: "Body12SUP", prop: "tracked01", weap: "Cannon2A-TMk1" },
 npsbb: { body: "Body8MBT", prop: "HalfTrack", weap: "Rocket-BB" },
 
 // CAM_1_5
+nphmgt: { body: "Body8MBT", prop: "tracked01", weap: "MG3Mk1" },
 npcybc: { body: "CyborgLightBody", prop: "CyborgLegs", weap: "CyborgCannon" },
 npcybf: { body: "CyborgLightBody", prop: "CyborgLegs", weap: "CyborgFlamer01" },
 npcybm: { body: "CyborgLightBody", prop: "CyborgLegs", weap: "CyborgChaingun" },

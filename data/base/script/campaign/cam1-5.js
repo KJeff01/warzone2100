@@ -25,7 +25,7 @@ const SCAVENGER_RES = [
 function getDroidsForNPLZ(args)
 {
 	const ATTACKER_LIMIT = 8;
-	var scouts = [cTempl.nppod, cTempl.npmrl];
+	var scouts = [cTempl.nppod, cTempl.npmrl, cTempl.nphmgt];
 	var heavies = [cTempl.npmor, cTempl.npmmct];
 
 	var numScouts = camRand(4) + 1;
@@ -220,7 +220,7 @@ function eventStartLevel()
 			order: CAM_ORDER_ATTACK,
 			groupSize: 4,
 			throttle: camChangeOnDiff(40000),
-			templates: [ cTempl.npmrl, cTempl.npmmct, cTempl.npsbb, cTempl.nphmg ],
+			templates: [ cTempl.npmrl, cTempl.npmmct, cTempl.nphmgt, cTempl.nppod ],
 			data: {
 				regroup: false,
 				repair: 40,
@@ -232,7 +232,7 @@ function eventStartLevel()
 			order: CAM_ORDER_ATTACK,
 			groupSize: 4,
 			throttle: camChangeOnDiff(50000),
-			templates: [ cTempl.npmor, cTempl.npsens, cTempl.npsbb, cTempl.nphmg ],
+			templates: [ cTempl.npmor, cTempl.npsens, cTempl.nphmgt ],
 			data: {
 				regroup: false,
 				repair: 40,
