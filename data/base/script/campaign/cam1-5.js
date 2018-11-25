@@ -24,21 +24,29 @@ const SCAVENGER_RES = [
 //Get some droids for the New Paradigm transport
 function getDroidsForNPLZ(args)
 {
-	var scouts = [ cTempl.npsens, cTempl.nppod, cTempl.nphmg ];
-	var heavies = [ cTempl.npsbb, cTempl.npmmct, cTempl.npmrl ];
+	const ATTACKER_LIMIT = 8;
+	var scouts = [cTempl.nppod, cTempl.npmrl];
+	var heavies = [cTempl.npmor, cTempl.npmmct];
 
-	var numScouts = camRand(5) + 1;
+	var numScouts = camRand(4) + 1;
 	var heavy = heavies[camRand(heavies.length)];
 	var list = [];
+	var i = 0;
 
-	for (var i = 0; i < numScouts; ++i)
+	for (i = 0; i < numScouts; ++i)
 	{
-		list[list.length] = scouts[camRand(scouts.length)];
+		list.push(scouts[camRand(scouts.length)]);
 	}
 
-	for (var a = numScouts; a < 8; ++a)
+	for (i = numScouts; i < ATTACKER_LIMIT; ++i)
 	{
-		list[list.length] = heavy;
+		list.push(heavy);
+	}
+
+	//Add a sensor if mortars were chosen for the heavy units
+	if (heavy.weap === cTempl.npmor.weap)
+	{
+		list.push(cTempl.npsens);
 	}
 
 	return list;
