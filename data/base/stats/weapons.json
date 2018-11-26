@@ -1387,7 +1387,7 @@
         "explosionWav": "lrgexpl.ogg",
         "faceInFlight": 1,
         "facePlayer": 1,
-        "firePause": 120,
+        "firePause": 60,
         "flags": "ShootAir",
         "flightGfx": "fxmflare.PIE",
         "flightSpeed": 1200,
