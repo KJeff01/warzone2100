@@ -13,42 +13,47 @@ const NEW_PARADIGM_RES = [
 	"R-Wpn-RocketSlow-Damage02", "R-Wpn-Mortar-ROF01", "R-Cyborg-Metals02",
 	"R-Wpn-Mortar-Acc01", "R-Wpn-RocketSlow-Accuracy01", "R-Wpn-Cannon-Accuracy01",
 ];
-
 const SCAVENGER_RES = [
 	"R-Wpn-Flamer-Damage03", "R-Wpn-Flamer-Range01", "R-Wpn-Flamer-ROF01",
 	"R-Wpn-MG-Damage04", "R-Wpn-MG-ROF02", "R-Wpn-Rocket-Damage03", "R-Wpn-Cannon-Damage03",
 	"R-Wpn-Rocket-Accuracy02", "R-Wpn-Rocket-ROF02", "R-Vehicle-Metals02",
 	"R-Defense-WallUpgrade02", "R-Struc-Materials02", "R-Wpn-Cannon-Accuracy01",
 ];
+var useHeavyReinforcement;
 
 //Get some droids for the New Paradigm transport
 function getDroidsForNPLZ(args)
 {
 	const ATTACKER_LIMIT = 8;
-	var scouts = [cTempl.nppod, cTempl.npmrl, cTempl.nphmgt];
-	var heavies = [cTempl.npmor, cTempl.npmmct];
-
-	var numScouts = camRand(4) + 1;
-	var heavy = heavies[camRand(heavies.length)];
+	var unitTemplates;
 	var list = [];
-	var i = 0;
 
-	for (i = 0; i < numScouts; ++i)
+	if (useHeavyReinforcement)
 	{
-		list.push(scouts[camRand(scouts.length)]);
+		var artillery = [cTempl.npmor];
+		var other = [cTempl.npmmct];
+		if (camRand(2) > 0)
+		{
+			//Add a sensor if artillery was chosen for the heavy units
+			list.push(cTempl.npsens);
+			unitTemplates = artillery;
+		}
+		else
+		{
+			unitTemplates = other;
+		}
+	}
+	else
+	{
+		unitTemplates = [cTempl.nppod, cTempl.npmrl, cTempl.nphmgt];
 	}
 
-	for (i = numScouts; i < ATTACKER_LIMIT; ++i)
+	for (var i = 0; i < ATTACKER_LIMIT; ++i)
 	{
-		list.push(heavy);
+		list.push(unitTemplates[camRand(unitTemplates.length)]);
 	}
 
-	//Add a sensor if mortars were chosen for the heavy units
-	if (heavy.weap === cTempl.npmor.weap)
-	{
-		list.push(cTempl.npsens);
-	}
-
+	useHeavyReinforcement = !useHeavyReinforcement; //switch it
 	return list;
 }
 
@@ -159,6 +164,7 @@ function eventStartLevel()
 		annihilate: true
 	});
 
+	useHeavyReinforcement = false; //Start with a light unit reinforcement first
 	var lz = getObject("LandingZone1"); //player lz
 	var lz2 = getObject("LandingZone2"); //new paradigm lz
 	var tent = getObject("TransporterEntry");
