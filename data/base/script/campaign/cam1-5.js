@@ -24,7 +24,8 @@ var useHeavyReinforcement;
 //Get some droids for the New Paradigm transport
 function getDroidsForNPLZ(args)
 {
-	const ATTACKER_LIMIT = 8;
+	const LIGHT_ATTACKER_LIMIT = 8;
+	const HEAVY_ATTACKER_LIMIT = 3;
 	var unitTemplates;
 	var list = [];
 
@@ -48,7 +49,8 @@ function getDroidsForNPLZ(args)
 		unitTemplates = [cTempl.nppod, cTempl.npmrl, cTempl.nphmgt];
 	}
 
-	for (var i = 0; i < ATTACKER_LIMIT; ++i)
+	var lim = useHeavyReinforcement ? HEAVY_ATTACKER_LIMIT : LIGHT_ATTACKER_LIMIT;
+	for (var i = 0; i < lim; ++i)
 	{
 		list.push(unitTemplates[camRand(unitTemplates.length)]);
 	}
