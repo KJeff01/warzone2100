@@ -2607,7 +2607,7 @@
         "flightGfx": "FXTracer.PIE",
         "flightSpeed": 1000,
         "hitGfx": "FXLExp.PIE",
-        "hitpoints": 5,
+        "hitpoints": 90,
         "id": "Mortar1Mk1",
         "lightWorld": 1,
         "longHit": 50,
@@ -2631,7 +2631,7 @@
         "weaponEffect": "ARTILLERY ROUND",
         "weaponSubClass": "MORTARS",
         "weaponWav": "mortar.ogg",
-        "weight": 2000
+        "weight": 1750
     },
     "Mortar2Mk1": {
         "buildPoints": 1000,
@@ -2646,7 +2646,7 @@
         "flightGfx": "FXCAmmo.PIE",
         "flightSpeed": 1000,
         "hitGfx": "FXMNExp.PIE",
-        "hitpoints": 5,
+        "hitpoints": 110,
         "id": "Mortar2Mk1",
         "lightWorld": 1,
         "longHit": 50,
@@ -2685,7 +2685,7 @@
         "flightGfx": "FXCAmmo.PIE",
         "flightSpeed": 1000,
         "hitGfx": "FXLExp.PIE",
-        "hitpoints": 5,
+        "hitpoints": 60,
         "id": "Mortar3ROTARYMk1",
         "lightWorld": 1,
         "longHit": 50,
