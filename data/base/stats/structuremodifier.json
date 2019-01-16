@@ -13,7 +13,7 @@
     },
     "ANTI TANK": {
         "BUNKER": 25,
-        "HARD": 25,
+        "HARD": 50,
         "MEDIUM": 75,
         "SOFT": 100
     },
