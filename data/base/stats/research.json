@@ -3061,7 +3061,7 @@
         "msgName": "RES_W_RK_ROF1",
         "name": "Fast Fire Mini-Rockets",
         "requiredResearch": [
-            "R-Wpn-Rocket-Damage01"
+            "R-Wpn-Rocket05-MiniPod"
         ],
         "researchPoints": 2400,
         "researchPower": 75,
@@ -3089,7 +3089,7 @@
         "id": "R-Wpn-Rocket-ROF02",
         "name": "Fast Fire Mini-Rockets Mk2",
         "requiredResearch": [
-            "R-Wpn-Rocket-ROF01",
+            "R-Wpn-Rocket-ROF01"
         ],
         "researchPoints": 3600,
         "researchPower": 112,
@@ -3180,7 +3180,7 @@
         "msgName": "RES_W_RK_HVAT1",
         "name": "Bunker Buster Rocket",
         "requiredResearch": [
-            "R-Wpn-Rocket01-LtAT"
+            "R-Wpn-Rocket05-MiniPod"
         ],
         "researchPoints": 4800,
         "researchPower": 150,
