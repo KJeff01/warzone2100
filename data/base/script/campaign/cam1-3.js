@@ -172,6 +172,11 @@ function eventStartLevel()
 		annihilate: true
 	});
 
+	if (difficulty === INSANE)
+	{
+		camSetPropulsionTypeLimit(2);
+	}
+
 	var startpos = getObject("StartPosition");
 	var lz = getObject("LandingZone");
 	var tent = getObject("TransporterEntry");

@@ -238,6 +238,11 @@ function eventAttacked(victim, attacker)
 
 function eventStartLevel()
 {
+	if (difficulty >= INSANE)
+	{
+		camSetPropulsionTypeLimit(3);
+	}
+
 	trapActive = false;
 	gammaAttackCount = 0;
 	var startpos = getObject("startPosition");

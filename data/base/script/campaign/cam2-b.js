@@ -113,6 +113,11 @@ function transferPower()
 
 function eventStartLevel()
 {
+	if (difficulty >= HARD)
+	{
+		camSetPropulsionTypeLimit(2);
+	}
+
 	camSetStandardWinLossConditions(CAM_VICTORY_STANDARD, "SUB_2_2S");
 
 	var startpos = getObject("startPosition");

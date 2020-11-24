@@ -278,6 +278,15 @@ function extraVictoryCondition()
 
 function eventStartLevel()
 {
+	if (difficulty === HARD)
+	{
+		camSetPropulsionTypeLimit(2);
+	}
+	else if (difficulty === INSANE)
+	{
+		camSetPropulsionTypeLimit(3);
+	}
+
 	camSetStandardWinLossConditions(CAM_VICTORY_STANDARD, "SUB_2_5S", {
 		callback: "extraVictoryCondition"
 	});

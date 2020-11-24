@@ -150,6 +150,15 @@ function eventStartLevel()
 {
 	camSetExtraObjectiveMessage(_("Send off at least one transporter with a truck and survive The Collective assault"));
 
+	if (difficulty === HARD)
+	{
+		camSetPropulsionTypeLimit(2);
+	}
+	else if (difficulty === INSANE)
+	{
+		camSetPropulsionTypeLimit(3);
+	}
+
 	var startpos = {"x": 88, "y": 101};
 	var lz = {"x": 86, "y": 99, "x2": 88, "y2": 101};
 	var tCoords = {"xStart": 87, "yStart": 100, "xOut": 0, "yOut": 55};

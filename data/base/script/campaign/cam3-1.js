@@ -244,6 +244,11 @@ function eventStartLevel()
 {
 	camSetExtraObjectiveMessage(_("Destroy the missile silos"));
 
+	if (difficulty >= INSANE)
+	{
+		camSetPropulsionTypeLimit(3);
+	}
+
 	var startpos = getObject("startPosition");
 	var lz = getObject("landingZone");
 	var tent = getObject("transporterEntry");

@@ -195,6 +195,11 @@ function cam3Setup()
 
 function eventStartLevel()
 {
+	if (difficulty >= INSANE)
+	{
+		camSetPropulsionTypeLimit(3);
+	}
+
 	const PLAYER_POWER = 16000;
 	var startpos = getObject("startPosition");
 	var lz = getObject("landingZone");

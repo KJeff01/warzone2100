@@ -91,6 +91,15 @@ function enableFactories()
 
 function eventStartLevel()
 {
+	if (difficulty === HARD)
+	{
+		camSetPropulsionTypeLimit(2);
+	}
+	else if (difficulty === INSANE)
+	{
+		camSetPropulsionTypeLimit(3);
+	}
+
 	camSetStandardWinLossConditions(CAM_VICTORY_OFFWORLD, "SUB_2DS",{
 		area: "RTLZ",
 		message: "C25_LZ",

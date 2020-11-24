@@ -156,6 +156,11 @@ function eventAttacked(victim, attacker)
 
 function eventStartLevel()
 {
+	if (difficulty >= HARD)
+	{
+		camSetPropulsionTypeLimit(2);
+	}
+
 	camSetStandardWinLossConditions(CAM_VICTORY_OFFWORLD, "CAM_2C",{
 		area: "RTLZ",
 		message: "C22_LZ",

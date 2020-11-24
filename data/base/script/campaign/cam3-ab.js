@@ -215,6 +215,11 @@ function eventStartLevel()
 {
 	camSetExtraObjectiveMessage(_("Research resistance circuits and survive the assault from Nexus"));
 
+	if (difficulty >= INSANE)
+	{
+		camSetPropulsionTypeLimit(3);
+	}
+
 	var startpos = getObject("startPosition");
 	var lz = getObject("landingZone");
 

@@ -124,6 +124,11 @@ function eventStartLevel()
 {
 	camSetExtraObjectiveMessage(_("Build non-wall structures on the plateau and destroy all New Paradigm reinforcements"));
 
+	if (difficulty >= HARD)
+	{
+		camSetPropulsionTypeLimit(3);
+	}
+
 	totalTransportLoads = 0;
 	blipActive = false;
 

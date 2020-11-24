@@ -256,6 +256,11 @@ function eventStartLevel()
 {
 	camSetExtraObjectiveMessage(_("Rescue Alpha team from Nexus"));
 
+	if (difficulty >= INSANE)
+	{
+		camSetPropulsionTypeLimit(3);
+	}
+
 	var startpos = getObject("startPosition");
 	var lz = getObject("landingZone");
 	var tent = getObject("transporterEntry");

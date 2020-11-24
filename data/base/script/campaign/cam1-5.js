@@ -130,6 +130,15 @@ function camEnemyBaseEliminated_NPBaseGroup()
 
 function eventStartLevel()
 {
+	if (difficulty === HARD)
+	{
+		camSetPropulsionTypeLimit(2);
+	}
+	else if (difficulty === INSANE)
+	{
+		camSetPropulsionTypeLimit(3);
+	}
+
 	camSetStandardWinLossConditions(CAM_VICTORY_OFFWORLD, "CAM_1A-C", {
 		area: "RTLZ",
 		message: "C1-5_LZ",

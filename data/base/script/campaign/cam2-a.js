@@ -296,6 +296,11 @@ function eventGameLoaded()
 
 function eventStartLevel()
 {
+	if (difficulty >= HARD)
+	{
+		camSetPropulsionTypeLimit(2);
+	}
+
 	const PLAYER_POWER = 5000;
 	var startpos = getObject("startPosition");
 	var lz = getObject("landingZone"); //player lz

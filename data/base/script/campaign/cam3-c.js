@@ -137,6 +137,11 @@ function eventStartLevel()
 {
 	camSetExtraObjectiveMessage(_("Reunite a part of Beta team with a Gamma team outpost"));
 
+	if (difficulty >= INSANE)
+	{
+		camSetPropulsionTypeLimit(3);
+	}
+
 	var startpos = getObject("startPosition");
 	var limboLZ = getObject("limboDroidLZ");
 	reunited = false;

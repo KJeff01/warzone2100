@@ -75,6 +75,15 @@ function eventStartLevel()
 {
 	camSetExtraObjectiveMessage(_("Secure the Uplink from The Collective"));
 
+	if (difficulty === HARD)
+	{
+		camSetPropulsionTypeLimit(2);
+	}
+	else if (difficulty === INSANE)
+	{
+		camSetPropulsionTypeLimit(3);
+	}
+
 	camSetStandardWinLossConditions(CAM_VICTORY_OFFWORLD, "SUB_2_6S", {
 		area: "RTLZ",
 		message: "C2D_LZ",

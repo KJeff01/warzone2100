@@ -213,6 +213,11 @@ function eventStartLevel()
 {
 	camSetExtraObjectiveMessage(_("Secure a missile silo"));
 
+	if (difficulty >= INSANE)
+	{
+		camSetPropulsionTypeLimit(3);
+	}
+
 	var siloZone = getObject("missileSilos");
 	var startpos = getObject("startPosition");
 	var lz = getObject("landingZone");

@@ -110,6 +110,15 @@ function buildDefenses()
 
 function eventStartLevel()
 {
+	if (difficulty === HARD)
+	{
+		camSetPropulsionTypeLimit(2);
+	}
+	else if (difficulty === INSANE)
+	{
+		camSetPropulsionTypeLimit(3);
+	}
+
 	camSetStandardWinLossConditions(CAM_VICTORY_OFFWORLD, "SUB_1_5S", {
 		area: "RTLZ",
 		message: "C1-4_LZ",

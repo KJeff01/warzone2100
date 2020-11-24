@@ -112,6 +112,11 @@ function truckDefense()
 
 function eventStartLevel()
 {
+	if (difficulty >= INSANE)
+	{
+		camSetPropulsionTypeLimit(3);
+	}
+
 	var startpos = getObject("startPosition");
 	var tpos = getObject("transportEntryExit");
 	var lz = getObject("landingZone");

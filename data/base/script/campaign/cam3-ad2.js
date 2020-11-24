@@ -270,6 +270,11 @@ function eventStartLevel()
 {
 	camSetExtraObjectiveMessage(_("Protect the missile silos and research for the missile codes"));
 
+	if (difficulty >= INSANE)
+	{
+		camSetPropulsionTypeLimit(3);
+	}
+
 	var startpos = getObject("startPosition");
 	var lz = getObject("landingZone");
 	mapLimit = 137.0;

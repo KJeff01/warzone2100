@@ -92,6 +92,15 @@ function enableTimeBasedFactories()
 
 function eventStartLevel()
 {
+	if (difficulty === HARD)
+	{
+		camSetPropulsionTypeLimit(2);
+	}
+	else if (difficulty === INSANE)
+	{
+		camSetPropulsionTypeLimit(3);
+	}
+
 	camSetStandardWinLossConditions(CAM_VICTORY_OFFWORLD, "SUB_2_7S", {
 		area: "RTLZ",
 		message: "C26_LZ",

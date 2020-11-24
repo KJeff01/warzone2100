@@ -164,6 +164,11 @@ camAreaEvent("NPLZ2Trigger", function()
 
 function eventStartLevel()
 {
+	if (difficulty >= HARD)
+	{
+		camSetPropulsionTypeLimit(2);
+	}
+
 	camSetStandardWinLossConditions(CAM_VICTORY_STANDARD, "CAM_1CA");
 	var startpos = getObject("startPosition");
 	var lz = getObject("landingZone");
