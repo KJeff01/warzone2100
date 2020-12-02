@@ -976,9 +976,12 @@ bool aiChooseSensorTarget(BASE_OBJECT *psObj, BASE_OBJECT **ppsTarget)
 	unsigned int	radSquared = sensorRange * sensorRange;
 	bool		radarDetector = objRadarDetector(psObj);
 
-	if (!objActiveRadar(psObj) && !radarDetector)
+	if (!objActiveRadar(psObj) && radarDetector)
 	{
-		ASSERT(false, "Only to be used for sensor turrets!");
+		if (!radarDetector)
+		{
+			ASSERT(false, "Only to be used for sensor turrets!");
+		}
 		return false;
 	}
 
