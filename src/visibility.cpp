@@ -488,9 +488,12 @@ int visibleObject(const BASE_OBJECT *psViewer, const BASE_OBJECT *psTarget, bool
 		{
 			const DROID *psDroid = (const DROID *)psViewer;
 
-			if (psDroid->order.psObj == psTarget && cbSensorDroid(psDroid))
+			if (psDroid->order.psObj == psTarget && (cbSensorDroid(psDroid) ||
+				(psDroid->droidType == DROID_SENSOR &&
+				asSensorStats[psDroid->asBits[COMP_SENSOR]].type == SUPER_SENSOR &&
+				psDroid->action == DACTION_OBSERVE)))
 			{
-				// if it is targetted by a counter battery sensor, it is seen
+				// if it is targetted by a counter battery sensor, or an observing wide spectrum sensor, it is seen
 				return UBYTE_MAX;
 			}
 			break;
