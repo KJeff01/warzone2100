@@ -194,6 +194,65 @@ function watchBaseThreat()
 	return baseInTrouble();
 }
 
+// Nexus absorb attack like in Gamma campaign! Does not work in online multiplayer.
+function nexusAbsorb()
+{
+	if (gameTime <= minutesToMilliseconds(15))
+	{
+		return;
+	}
+	if ((random(100) > 20) || (enumStruct(me, HQ).length === 0))
+	{
+		return;
+	}
+
+	var stuff = [];
+	var enemies = getAliveEnemyPlayers();
+
+	if (enemies.length === 0)
+	{
+		return;
+	}
+
+	var randomEnemy = enemies[random(enemies.length)];
+	var typeOfAbsorb = random(3);
+
+	if (typeOfAbsorb === 0 || typeOfAbsorb === 2)
+	{
+		var droids = enumDroid(randomEnemy);
+		if (droids.length > 0)
+		{
+			stuff.push(droids[random(droids.length)]);
+		}
+	}
+	if (typeOfAbsorb === 1 || typeOfAbsorb === 2)
+	{
+		var structs = enumStruct(randomEnemy).filter(function(obj) {
+			return obj.status === BUILT;
+		});
+		if (structs.length > 0)
+		{
+			stuff.push(structs[random(structs.length)]);
+		}
+	}
+
+	for (var i = 0, len = stuff.length; i < len; ++i)
+	{
+		var obj = stuff[i];
+		if (!(obj.type === DROID && obj.droidType === DROID_CONSTRUCT) && (random(100) < 40))
+		{
+			if (!donateObject(obj, me))
+			{
+				removeObject(obj, true);
+			}
+		}
+		else
+		{
+			removeObject(obj, true);
+		}
+	}
+}
+
 //Spread out over 2 ticks.
 function tacticsMain()
 {

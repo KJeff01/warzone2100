@@ -26,6 +26,10 @@ function eventStartLevel()
 	setTimer("scoutMain", (lenient) ? 10800 : 2700); //* 2
 	setTimer("tacticsMain", (lenient) ? 18000 : 3000); //* 2
 	setTimer("vtolMain", (lenient) ? 10200 : 3400); //* 3
+	if (!isMultiplayer && (difficulty === INSANE))
+	{
+		setTimer("nexusAbsorb", 5000);
+	}
 }
 
 function eventAttacked(victim, attacker)
