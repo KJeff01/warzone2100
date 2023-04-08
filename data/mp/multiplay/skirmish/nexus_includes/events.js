@@ -3,6 +3,7 @@
 function eventStartLevel()
 {
 	var lenient = (difficulty <= MEDIUM);
+	var offset = me * 100; //Helps performance with multiple Nexus AIs.
 	debugMode = true;
 	numVtolUnits = 0;
 	rebuildQueue = [];
@@ -25,22 +26,22 @@ function eventStartLevel()
 	}
 
 	//See also the notes at each * function for how many ticks they span over.
-	setTimer("buildBase", (lenient) ? 3600 : 900); //* 9
-	setTimer("buildDerrick", (lenient) ? 4000 : 1000);
-	setTimer("protectCloseDerrick", (lenient) ? 4800 : 1200);
-	setTimer("doResearch", (lenient) ? 5600 : 1400);
-	setTimer("productionMain", (lenient) ? 8000 : 1600); //* 3
+	setTimer("buildBase", ((lenient) ? 3600 : 900) + offset); //* 9
+	setTimer("buildDerrick", ((lenient) ? 4000 : 1000) + offset);
+	setTimer("protectCloseDerrick", ((lenient) ? 4800 : 1200) + offset);
+	setTimer("doResearch", ((lenient) ? 5600 : 1400) + offset);
+	setTimer("productionMain", ((lenient) ? 8000 : 1600) + offset); //* 3
 	if (alliancesType === ALLIANCES)
 	{
 		setTimer("allianceMain", 2000); //* 2
 	}
 	setTimer("helpMain", 2400);
-	setTimer("scoutMain", (lenient) ? 10800 : 2700); //* 2
-	setTimer("tacticsMain", (lenient) ? 18000 : 3000); //* 2
-	setTimer("vtolMain", (lenient) ? 10200 : 3400); //* 3
+	setTimer("scoutMain", ((lenient) ? 10800 : 2700) + offset); //* 2
+	setTimer("tacticsMain", ((lenient) ? 18000 : 3000) + offset); //* 2
+	setTimer("vtolMain", ((lenient) ? 10200 : 3400) + offset); //* 3
 	if (!isMultiplayer && (difficulty === INSANE))
 	{
-		setTimer("nexusAbsorb", 5000);
+		setTimer("nexusAbsorb", 5000 + offset);
 	}
 }
 
