@@ -646,7 +646,7 @@ function buildMaximums()
 	var amount = buildMaxsBasedOnDerricks();
 	var currStructCount = countStruct(BASE_STRUCTURES.labs);
 
-	if (currStructCount < getStructureLimit(BASE_STRUCTURES.labs, me) && currStructCount < amount && grabTrucksAndBuild(BASE_STRUCTURES.labs, BASE, 25, 0))
+	if (currStructCount < getStructureLimit(BASE_STRUCTURES.labs, me) && ((currStructCount < amount) || (difficulty === INSANE && currStructCount < 4)) && grabTrucksAndBuild(BASE_STRUCTURES.labs, BASE, 25, 0))
 	{
 		return true;
 	}
