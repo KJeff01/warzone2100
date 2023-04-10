@@ -13,18 +13,6 @@ function eventStartLevel()
 	allianceTimeInit();
 	initPersonalityData();
 
-	// Research speed cheat similar to the original version.
-	if (!isMultiplayer && (difficulty >= HARD))
-	{
-		for (var i = 0; i < maxPlayers; ++i)
-		{
-			if (friendlyPlayer(i))
-			{
-				completeResearch("R-Struc-Research-Upgrade-Nexus", i);
-			}
-		}
-	}
-
 	//See also the notes at each * function for how many ticks they span over.
 	setTimer("buildBase", ((lenient) ? 3600 : 900) + offset); //* 9
 	setTimer("buildDerrick", ((lenient) ? 4000 : 1000) + offset);
