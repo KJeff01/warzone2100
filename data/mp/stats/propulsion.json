@@ -43,9 +43,9 @@
 		"model": "prlhtr1.pie",
 		"name": "Half-tracks",
 		"skidDeceleration": 500,
-		"speed": 150,
+		"speed": 200,
 		"type": "Half-Tracked",
-		"weight": 400
+		"weight": 500
 	},
 	"Helicopter": {
 		"acceleration": 200,
@@ -83,7 +83,8 @@
 		"id": "V-Tol",
 		"model": "DPVTOL.PIE",
 		"name": "VTOL",
-		"speed": 700,
+		"skidDeceleration": 2500,
+		"speed": 3500,
 		"spinSpeed": 200,
 		"turnSpeed": 100,
 		"type": "Lift",
@@ -104,7 +105,7 @@
 		"model": "PRLHOV1.PIE",
 		"name": "Hover",
 		"skidDeceleration": 120,
-		"speed": 300,
+		"speed": 375,
 		"type": "Hover",
 		"weight": 200
 	},
@@ -116,8 +117,9 @@
 		"id": "tracked01",
 		"model": "prltrk1.pie",
 		"name": "Tracks",
-		"speed": 125,
+		"speed": 175,
 		"spinAngle": 45,
+		"spinSpeed": 70,
 		"type": "Tracked",
 		"weight": 650
 	},
@@ -130,7 +132,7 @@
 		"model": "prlwhl1.pie",
 		"name": "Wheels",
 		"skidDeceleration": 350,
-		"speed": 175,
+		"speed": 250,
 		"type": "Wheeled",
 		"weight": 300
 	}
