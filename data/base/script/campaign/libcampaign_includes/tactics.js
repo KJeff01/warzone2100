@@ -183,6 +183,189 @@ function __camDistToGroupAverage(obj1, obj2)
 	return (__DIST1 - __DIST2);
 }
 
+function __camUpdateSectors()
+{
+	const __SECTOR_CHUNK_SIZE = 8;
+	const __SUBSECTOR_CHUNK_SIZE = (__SECTOR_CHUNK_SIZE / 2);
+	if ((mapWidth * mapHeight) <= (__SECTOR_CHUNK_SIZE * __SECTOR_CHUNK_SIZE))
+	{
+		camDebug("Map is too small for sector analysis");
+		return;
+	}
+	//Initialize the map sectors if not already done.
+	if (__camRetreatSectorMap.length === 0)
+	{
+		let lastIdx = 0;
+		let widthIdx = 0;
+		let heightIdx = 0;
+		const __WIDTH_LIMIT = Math.ceil(mapWidth / __SECTOR_CHUNK_SIZE);
+		const __HEIGHT_LIMIT = Math.ceil(mapHeight / __SECTOR_CHUNK_SIZE);
+		while (heightIdx < __HEIGHT_LIMIT)
+		{
+			if (widthIdx > __WIDTH_LIMIT)
+			{
+				widthIdx = 0;
+				++heightIdx;
+				continue;
+			}
+			let spX = (widthIdx * __SECTOR_CHUNK_SIZE);
+			let spY = (heightIdx * __SECTOR_CHUNK_SIZE);
+			if (spX > mapWidth) { spX = __camRetreatSectorMap[lastIdx].area.x1 + 1; }
+			if (spY > mapHeight) { spY = __camRetreatSectorMap[lastIdx].area.y1 + 1; }
+			let epX = ((spX + __SECTOR_CHUNK_SIZE) - 1);
+			let epY = ((spY + __SECTOR_CHUNK_SIZE) - 1);
+			if (epX > mapWidth) { epX = __camRetreatSectorMap[lastIdx].area.x2 + 1; }
+			if (epY > mapHeight) { epY = __camRetreatSectorMap[lastIdx].area.y2 + 1; }
+			let area = {x1: spX, y1: spY: idx, x2: epX, y2: epY};
+			__camRetreatSectorMap.push({
+				area: area,
+				index: lastIdx,
+				playerObjects: 0,
+				poisoned: {state: false, lastCheck: 0},
+				dangerous: false,
+				artilleryWatched: false,
+				antiAir: false
+			});
+			++lastIdx;
+			++widthIdx;
+		}
+	}
+	// Scan each sector and update their threat analysis data.
+	for (let i = 0, len = __camRetreatSectorMap.length; i < len; ++i)
+	{
+		const sector = __camRetreatSectorMap[i];
+		const objects = enumArea(sector.x1, sector.y1, sector.x2, sector.y2, CAM_HUMAN_PLAYER, false);
+		sector.playerObjects = objects.length;
+
+		for (let j = 0, len2 = objects.length; j < len2; ++j)
+		{
+			const obj = objects[j];
+			if (obj.type === STRUCTURE)
+			{
+				if (obj.stattype === WALL || obj.stattype === GATE)
+				{
+					continue;
+				}
+				else if (obj.isSensor)
+				{
+					sector.artilleryWatched = true;
+					sector.dangerous = true;
+				}
+				else if (obj.stattype === DEFENSE)
+				{
+					sector.dangerous = true;
+					if (obj.canHitAir)
+					{
+						sector.antiAir = true;
+					}
+				}
+			}
+			else if (obj.type === DROID)
+			{
+				if (obj.isSensor)
+				{
+					sector.artilleryWatched = true;
+					sector.dangerous = true;
+				}
+				else if (obj.droidType === DROID_WEAPON || obj.droidType === DROID_CYBORG)
+				{
+					sector.dangerous = true;
+					if (obj.canHitAir)
+					{
+						sector.antiAir = true;
+					}
+				}
+			}
+		}
+		__camRetreatSectorMap[i] = sector;
+	}
+
+	__camUnpoisonSectors();
+}
+
+// Something bad happened to a unit so poison sectors nearby it.
+function __camPoisonSectors(pos)
+{
+	if (!camDef(pos))
+	{
+		camDebug("Bad or undefined position during sector poison attempt");
+		return;
+	}
+	const __MAX_SECTORS_POISONED_AROUND_UNIT = 9;
+	const __POISONED_DISTANCE = 6;
+	let poisonedCount = 0;
+	for (let i = 0, len = __camRetreatSectorMap.length; i < len; ++i)
+	{
+		let poison = false;
+		const sector = __camRetreatSectorMap[i];
+		if (camDist(sector.area.x1, sector.area.y1, pos.x, pos.y) <= __POISONED_DISTANCE) { poison = true; }
+		else if (camDist(sector.area.x1, sector.area.y2, pos.x, pos.y) <= __POISONED_DISTANCE) { poison = true; }
+		else if (camDist(sector.area.x2, sector.area.y1, pos.x, pos.y) <= __POISONED_DISTANCE) { poison = true; }
+		else if (camDist(sector.area.x2, sector.area.y2, pos.x, pos.y) <= __POISONED_DISTANCE) { poison = true; }
+		if (poison)
+		{
+			__camRetreatSectorMap[i].poisoned.state = true;
+			__camRetreatSectorMap[i].poisoned.lastCheck = gameTime;
+			++poisonedCount;
+			if (poisonedCount >= __MAX_SECTORS_POISONED_AROUND_UNIT)
+			{
+				break; // Can only poison 9 sectors around self.
+			}
+		}
+	}
+}
+
+// Allow units to feel these zones again. Potentially.
+function __camUnpoisonSectors()
+{
+	const __UNPOISON_TIME = camSecondsToMilliseconds(30);
+	for (let i = 0, len = __camRetreatSectorMap.length; i < len; ++i)
+	{
+		const sector = __camRetreatSectorMap[i];
+		if (sector.poisoned.state && (sector.poisoned.lastCheck + __UNPOISON_TIME < gameTime))
+		{
+			__camRetreatSectorMap[i].poisoned.state = false;
+		}
+	}
+}
+
+// The retreating unit will run to a VERY safe position first, then feel out these zones and mark them as safe.
+function __camFindSafeRetreatArea(obj, scanRadius)
+{
+	if (!camDef(obj) || (!camDef(obj.x) || !camDef(obj.y)))
+	{
+		camDebug("Invalid parameter");
+		return;
+	}
+	const __SCAN_RADIUS = ((camDef(scanRadius)) ? scanRadius : 16);
+	const center = {x: obj.x, y: obj.y};
+	const potentialSectors = [];
+
+	for (let i = 0, len = __camRetreatSectorMap.length; i < len; ++i)
+	{
+		const sector = __camRetreatSectorMap[i];
+		if (sector.dangerous || sector.poisoned.state)
+		{
+			continue;
+		}
+		potentialSectors.push(sector);
+	}
+
+	potentialSectors = potentialSectors.sort(function(sec) { camDist(Math.floor((sec.area.x1 + sec.area.x2) / 2), Math.floor((sec.area.y1 + sec.area.y2) / 2), center.x, center.y) });
+
+	for (let i = 0, len = potentialSectors.length; i < len; ++i)
+	{
+		const sector = potentialSectors[i];
+		const midPos = {x: Math.floor((sec.area.x1 + sec.area.x2) / 2), y: Math.floor((sec.area.y1 + sec.area.y2) / 2)};
+		const __MAX_ATTEMPTS = 20;
+		let attempt = 0;
+		while (attempt < __MAX_ATTEMPTS)
+		{
+
+		}
+	}
+}
+
 function __camPickTarget(group)
 {
 	let targets = [];
@@ -381,13 +564,14 @@ function __camTacticsTickForGroup(group)
 	let healthyDroids = [];
 	const repair = {
 		hasFacility: enumStruct(rawDroids[0].player, REPAIR_FACILITY).length > 0,
-		pos: camDef(gi.data.repairPos) ? gi.data.repairPos : undefined,
+		pos: (rawDroids[0].player === CAM_NEXUS) ? true : false,
 		percent: camDef(gi.data.repair) ? gi.data.repair : 66,
 	};
 
 	//repair
 	if (repair.hasFacility || camDef(repair.pos))
 	{
+		profile("__camUpdateSectors");
 		for (let i = 0, len = rawDroids.length; i < len; ++i)
 		{
 			const droid = rawDroids[i];
@@ -398,8 +582,12 @@ function __camTacticsTickForGroup(group)
 				continue;
 			}
 
+			if (isVTOL(droid))
+			{
+				// Don't repair VTOLs.
+			}
 			//has a repair facility so use it
-			if (repair.hasFacility && camDef(gi.data.repair))
+			else if (repair.hasFacility && camDef(gi.data.repair))
 			{
 				if (droid.health < repair.percent)
 				{
@@ -410,11 +598,28 @@ function __camTacticsTickForGroup(group)
 			//Or they have auto-repair and run to some position for a while
 			else if (!repair.hasFacility && repair.pos)
 			{
+				let lastHitSpecific = 0;
+				if (camDef(gi.memberData))
+				{
+					for (let i = 0, len = gi.memberData.length; i < len; ++i)
+					{
+						const data = gi.memberData[i];
+						if (droid.id === data.id)
+						{
+							lastHitSpecific = data.lastHit;
+							break;
+						}
+					}
+				}
 				if (droid.health < repair.percent)
 				{
-					const loc = camMakePos(repair.pos);
-					orderDroidLoc(droid, DORDER_MOVE, loc.x, loc.y);
 					repairLikeAction = true;
+					const __SHOULD_RUN = ((gameTime - lastHitSpecific) < __CAM_RUN_AWAY_WHEN_HIT_LAST);
+					if ((droid.order !== DORDER_MOVE) && __SHOULD_RUN)
+					{
+						let loc = profile("__camFindSafeRetreatArea", {x: droid.x, y: droid.y});
+						orderDroidLoc(droid, DORDER_MOVE, loc.x, loc.y);
+					}
 				}
 			}
 
@@ -451,10 +656,11 @@ function __camTacticsTickForGroup(group)
 			}
 		}
 
-		const __HIT_RECENTLY = (gameTime - gi.lastHit < __CAM_FALLBACK_TIME_ON_REGROUP);
 		// not enough droids grouped?
-		if (gi.count < 0 ? (ret.maxCount < groupSize(group) * 0.66) : (ret.maxCount < gi.count))
+		if ((gi.count < 0) ? (ret.maxCount < (groupSize(group) * 0.66)) : (ret.maxCount < gi.count))
 		{
+			const __HIT_RECENTLY = ((gameTime - gi.lastHit) < __CAM_FALLBACK_TIME_ON_REGROUP);
+
 			for (let i = 0, len = droids.length; i < len; ++i)
 			{
 				const droid = droids[i];
@@ -463,7 +669,7 @@ function __camTacticsTickForGroup(group)
 					continue;
 				}
 
-				if (__HIT_RECENTLY && enumStruct(droid.player, HQ).length > 0)
+				if (__HIT_RECENTLY && (enumStruct(droid.player, HQ).length > 0))
 				{
 					if (droid.order !== DORDER_RTB)
 					{

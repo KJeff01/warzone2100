@@ -95,6 +95,34 @@ function camSafeRemoveObject(obj, specialEffects)
 	}
 }
 
+function camCheckPositionWithinBounds(obj)
+{
+	if (!camDef(obj) || (!camDef(obj.x) || !camDef(obj.y)))
+	{
+		camDebug("Invald parameter");
+		return;
+	}
+	const mapLimits = getScrollLimits();
+	let pos = obj;
+	if (pos.x <= mapLimits.x1)
+	{
+		pos.x = mapLimits.x1 + 1;
+	}
+	else if (pos.x >= mapLimits.x2)
+	{
+		pos.x = mapLimits.x2 - 1;
+	}
+	else if (pos.y <= mapLimits.y1)
+	{
+		pos.y = mapLimits.y1 + 1;
+	}
+	else if (pos.y >= mapLimits.y2)
+	{
+		pos.y = mapLimits.y2 - 1;
+	}
+	return pos;
+}
+
 //;; ## camMakePos(label|object|x[, y])
 //;;
 //;; Make a `POSITION`-like object, unless already done.

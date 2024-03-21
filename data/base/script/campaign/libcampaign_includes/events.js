@@ -133,6 +133,7 @@ function cam_eventStartLevel()
 	__camNeverGroupDroids = [];
 	__camNumTransporterExits = 0;
 	__camAllowVictoryMsgClear = true;
+	__camRetreatSectorMap = [];
 	__camExpLevel = 0;
 	camSetPropulsionTypeLimit(); //disable the propulsion changer by default
 	__camAiPowerReset(); //grant power to the AI
@@ -328,7 +329,32 @@ function cam_eventAttacked(victim, attacker)
 			if (camDef(__camGroupInfo[victim.group]))
 			{
 				__camGroupInfo[victim.group].lastHit = gameTime;
-
+				// Set time a specific member was hit. Needed for Nexus hit-and-run behavior.
+				const victimData = {id: victim.id, lastHit: gameTime};
+				if (!camDef(__camGroupInfo[victim.group].memberData))
+				{
+					__camGroupInfo[victim.group].memberData = [];
+					__camGroupInfo[victim.group].memberData.push(victimData);
+				}
+				else
+				{
+					let found = false; //See if we need to add data about this member.
+					for (let i = 0, len = __camGroupInfo[victim.group].memberData.length; i < len; ++i)
+					{
+						const data = __camGroupInfo[victim.group].memberData[i];
+						if (victim.id === data.id)
+						{
+							__camGroupInfo[victim.group].memberData[i].lastHit = gameTime;
+							found = true;
+							break;
+						}
+					}
+					if (!found)
+					{
+						__camGroupInfo[victim.group].memberData.push(victimData);
+					}
+				}
+				__camPoisonSectors({x: victim.x, y: victim.y});
 				//Increased Nexus intelligence if struck on cam3-4
 				if (__camNextLevel === CAM_GAMMA_OUT)
 				{
