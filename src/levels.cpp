@@ -52,6 +52,7 @@
 #include "qtscript.h"
 #include "wrappers.h"
 #include "activity.h"
+#include "challenge.h"
 #include <wzmaplib/map_package.h>
 
 #include <unordered_set>
@@ -175,7 +176,10 @@ LEVEL_DATASET *levFindDataSet(char const *name, Sha256 const *hash)
 
 	for (auto psNewLevel : psLevels)
 	{
-		if (!psNewLevel->pName.empty() && strcmp(psNewLevel->pName.c_str(), name) == 0)
+		if (!psNewLevel->pName.empty() &&
+			((strcmp(psNewLevel->pName.c_str(), name) == 0) ||
+			// So challenge files don't force the tech level as part of the map name if it's an older format.
+			(challengeActive && strcmp(mapNameWithoutTechlevel(psNewLevel->pName.c_str()).c_str(), name) == 0)))
 		{
 			if (hash == nullptr || levGetFileHash(psNewLevel) == *hash)
 			{
