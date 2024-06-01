@@ -428,7 +428,6 @@ function eventStartLevel()
 
 	camManageTrucks(CAM_THE_COLLECTIVE);
 	setUnitRank(); //All pre-placed player droids are ranked.
-	camPlayVideos({video: "MB2A_MSG", type: MISS_MSG});
 	startedFromMenu = false;
 
 	//Only if starting Beta directly rather than going through Alpha

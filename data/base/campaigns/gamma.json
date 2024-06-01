@@ -1,4 +1,6 @@
 {
 	"name" : "Gamma Campaign",
-	"level" : "CAM_3A"
+	"level" : "CAM_3A",
+	"video" : "cam3/c003.ogg",
+	"captions" : "cam3/c003.txa"
 }

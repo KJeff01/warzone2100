@@ -1,4 +1,6 @@
 {
 	"name" : "Beta Campaign",
-	"level" : "CAM_2A"
+	"level" : "CAM_2A",
+	"video" : "cam2/c002.ogg",
+	"captions" : "cam2/c002.txa"
 }
