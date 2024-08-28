@@ -59,6 +59,7 @@ struct MOVE_CONTROL
 	uint16_t lastBump = 0;                ///< Time of last bump with a droid - relative to bumpTime
 	uint16_t pauseTime = 0;               ///< When MOVEPAUSE started - relative to bumpTime
 	Position bumpPos = Position(0, 0, 0); ///< Position of last bump
+	unsigned toleranceCounter = 0;        ///< When close to a waypoint this will keep increasing as a multiplier for a distance threshold check
 
 	unsigned shuffleStart = 0;            ///< When a shuffle started
 
