@@ -325,6 +325,10 @@ function __camBasesTick()
 		{
 			continue;
 		}
+		if (bi.reinforce_kind === CAM_REINFORCE_NONE)
+		{
+			continue;
+		}
 		if (gameTime - bi.reinforce_last < bi.reinforce_interval)
 		{
 			continue;

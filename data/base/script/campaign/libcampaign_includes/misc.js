@@ -415,7 +415,7 @@ function camMakeGroup(what, playerFilter)
 				camDebug("Trying to add", o);
 				continue;
 			}
-			if (o.type === DROID && o.droidType !== DROID_CONSTRUCT && camPlayerMatchesFilter(o.player, playerFilter))
+			if (o.type === DROID && o.droidType !== DROID_CONSTRUCT && !camIsTransporter(o) && camPlayerMatchesFilter(o.player, playerFilter))
 			{
 				groupAdd(group, o);
 			}
@@ -445,113 +445,159 @@ function camBreakAlliances()
 	}
 }
 
-//;; ## camGenerateRandomMapEdgeCoordinate(reachPosition)
+//;; ## camGenerateRandomMapEdgeCoordinate(reachPosition [, propulsion [, distFromReach]])
 //;;
 //;; Returns a random coordinate anywhere on the edge of the map that reachs a position.
+//;; `reachPosition` may be undefined if you just want a random edge coordinate.
 //;;
 //;; @param {Object} reachPosition
+//;; @param {String} propulsion
 //;; @returns {Object}
 //;;
-function camGenerateRandomMapEdgeCoordinate(reachPosition)
+function camGenerateRandomMapEdgeCoordinate(reachPosition, propulsion, distFromReach)
 {
+	if (!camDef(propulsion))
+	{
+		propulsion = CAM_GENERIC_LAND_STAT;
+	}
+	if (!camDef(distFromReach))
+	{
+		distFromReach = 0;
+	}
+
 	const limits = getScrollLimits();
+	const __MAX_ATTEMPTS = 10000;
+	const __DEFINED_POS = (camDef(reachPosition) && reachPosition);
+	const __OFFSET = 3; // Gives transporters enough space to turn around near map edges.
+	let attempts = 0;
+	let breakOut = false;
 	let loc;
 
-	do
+	while (!breakOut)
 	{
+		++attempts;
 		const location = {x: 0, y: 0};
 		let xWasRandom = false;
 
 		if (camRand(100) < 50)
 		{
 			location.x = camRand(limits.x2 + 1);
-			if (location.x < (limits.x + 2))
+			if (location.x < (limits.x + __OFFSET))
 			{
-				location.x = limits.x + 2;
+				location.x = limits.x + __OFFSET;
 			}
-			else if (location.x > (limits.x2 - 2))
+			else if (location.x > (limits.x2 - __OFFSET))
 			{
-				location.x = limits.x2 - 2;
+				location.x = limits.x2 - __OFFSET;
 			}
 			xWasRandom = true;
 		}
 		else
 		{
-			location.x = (camRand(100) < 50) ? (limits.x2 - 2) : (limits.x + 2);
+			location.x = (camRand(100) < 50) ? (limits.x2 - __OFFSET) : (limits.x + __OFFSET);
 		}
 
 		if (!xWasRandom && (camRand(100) < 50))
 		{
 			location.y = camRand(limits.y2 + 1);
-			if (location.y < (limits.y + 2))
+			if (location.y < (limits.y + __OFFSET))
 			{
-				location.y = limits.y + 2;
+				location.y = limits.y + __OFFSET;
 			}
-			else if (location.y > (limits.y2 - 2))
+			else if (location.y > (limits.y2 - __OFFSET))
 			{
-				location.y = limits.y2 - 2;
+				location.y = limits.y2 - __OFFSET;
 			}
 		}
 		else
 		{
-			location.y = (camRand(100) < 50) ? (limits.y2 - 2) : (limits.y + 2);
+			location.y = (camRand(100) < 50) ? (limits.y2 - __OFFSET) : (limits.y + __OFFSET);
 		}
 
 		loc = location;
-	} while (camDef(reachPosition) && reachPosition && !propulsionCanReach(CAM_GENERIC_LAND_STAT, reachPosition.x, reachPosition.y, loc.x, loc.y));
+
+		if ((attempts > __MAX_ATTEMPTS) ||
+			((!__DEFINED_POS ||
+			(__DEFINED_POS &&
+			(camDist(reachPosition.x, reachPosition.y, loc.x, loc.y) >= distFromReach) &&
+			propulsionCanReach(propulsion, reachPosition.x, reachPosition.y, loc.x, loc.y)))))
+		{
+			breakOut = true;
+		}
+	}
 
 	return loc;
 }
 
-//;; ## camGenerateRandomMapCoordinate(reachPosition)
+//;; ## camGenerateRandomMapCoordinate(reachPosition [, propulsion [, distFromReach [, scanObjectRadius]]])
 //;;
 //;; Returns a random coordinate anywhere on the map
 //;;
 //;; @param {Object} reachPosition
+//;; @param {String} propulsion
+//;; @param {Number} distFromReach
+//;; @param {Number} scanObjectRadius
 //;; @returns {Object}
 //;;
-function camGenerateRandomMapCoordinate(reachPosition, distFromReach, scanObjectRadius)
+function camGenerateRandomMapCoordinate(reachPosition, propulsion, distFromReach, scanObjectRadius)
 {
+	if (!camDef(reachPosition) || !reachPosition)
+	{
+		camDebug("Undefined reachPosition when attempting to generate random coordinate.");
+		return {x: (mapWidth / 2), y: (mapHeight / 2)}; // Better than nothing.
+	}
 	if (!camDef(distFromReach))
 	{
 		distFromReach = 10;
 	}
 	if (!camDef(scanObjectRadius))
 	{
-		scanObjectRadius = 2;
+		scanObjectRadius = 1;
+	}
+	if (!camDef(propulsion))
+	{
+		propulsion = CAM_GENERIC_LAND_STAT;
 	}
 
 	const limits = getScrollLimits();
+	const __MAX_ATTEMPTS = 10000;
+	const __OFFSET = 3; // Gives transporters enough space to turn around near map edges.
+	let attempts = 0;
+	let breakOut = false;
 	let pos;
 
-	do
+	while (!breakOut)
 	{
+		++attempts;
 		let randomPos = {x: camRand(limits.x2), y: camRand(limits.y2)};
 
-		if (randomPos.x < (limits.x + 2))
+		if (randomPos.x < (limits.x + __OFFSET))
 		{
-			randomPos.x = limits.x + 2;
+			randomPos.x = limits.x + __OFFSET;
 		}
-		else if (randomPos.x > (limits.x2 - 2))
+		else if (randomPos.x > (limits.x2 - __OFFSET))
 		{
-			randomPos.x = limits.x2 - 2;
+			randomPos.x = limits.x2 - __OFFSET;
 		}
 
-		if (randomPos.y < (limits.y + 2))
+		if (randomPos.y < (limits.y + __OFFSET))
 		{
 			randomPos.y = limits.y;
 		}
-		else if (randomPos.y > (limits.y2 - 2))
+		else if (randomPos.y > (limits.y2 - __OFFSET))
 		{
-			randomPos.y = limits.y2 - 2;
+			randomPos.y = limits.y2 - __OFFSET;
 		}
 
 		pos = randomPos;
-	} while (camDef(reachPosition) &&
-		reachPosition &&
-		!propulsionCanReach(CAM_GENERIC_LAND_STAT, reachPosition.x, reachPosition.y, pos.x, pos.y) &&
-		(camDist(pos, reachPosition) < distFromReach) &&
-		(enumRange(pos.x, pos.y, scanObjectRadius, ALL_PLAYERS, false).length > 0));
+		if ((attempts > __MAX_ATTEMPTS) ||
+			((camDist(pos, reachPosition) >= distFromReach) &&
+			propulsionCanReach(propulsion, reachPosition.x, reachPosition.y, pos.x, pos.y) &&
+			!enumRange(pos.x, pos.y, scanObjectRadius, ALL_PLAYERS, false).length))
+		{
+			breakOut = true;
+		}
+	}
 
 	return pos;
 }
