@@ -3,17 +3,22 @@
 // Truck management.
 ////////////////////////////////////////////////////////////////////////////////
 
-//;; ## camManageTrucks(playerId)
+//;; ## camManageTrucks(playerId [, allowOilCapture])
 //;;
-//;; Manage trucks for an AI player. This assumes recapturing oils and rebuilding destroyed trucks
-//;; in factories, the latter is implemented via `camQueueDroidProduction()` mechanism.
+//;; Manage trucks for an AI player. This assumes rebuilding destroyed trucks
+//;; in factories, which is implemented via the `camQueueDroidProduction()` mechanism.
 //;;
 //;; @param {number} playerId
+//;; @param {boolean} allowOilCapture
 //;; @returns {void}
 //;;
-function camManageTrucks(playerId)
+function camManageTrucks(playerId, allowOilCapture)
 {
-	__camTruckInfo[playerId] = { enabled: 1, queue: [], player: playerId };
+	if (!camDef(allowOilCapture))
+	{
+		allowOilCapture = true;
+	}
+	__camTruckInfo[playerId] = { enabled: 1, queue: [], player: playerId, grabOil: allowOilCapture };
 }
 
 //;; ## camQueueBuilding(playerId, stat[, position])
@@ -88,6 +93,7 @@ function __camTruckTick()
 	{
 		const ti = __camTruckInfo[playerObj];
 		const __PLAYER = ti.player;
+		const __CAPTURE_OIL = ti.grabOil;
 		let freeTrucks = __camEnumFreeTrucks(__PLAYER);
 		let truck;
 
@@ -134,18 +140,20 @@ function __camTruckTick()
 		}
 
 		// Then, capture free oils.
-		const oils = enumFeature(ALL_PLAYERS, CAM_OIL_RESOURCE_STAT);
-		if (oils.length === 0)
+		if (__CAPTURE_OIL)
 		{
-			continue;
-		}
-		const oil = oils[0];
-		truck = __camGetClosestTruck(__PLAYER, oil, freeTrucks);
-		if (camDef(truck) && __PLAYER !== CAM_NEXUS)
-		{
-			enableStructure(cam_base_structures.derrick, __PLAYER);
-			orderDroidBuild(truck, DORDER_BUILD, cam_base_structures.derrick, oil.x, oil.y);
-			continue;
+			const oils = enumFeature(ALL_PLAYERS, CAM_OIL_RESOURCE_STAT);
+			if (oils.length === 0)
+			{
+				continue;
+			}
+			const oil = oils[0];
+			truck = __camGetClosestTruck(__PLAYER, oil, freeTrucks);
+			if (camDef(truck))
+			{
+				enableStructure(cam_base_structures.derrick, __PLAYER);
+				orderDroidBuild(truck, DORDER_BUILD, cam_base_structures.derrick, oil.x, oil.y);
+			}
 		}
 	}
 }

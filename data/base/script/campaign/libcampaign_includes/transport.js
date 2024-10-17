@@ -113,14 +113,13 @@ function __camDispatchTransporterUnsafe()
 
 	setNoGoArea(pos.x - __OFFSET, pos.y - __OFFSET, pos.x + __OFFSET, pos.y + __OFFSET, __PLAYER);
 
-	//Delete previous enemy reinforcement transport blip
 	if (__PLAYER !== CAM_HUMAN_PLAYER)
 	{
-		camRemoveEnemyTransporterBlip();
-	}
-
-	if (__PLAYER !== CAM_HUMAN_PLAYER)
-	{
+		const __DEFINED_BLIP_REMOVAL = camDef(data.ignoreBlipRemoval);
+		if (!__DEFINED_BLIP_REMOVAL || (__DEFINED_BLIP_REMOVAL && !data.ignoreBlipRemoval))
+		{
+			camRemoveEnemyTransporterBlip(); //Delete previous enemy reinforcement transport blip.
+		}
 		playSound(cam_sounds.transport.enemyTransportDetected);
 	}
 

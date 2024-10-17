@@ -648,11 +648,9 @@
 		"iconID": "IMAGE_RES_DROIDTECH",
 		"id": "R-Vehicle-Metals01",
 		"imdName": "icmolql.pie",
-		"keyTopic": 1,
 		"msgName": "RES_V_MET1",
 		"name": "Composite Alloys",
 		"requiredResearch": [
-			"R-Struc-Research-Module",
 			"R-Struc-Factory-Module"
 		],
 		"researchPoints": 1800,
@@ -679,6 +677,7 @@
 		"iconID": "IMAGE_RES_DROIDTECH",
 		"id": "R-Vehicle-Metals02",
 		"imdName": "icmolql.pie",
+		"keyTopic": 1,
 		"name": "Composite Alloys Mk2",
 		"requiredResearch": [
 			"R-Vehicle-Metals01"
@@ -1278,8 +1277,8 @@
 		"requiredResearch": [
 			"R-Wpn-Missile2A-T"
 		],
-		"researchPoints": 14400,
-		"researchPower": 450,
+		"researchPoints": 6400,
+		"researchPower": 200,
 		"resultComponents": [
 			"Cyb-Wpn-Atmiss"
 		],
@@ -1293,8 +1292,8 @@
 		"requiredResearch": [
 			"R-Wpn-Laser01"
 		],
-		"researchPoints": 14400,
-		"researchPower": 450,
+		"researchPoints": 4800,
+		"researchPower": 150,
 		"resultComponents": [
 			"Cyb-Wpn-Laser"
 		],
@@ -1311,8 +1310,8 @@
 		"requiredResearch": [
 			"R-Wpn-RailGun01"
 		],
-		"researchPoints": 14400,
-		"researchPower": 450,
+		"researchPoints": 5600,
+		"researchPower": 175,
 		"resultComponents": [
 			"Cyb-Wpn-Rail1"
 		],
@@ -1446,8 +1445,8 @@
 		"requiredResearch": [
 			"R-Sys-Engineering01"
 		],
-		"researchPoints": 300,
-		"researchPower": 9,
+		"researchPoints": 160,
+		"researchPower": 5,
 		"resultStructures": [
 			"A0TankTrap"
 		],
@@ -2236,7 +2235,7 @@
 		"msgName": "RES_V_B05",
 		"name": "Medium Body - Cobra",
 		"requiredResearch": [
-			"R-Struc-Factory-Module",
+			"R-Vehicle-Metals01",
 			"R-Vehicle-Body01"
 		],
 		"researchPoints": 1200,
@@ -2254,7 +2253,7 @@
 		"requiredResearch": [
 			"R-Vehicle-Body05",
 			"R-Vehicle-Body04",
-			"R-Vehicle-Metals01"
+			"R-Vehicle-Metals02"
 		],
 		"researchPoints": 2400,
 		"researchPower": 75,
@@ -3168,10 +3167,10 @@
 		"requiredResearch": [
 			"R-Wpn-Mortar01Lt",
 			"R-Wpn-Mortar-Damage02",
-			"R-Vehicle-Metals01"
+			"R-Vehicle-Metals02"
 		],
-		"researchPoints": 7200,
-		"researchPower": 225,
+		"researchPoints": 4800,
+		"researchPower": 150,
 		"resultComponents": [
 			"Mortar2Mk1"
 		],
