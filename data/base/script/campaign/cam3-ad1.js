@@ -27,6 +27,7 @@ const mis_nexusResClassic = [
 	"R-Sys-Sensor-Upgrade01", "R-Sys-NEXUSrepair", "R-Wpn-Flamer-Damage06",
 	"R-Sys-NEXUSsensor",
 ];
+const mis_vtolSpawnPositions = ["vtolSpawnPos1", "vtolSpawnPos2"];
 var capturedSilos; // victory flag letting us know if we captured any silos.
 var mapLimit; //LasSat slowly creeps toward missile silos.
 var truckLocCounter;
@@ -60,6 +61,49 @@ camAreaEvent("NWDefenseZone", function(droid) {
 		regroup: true
 	});
 });
+
+//Remove Nexus VTOL droids.
+camAreaEvent("vtolRemoveZone", function(droid)
+{
+	if (droid.player !== CAM_HUMAN_PLAYER && camVtolCanDisappear(droid))
+	{
+		camSafeRemoveObject(droid, false);
+	}
+	resetLabel("vtolRemoveZone", CAM_NEXUS);
+});
+
+function wave2()
+{
+	const list = [cTempl.nxlscouv, cTempl.nxlscouv];
+	const ext = {limit: [3, 3], alternate: true, altIdx: 0};
+	camSetVtolData(CAM_NEXUS, mis_vtolSpawnPositions, "vtolRemoveZone", list, camMinutesToMilliseconds(4), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
+}
+
+function wave3()
+{
+	const list = [cTempl.nxmtherv, cTempl.nxmtherv];
+	const ext = {limit: [2, 2], alternate: true, altIdx: 0};
+	camSetVtolData(CAM_NEXUS, mis_vtolSpawnPositions, "vtolRemoveZone", list, camMinutesToMilliseconds(4), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
+}
+
+//Setup Nexus VTOL hit and runners. Choose a random spawn point for the VTOLs.
+function insaneVtolAttack()
+{
+	if (camClassicMode())
+	{
+		const list = [cTempl.nxmtherv, cTempl.nxmheapv];
+		const ext = {limit: [5, 5], alternate: true, altIdx: 0};
+		camSetVtolData(CAM_NEXUS, mis_vtolSpawnPositions, "vtolRemoveZone", list, camMinutesToMilliseconds(4), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
+	}
+	else
+	{
+		const list = [cTempl.nxmheapv, cTempl.nxmheapv];
+		const ext = {limit: [2, 2], alternate: true, altIdx: 0};
+		camSetVtolData(CAM_NEXUS, mis_vtolSpawnPositions, "vtolRemoveZone", list, camMinutesToMilliseconds(4), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
+		queue("wave2", camChangeOnDiff(camSecondsToMilliseconds(30)));
+		queue("wave3", camChangeOnDiff(camSecondsToMilliseconds(60)));
+	}
+}
 
 function setupGroups()
 {
@@ -115,6 +159,22 @@ function truckDefense()
 	}
 
 	camQueueBuilding(CAM_NEXUS, list[camRand(list.length)], position);
+}
+
+function insaneReinforcementSpawn()
+{
+	const units = {units: [cTempl.nxmpulseh, cTempl.nxmscouh, cTempl.nxmrailh, cTempl.nxmangel], appended: cTempl.nxmsens};
+	const limits = {minimum: 8, maxRandom: 2};
+	const location = camMakePos("southSpawnPos");
+	camSendGenericSpawn(CAM_REINFORCE_GROUND, CAM_NEXUS, CAM_REINFORCE_CONDITION_ARTIFACTS, location, units, limits.minimum, limits.maxRandom);
+}
+
+function insaneTransporterAttack()
+{
+	const units = {units: cTempl.nxmangel, appended: cTempl.nxmsens};
+	const limits = {minimum: 9, maxRandom: 0};
+	const location = camMakePos("lzReinforcementPos");
+	camSendGenericSpawn(CAM_REINFORCE_TRANSPORT, CAM_NEXUS, CAM_REINFORCE_CONDITION_ARTIFACTS, location, units, limits.minimum, limits.maxRandom);
 }
 
 //Choose a target to fire the LasSat at. Automatically increases the limits
@@ -373,7 +433,7 @@ function eventStartLevel()
 	if (difficulty >= HARD)
 	{
 		addDroid(CAM_NEXUS, 15, 234, "Truck Retribution Hover", tBody.tank.retribution, tProp.tank.hover2, "", "", tConstruct.truck);
-		camManageTrucks(CAM_NEXUS);
+		camManageTrucks(CAM_NEXUS, false);
 		setTimer("truckDefense", camChangeOnDiff(camMinutesToMilliseconds(4.5)));
 	}
 
@@ -388,4 +448,10 @@ function eventStartLevel()
 	queue("enableAllFactories", camChangeOnDiff(camMinutesToMilliseconds(5)));
 
 	setTimer("vaporizeTarget", camSecondsToMilliseconds(10));
+	if (difficulty >= INSANE)
+	{
+		queue("insaneVtolAttack", camMinutesToMilliseconds(7));
+		setTimer("insaneTransporterAttack", camMinutesToMilliseconds(3));
+		setTimer("insaneReinforcementSpawn", camMinutesToMilliseconds(5));
+	}
 }

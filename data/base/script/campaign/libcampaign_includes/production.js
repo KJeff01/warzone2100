@@ -275,12 +275,13 @@ function __camFactoryUpdateTactics(flabel)
 	}
 	else
 	{
+		const __RADIUS = 6;
 		let pos = camMakePos(fi.assembly);
 		if (!camDef(pos))
 		{
 			pos = camMakePos(flabel);
 		}
-		camManageGroup(fi.group, CAM_ORDER_DEFEND, { pos: pos });
+		camManageGroup(fi.group, CAM_ORDER_DEFEND, { pos: pos, radius: __RADIUS });
 	}
 }
 
@@ -372,9 +373,22 @@ function __checkEnemyFactoryProductionTick()
 {
 	for (const flabel in __camFactoryInfo)
 	{
-		if (getObject(flabel) !== null && __camFactoryInfo[flabel].enabled === true)
+		if (!__camFactoryInfo[flabel].enabled)
+		{
+			continue;
+		}
+		if (getObject(flabel) !== null)
 		{
 			__camContinueProduction(flabel);
+		}
+		else
+		{
+			const droids = enumGroup(__camFactoryInfo[flabel].group);
+			if (droids.length > 0)
+			{
+				camManageGroup(__camFactoryInfo[flabel].group, CAM_ORDER_ATTACK);
+			}
+			__camFactoryInfo[flabel].enabled = false;
 		}
 	}
 }
