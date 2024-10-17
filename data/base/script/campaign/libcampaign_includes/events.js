@@ -398,8 +398,8 @@ function cam_eventGameLoaded()
 		}
 	}
 
-	if (__camWinLossCallback === CAM_VICTORY_TIMEOUT
-		&& enumDroid(CAM_HUMAN_PLAYER, DROID_SUPERTRANSPORTER).length === 0)
+	if (__camWinLossCallback === CAM_VICTORY_TIMEOUT &&
+		enumDroid(CAM_HUMAN_PLAYER, DROID_SUPERTRANSPORTER).length === 0)
 	{
 		// If the transport is gone on Beta End, put a timer up to show when it'll be back
 		setReinforcementTime(__camVictoryData.reinforcements);

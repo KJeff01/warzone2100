@@ -521,7 +521,6 @@ function __camTacticsTickForGroup(group)
 		{
 			const __ARM = droid.weapons[0].armed;
 			const __IS_REARMING = droid.order === DORDER_REARM;
-
 			if ((__ARM < 1) || (__IS_REARMING && (__ARM < 100 || droid.health < 100)))
 			{
 				const __HAVE_PADS = enumStruct(droid.player, REARM_PAD).length > 0;
