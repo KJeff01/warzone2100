@@ -183,6 +183,7 @@ private:
 
 char sPlayer[128] = {'\0'}; // player name (to be used)
 bool multiintDisableLobbyRefresh = false; // if we allow lobby to be refreshed or not.
+std::string defaultSkirmishAI = "";
 
 static UDWORD hideTime = 0;
 LOBBY_ERROR_TYPES LobbyError = ERROR_NOERROR;
@@ -440,6 +441,57 @@ const std::vector<WzString> getAINames()
 		}
 	}
 	return l;
+}
+
+void frontendCycleAIs()
+{
+	std::string currAI = getDefaultSkirmishAI();
+
+	for (size_t i = 0; i < aidata.size(); ++i)
+	{
+		if (aidata[i].js == currAI)
+		{
+			size_t idx = ((i + 1) >= aidata.size()) ? 0 : (i + 1);
+			setDefaultSkirmishAI(aidata[idx].js);
+			break;
+		}
+	}
+}
+
+void setDefaultSkirmishAI(const std::string& name)
+{
+	defaultSkirmishAI = name;
+}
+
+std::string getDefaultSkirmishAI(const bool& displayNameOnly/*=false*/)
+{
+	const std::string fallbackAI = "nexus.js";
+	size_t fallbackIdx = 0;
+	std::string name = "";
+
+	for (size_t i = 0; i < aidata.size(); ++i)
+	{
+		if (aidata[i].js == fallbackAI)
+		{
+			fallbackIdx = i;
+		}
+		if (aidata[i].js == defaultSkirmishAI)
+		{
+			name = (displayNameOnly) ? aidata[i].name : aidata[i].js;
+		}
+	}
+
+	// In case something went wrong or the user messed with the config value
+	if (name.empty())
+	{
+		if (aidata.size() > 0)
+		{
+			defaultSkirmishAI = aidata[fallbackIdx].js;
+			name = (displayNameOnly) ? aidata[fallbackIdx].name : aidata[fallbackIdx].js;
+		}
+	}
+
+	return name;
 }
 
 const char *getAIName(int player)
@@ -930,7 +982,7 @@ void readAIs()
 			sstrcat(ai.tip, statistics);
 		}
 
-		if (strcmp(file, "nexus.json") == 0)
+		if (strcmp(ai.js, defaultSkirmishAI.c_str()) == 0)
 		{
 			aidata.insert(aidata.begin(), ai);
 		}
