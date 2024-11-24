@@ -2919,7 +2919,7 @@
 		"designable": 1,
 		"effectSize": 100,
 		"facePlayer": 1,
-		"firePause": 4,
+		"firePause": 2,
 		"flags": "ShootAir",
 		"flightGfx": "FXTracr2.PIE",
 		"flightSpeed": 1500,
