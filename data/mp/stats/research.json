@@ -64,15 +64,29 @@
 		"requiredResearch": [
 			"R-Cyborg-Metals03"
 		],
-		"researchPoints": 3600,
-		"researchPower": 112,
+		"researchPoints": 1200,
+		"researchPower": 37,
 		"results": [
 			{
 				"class": "Body",
 				"filterParameter": "BodyClass",
 				"filterValue": "Cyborgs",
 				"parameter": "Thermal",
-				"value": 45
+				"value": 70
+			},
+			{
+				"class": "Body",
+				"filterParameter": "BodyClass",
+				"filterValue": "Cyborgs",
+				"parameter": "Armour",
+				"value": 15
+			},
+			{
+				"class": "Body",
+				"filterParameter": "BodyClass",
+				"filterValue": "Cyborgs",
+				"parameter": "HitPointPct",
+				"value": 15
 			}
 		],
 		"subgroupIconID": "IMAGE_RES_GRPUPG"
@@ -85,15 +99,29 @@
 		"requiredResearch": [
 			"R-Cyborg-Armor-Heat01"
 		],
-		"researchPoints": 4800,
-		"researchPower": 150,
+		"researchPoints": 2400,
+		"researchPower": 75,
 		"results": [
 			{
 				"class": "Body",
 				"filterParameter": "BodyClass",
 				"filterValue": "Cyborgs",
 				"parameter": "Thermal",
-				"value": 45
+				"value": 70
+			},
+			{
+				"class": "Body",
+				"filterParameter": "BodyClass",
+				"filterValue": "Cyborgs",
+				"parameter": "Armour",
+				"value": 15
+			},
+			{
+				"class": "Body",
+				"filterParameter": "BodyClass",
+				"filterValue": "Cyborgs",
+				"parameter": "HitPointPct",
+				"value": 15
 			}
 		],
 		"subgroupIconID": "IMAGE_RES_GRPUPG",
@@ -107,15 +135,29 @@
 		"requiredResearch": [
 			"R-Cyborg-Armor-Heat02"
 		],
-		"researchPoints": 6000,
-		"researchPower": 187,
+		"researchPoints": 3600,
+		"researchPower": 112,
 		"results": [
 			{
 				"class": "Body",
 				"filterParameter": "BodyClass",
 				"filterValue": "Cyborgs",
 				"parameter": "Thermal",
-				"value": 45
+				"value": 70
+			},
+			{
+				"class": "Body",
+				"filterParameter": "BodyClass",
+				"filterValue": "Cyborgs",
+				"parameter": "Armour",
+				"value": 15
+			},
+			{
+				"class": "Body",
+				"filterParameter": "BodyClass",
+				"filterValue": "Cyborgs",
+				"parameter": "HitPointPct",
+				"value": 15
 			}
 		],
 		"subgroupIconID": "IMAGE_RES_GRPUPG",
@@ -131,15 +173,29 @@
 			"R-Cyborg-Armor-Heat03",
 			"R-Cyborg-Metals06"
 		],
-		"researchPoints": 8000,
-		"researchPower": 250,
+		"researchPoints": 5000,
+		"researchPower": 156,
 		"results": [
 			{
 				"class": "Body",
 				"filterParameter": "BodyClass",
 				"filterValue": "Cyborgs",
 				"parameter": "Thermal",
-				"value": 45
+				"value": 70
+			},
+			{
+				"class": "Body",
+				"filterParameter": "BodyClass",
+				"filterValue": "Cyborgs",
+				"parameter": "Armour",
+				"value": 15
+			},
+			{
+				"class": "Body",
+				"filterParameter": "BodyClass",
+				"filterValue": "Cyborgs",
+				"parameter": "HitPointPct",
+				"value": 15
 			}
 		],
 		"subgroupIconID": "IMAGE_RES_GRPUPG"
@@ -152,15 +208,29 @@
 		"requiredResearch": [
 			"R-Cyborg-Armor-Heat04"
 		],
-		"researchPoints": 10000,
-		"researchPower": 312,
+		"researchPoints": 6200,
+		"researchPower": 193,
 		"results": [
 			{
 				"class": "Body",
 				"filterParameter": "BodyClass",
 				"filterValue": "Cyborgs",
 				"parameter": "Thermal",
-				"value": 45
+				"value": 70
+			},
+			{
+				"class": "Body",
+				"filterParameter": "BodyClass",
+				"filterValue": "Cyborgs",
+				"parameter": "Armour",
+				"value": 15
+			},
+			{
+				"class": "Body",
+				"filterParameter": "BodyClass",
+				"filterValue": "Cyborgs",
+				"parameter": "HitPointPct",
+				"value": 15
 			}
 		],
 		"subgroupIconID": "IMAGE_RES_GRPUPG",
@@ -174,15 +244,29 @@
 		"requiredResearch": [
 			"R-Cyborg-Armor-Heat05"
 		],
-		"researchPoints": 12000,
-		"researchPower": 375,
+		"researchPoints": 7400,
+		"researchPower": 231,
 		"results": [
 			{
 				"class": "Body",
 				"filterParameter": "BodyClass",
 				"filterValue": "Cyborgs",
 				"parameter": "Thermal",
-				"value": 45
+				"value": 70
+			},
+			{
+				"class": "Body",
+				"filterParameter": "BodyClass",
+				"filterValue": "Cyborgs",
+				"parameter": "Armour",
+				"value": 15
+			},
+			{
+				"class": "Body",
+				"filterParameter": "BodyClass",
+				"filterValue": "Cyborgs",
+				"parameter": "HitPointPct",
+				"value": 15
 			}
 		],
 		"subgroupIconID": "IMAGE_RES_GRPUPG",
@@ -196,15 +280,29 @@
 		"requiredResearch": [
 			"R-Cyborg-Armor-Heat06"
 		],
-		"researchPoints": 14000,
-		"researchPower": 437,
+		"researchPoints": 9000,
+		"researchPower": 281,
 		"results": [
 			{
 				"class": "Body",
 				"filterParameter": "BodyClass",
 				"filterValue": "Cyborgs",
 				"parameter": "Thermal",
-				"value": 45
+				"value": 70
+			},
+			{
+				"class": "Body",
+				"filterParameter": "BodyClass",
+				"filterValue": "Cyborgs",
+				"parameter": "Armour",
+				"value": 15
+			},
+			{
+				"class": "Body",
+				"filterParameter": "BodyClass",
+				"filterValue": "Cyborgs",
+				"parameter": "HitPointPct",
+				"value": 15
 			}
 		],
 		"subgroupIconID": "IMAGE_RES_GRPUPG",
@@ -218,15 +316,29 @@
 		"requiredResearch": [
 			"R-Cyborg-Armor-Heat07"
 		],
-		"researchPoints": 16000,
-		"researchPower": 450,
+		"researchPoints": 10200,
+		"researchPower": 318,
 		"results": [
 			{
 				"class": "Body",
 				"filterParameter": "BodyClass",
 				"filterValue": "Cyborgs",
 				"parameter": "Thermal",
-				"value": 45
+				"value": 70
+			},
+			{
+				"class": "Body",
+				"filterParameter": "BodyClass",
+				"filterValue": "Cyborgs",
+				"parameter": "Armour",
+				"value": 15
+			},
+			{
+				"class": "Body",
+				"filterParameter": "BodyClass",
+				"filterValue": "Cyborgs",
+				"parameter": "HitPointPct",
+				"value": 15
 			}
 		],
 		"subgroupIconID": "IMAGE_RES_GRPUPG",
@@ -240,15 +352,29 @@
 		"requiredResearch": [
 			"R-Cyborg-Armor-Heat08"
 		],
-		"researchPoints": 18000,
-		"researchPower": 450,
+		"researchPoints": 11400,
+		"researchPower": 356,
 		"results": [
 			{
 				"class": "Body",
 				"filterParameter": "BodyClass",
 				"filterValue": "Cyborgs",
 				"parameter": "Thermal",
-				"value": 45
+				"value": 70
+			},
+			{
+				"class": "Body",
+				"filterParameter": "BodyClass",
+				"filterValue": "Cyborgs",
+				"parameter": "Armour",
+				"value": 15
+			},
+			{
+				"class": "Body",
+				"filterParameter": "BodyClass",
+				"filterValue": "Cyborgs",
+				"parameter": "HitPointPct",
+				"value": 15
 			}
 		],
 		"subgroupIconID": "IMAGE_RES_GRPUPG",
