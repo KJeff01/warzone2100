@@ -7,8 +7,8 @@
 		"requiredResearch": [
 			"R-Struc-CommandRelay"
 		],
-		"researchPoints": 600,
-		"researchPower": 18,
+		"researchPoints": 400,
+		"researchPower": 12,
 		"resultComponents": [
 			"CommandBrain01",
 			"CommandTurret1"
@@ -25,8 +25,8 @@
 			"R-Sys-Sensor-Upgrade02",
 			"R-Struc-Research-Upgrade07"
 		],
-		"researchPoints": 2500,
-		"researchPower": 78,
+		"researchPoints": 1200,
+		"researchPower": 37,
 		"results": [
 			{
 				"class": "Brain",
