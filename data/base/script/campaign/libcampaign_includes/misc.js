@@ -529,17 +529,18 @@ function camGenerateRandomMapEdgeCoordinate(reachPosition, propulsion, distFromR
 	return loc;
 }
 
-//;; ## camGenerateRandomMapCoordinate(reachPosition [, propulsion [, distFromReach [, scanObjectRadius]]])
+//;; ## camGenerateRandomMapCoordinate(reachPosition [, propulsion [, distFromReach [, scanObjectRadius, [, avoidNearbyCliffs]]]])
 //;;
-//;; Returns a random coordinate anywhere on the map
+//;; Returns a random coordinate anywhere on the map.
 //;;
 //;; @param {Object} reachPosition
 //;; @param {String} propulsion
 //;; @param {Number} distFromReach
 //;; @param {Number} scanObjectRadius
+//;; @param {Boolean} avoidNearbyCliffs
 //;; @returns {Object}
 //;;
-function camGenerateRandomMapCoordinate(reachPosition, propulsion, distFromReach, scanObjectRadius)
+function camGenerateRandomMapCoordinate(reachPosition, propulsion, distFromReach, scanObjectRadius, avoidNearbyCliffs)
 {
 	if (!camDef(reachPosition) || !reachPosition)
 	{
@@ -558,6 +559,10 @@ function camGenerateRandomMapCoordinate(reachPosition, propulsion, distFromReach
 	{
 		propulsion = CAM_GENERIC_LAND_STAT;
 	}
+	if (!camDef(avoidNearbyCliffs))
+	{
+		avoidNearbyCliffs = true;
+	}
 
 	const limits = getScrollLimits();
 	const __MAX_ATTEMPTS = 10000;
@@ -570,6 +575,7 @@ function camGenerateRandomMapCoordinate(reachPosition, propulsion, distFromReach
 	{
 		++attempts;
 		let randomPos = {x: camRand(limits.x2), y: camRand(limits.y2)};
+		let nearPitOrCliff = false;
 
 		if (randomPos.x < (limits.x + __OFFSET))
 		{
@@ -582,7 +588,7 @@ function camGenerateRandomMapCoordinate(reachPosition, propulsion, distFromReach
 
 		if (randomPos.y < (limits.y + __OFFSET))
 		{
-			randomPos.y = limits.y;
+			randomPos.y = limits.y + __OFFSET;
 		}
 		else if (randomPos.y > (limits.y2 - __OFFSET))
 		{
@@ -590,9 +596,28 @@ function camGenerateRandomMapCoordinate(reachPosition, propulsion, distFromReach
 		}
 
 		pos = randomPos;
+
+		// Scan for nearby pits/hills so transporters don't put units inside inaccessible areas.
+		for (let x = -2; x <= 2; ++x)
+		{
+			for (let y = -2; y <= 2; ++y)
+			{
+				if (!propulsionCanReach(propulsion, reachPosition.x, reachPosition.y, pos.x + x, pos.y + y))
+				{
+					nearPitOrCliff = true;
+					break;
+				}
+			}
+			if (nearPitOrCliff)
+			{
+				break;
+			}
+		}
+
 		if ((attempts > __MAX_ATTEMPTS) ||
 			((camDist(pos, reachPosition) >= distFromReach) &&
 			propulsionCanReach(propulsion, reachPosition.x, reachPosition.y, pos.x, pos.y) &&
+			(!avoidNearbyCliffs || (avoidNearbyCliffs && !nearPitOrCliff)) &&
 			!enumRange(pos.x, pos.y, scanObjectRadius, ALL_PLAYERS, false).length))
 		{
 			breakOut = true;

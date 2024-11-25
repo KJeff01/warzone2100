@@ -261,7 +261,7 @@ function eventStartLevel()
 				repair: 20,
 				count: -1,
 			},
-			templates: [cTempl.comagt, cTempl.cohact, cTempl.cohhpv, cTempl.comtath]
+			templates: (!camClassicMode()) ? [cTempl.comagt, cTempl.cohact, cTempl.cohhpv, cTempl.comhltat] : [cTempl.comagt, cTempl.cohact, cTempl.cohhpv, cTempl.comtath]
 		},
 		"COCyborgFac-b2": {
 			assembly: "base2CybAssembly",

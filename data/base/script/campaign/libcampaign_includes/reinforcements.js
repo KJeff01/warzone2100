@@ -200,7 +200,7 @@ function camSetBaseReinforcements(baseLabel, interval, callbackName, kind, data)
 //;;   * `CAM_REINFORCE_CONDITION_NONE` or `undefined`: Do not use a condition, will always attempt a spawn.
 //;;   * `CAM_REINFORCE_CONDITION_BASES`: Do not spawn if all bases are eliminated.
 //;;   * `CAM_REINFORCE_CONDITION_UNITS`: Do not spawn if `player` has zero units.
-//;;   * An `Object`: {condition: `CAM_REINFORCE_CONDITION_OBJECT`, object: `label_of_object`}, spawns only if object is alive.
+//;;   * An `Object` {condition: `CAM_REINFORCE_CONDITION_OBJECT`, object: `label_of_object`} or `label`: spawns only if object is alive.
 //;;   * `CAM_REINFORCE_CONDITION_ARTIFACTS`: Do not spawn if the player has picked up all artifacts.
 //;; `player`: The player to check conditions for. Doesn't need to be specified except for the units condition.
 //;;
