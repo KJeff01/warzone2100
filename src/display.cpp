@@ -488,6 +488,10 @@ static void handleAreaDemolition()
 	for (GridIterator gi = gridList.begin(); gi != gridList.end(); ++gi)
 	{
 		BASE_OBJECT *psObj = *gi;
+		if (psObj == nullptr || psObj->died)
+		{
+			continue;
+		}
 		if (psObj->type == OBJ_STRUCTURE && psObj->player == selectedPlayer)
 		{
 			// add demolish order to queue for every selected unit

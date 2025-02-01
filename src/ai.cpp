@@ -953,8 +953,12 @@ bool aiChooseTarget(BASE_OBJECT *psObj, BASE_OBJECT **ppsTarget, int weapon_slot
 			for (GridIterator gi = gridList.begin(); gi != gridList.end(); ++gi)
 			{
 				BASE_OBJECT *psCurr = *gi;
+				if (psCurr == nullptr || psCurr->died)
+				{
+					continue;
+				}
 				/* Check that it is a valid target */
-				if (psCurr->type != OBJ_FEATURE && !psCurr->died
+				if (psCurr->type != OBJ_FEATURE
 				    && !aiCheckAlliances(psCurr->player, psObj->player)
 				    && validTarget(psObj, psCurr, weapon_slot) && psCurr->visible[psObj->player] == UBYTE_MAX
 				    && aiStructHasRange((STRUCTURE *)psObj, psCurr, weapon_slot))
@@ -1036,12 +1040,12 @@ bool aiChooseSensorTarget(BASE_OBJECT *psObj, BASE_OBJECT **ppsTarget)
 		for (GridIterator gi = gridList.begin(); gi != gridList.end(); ++gi)
 		{
 			BASE_OBJECT *psCurr = *gi;
-			if (psCurr == nullptr)
+			if (psCurr == nullptr || psCurr->died)
 			{
 				continue;
 			}
 			// Don't target features or doomed/dead objects
-			if (psCurr->type != OBJ_FEATURE && !psCurr->died && !aiObjectIsProbablyDoomed(psCurr, false))
+			if (psCurr->type != OBJ_FEATURE && !aiObjectIsProbablyDoomed(psCurr, false))
 			{
 				if (!aiCheckAlliances(psCurr->player, psObj->player) && !aiObjIsWall(psCurr))
 				{

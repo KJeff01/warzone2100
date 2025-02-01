@@ -2653,7 +2653,11 @@ std::vector<const BASE_OBJECT *> scripting_engine::_enumAreaWorldCoords(WZAPI_PA
 	for (GridIterator gi = gridList.begin(); gi != gridList.end(); ++gi)
 	{
 		BASE_OBJECT *psObj = *gi;
-		if ((psObj->visible[player] || !seen) && !psObj->died)
+		if (psObj == nullptr || psObj->died)
+		{
+			continue;
+		}
+		if (psObj->visible[player] || !seen)
 		{
 			if ((playerFilter >= 0 && psObj->player == playerFilter) || playerFilter == ALL_PLAYERS
 			    || (playerFilter == ALLIES && psObj->type != OBJ_FEATURE && aiCheckAlliances(psObj->player, player))

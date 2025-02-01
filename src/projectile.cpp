@@ -868,15 +868,19 @@ static PROJECTILE* proj_InFlightFunc(PROJECTILE *psProj)
 		BASE_OBJECT *psTempObj = *gi;
 		CHECK_OBJECT(psTempObj);
 
-		if (std::find(psProj->psDamaged.begin(), psProj->psDamaged.end(), psTempObj) != psProj->psDamaged.end())
+		if (psTempObj == nullptr)
 		{
-			// Dont damage one target twice
 			continue;
 		}
-		else if (psTempObj->died)
+		if (psTempObj->died)
 		{
 			// Do not damage dead objects further
 			ASSERT(psTempObj->type < OBJ_NUM_TYPES, "Bad pointer! type=%u", psTempObj->type);
+			continue;
+		}
+		else if (std::find(psProj->psDamaged.begin(), psProj->psDamaged.end(), psTempObj) != psProj->psDamaged.end())
+		{
+			// Dont damage one target twice
 			continue;
 		}
 		else if (psTempObj->type == OBJ_FEATURE && !((FEATURE *)psTempObj)->psStats->damageable)
@@ -1021,6 +1025,10 @@ static void proj_radiusSweep(PROJECTILE *psObj, WEAPON_STATS *psStats, Vector3i 
 	for (GridIterator gi = gridList.begin(); gi != gridList.end(); ++gi)
 	{
 		BASE_OBJECT *psCurr = *gi;
+		if (psCurr == nullptr)
+		{
+			continue;
+		}
 		if (psCurr->died)
 		{
 			ASSERT(psCurr->type < OBJ_NUM_TYPES, "Bad pointer! type=%u", psCurr->type);
@@ -1502,6 +1510,10 @@ static void proj_checkPeriodicalDamage(PROJECTILE *psProj)
 	for (GridIterator gi = gridList.begin(); gi != gridList.end(); ++gi)
 	{
 		BASE_OBJECT *psCurr = *gi;
+		if (psCurr == nullptr)
+		{
+			continue;
+		}
 		if (psCurr->died)
 		{
 			syncDebugObject(psCurr, '-');

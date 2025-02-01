@@ -150,7 +150,7 @@ static GridList const &gridStartIterateFiltered(int32_t x, int32_t y, uint32_t r
 
 	// In case you are curious.
 	//debug(LOG_WARNING, "gridStartIterateFiltered(%d, %d, %u) found %u objects", x, y, radius, (unsigned)gridPointTree->lastQueryResults.size());
-	
+
 	static GridList gridList;
 	gridList.resize(gridPointTree->lastQueryResults.size());
 	for (unsigned n = 0; n < gridList.size(); ++n)
@@ -212,7 +212,7 @@ struct ConditionDroidCandidateForRepair
 	ConditionDroidCandidateForRepair(int32_t player_) : player(player_) {}
 	bool test(BASE_OBJECT *obj) const
 	{
-		if (obj->type != OBJ_DROID) return false;
+		if (obj == nullptr || obj->type != OBJ_DROID) return false;
 		const DROID *psDroid = (const DROID*) obj;
 		const bool isOwnOrAlly = psDroid->player == player || aiCheckAlliances(psDroid->player, player);
 		const bool isVTOL = psDroid->getPropulsionStats()->propulsionType == PROPULSION_TYPE_LIFT;

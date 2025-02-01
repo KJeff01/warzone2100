@@ -256,6 +256,10 @@ static DROID* _findSomeoneToRepair(REPAIR_FACILITY *psRepairFac,
 	for (GridIterator gi = gridList.begin(); gi != gridList.end(); ++gi)
 	{
 		DROID *psDroid = (DROID*) *gi;
+		if (psDroid == nullptr || psDroid->died)
+		{
+			continue;
+		}
 		if (psDroid->isDamaged())
 		{
 			queue.push(psDroid);

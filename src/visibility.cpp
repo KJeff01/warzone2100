@@ -205,6 +205,10 @@ static void updateSpotters()
 		for (GridIterator gi = gridList.begin(); gi != gridList.end(); ++gi)
 		{
 			BASE_OBJECT *psObj = *gi;
+			if (psObj == nullptr || psObj->died)
+			{
+				continue;
+			}
 
 			// Tell system that this side can see this object
 			setSeenBy(psObj, psSpot->player, UBYTE_MAX);
@@ -741,6 +745,10 @@ static void processVisibilityVision(BASE_OBJECT *psViewer)
 	for (GridIterator gi = gridList.begin(); gi != gridList.end(); ++gi)
 	{
 		BASE_OBJECT *psObj = *gi;
+		if (psObj == nullptr || psObj->died)
+		{
+			continue;
+		}
 
 		int val = visibleObject(psViewer, psObj, false);
 

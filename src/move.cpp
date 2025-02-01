@@ -752,6 +752,10 @@ static void moveCheckSquished(DROID *psDroid, int32_t emx, int32_t emy)
 	for (GridIterator gi = gridList.begin(); gi != gridList.end(); ++gi)
 	{
 		BASE_OBJECT *psObj = *gi;
+		if (psObj == nullptr || psObj->died)
+		{
+			continue;
+		}
 		if (psObj->type != OBJ_DROID || ((DROID *)psObj)->droidType != DROID_PERSON)
 		{
 			// ignore everything but people
@@ -1196,6 +1200,10 @@ static void moveCalcDroidSlide(DROID *psDroid, int *pmx, int *pmy)
 	for (GridIterator gi = gridList.begin(); gi != gridList.end(); ++gi)
 	{
 		BASE_OBJECT *psObj = *gi;
+		if (psObj == nullptr)
+		{
+			continue;
+		}
 		if (psObj->died)
 		{
 			ASSERT(psObj->type < OBJ_NUM_TYPES, "Bad pointer! type=%u", psObj->type);
@@ -1326,7 +1334,7 @@ static Vector2i moveGetObstacleVector(DROID *psDroid, Vector2i dest)
 		}
 
 		DROID *psObstacle = castDroid(*gi);
-		if (psObstacle == nullptr)
+		if (psObstacle == nullptr || psObstacle->died)
 		{
 			// Object wrong type to worry about.
 			continue;
@@ -2197,7 +2205,12 @@ static void checkLocalFeatures(DROID *psDroid)
 		BASE_OBJECT *psObj = *gi;
 		bool pickedUp = false;
 
-		if (psObj->type == OBJ_FEATURE && !psObj->died)
+		if (psObj == nullptr || psObj->died)
+		{
+			continue;
+		}
+
+		if (psObj->type == OBJ_FEATURE)
 		{
 			if (std::abs(psDroid->pos.z - psObj->pos.z) > MAX_PICKUP_DISTANCE)
 			{
