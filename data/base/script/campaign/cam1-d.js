@@ -58,6 +58,7 @@ function transportBaseSetup()
 	camSetBaseReinforcements("NPLZGroup", camChangeOnDiff(camMinutesToMilliseconds(10)), "getDroidsForNPLZ", CAM_REINFORCE_TRANSPORT, {
 		entry: { x: 2, y: 2 },
 		exit: { x: 2, y: 2 },
+		posLZ: camMakePos("NPLZ1"),
 		data: {
 			regroup: false,
 			count: -1,
@@ -217,7 +218,7 @@ function eventStartLevel()
 			eliminateSnd: cam_sounds.baseElimination.enemyBaseEradicated,
 		},
 		"NPLZGroup": {
-			cleanup: "NPLZ1",
+			cleanup: "NPLZBaseCleanup",
 			detectMsg: "C1D_LZ2",
 			eliminateSnd: cam_sounds.baseElimination.enemyBaseEradicated,
 			player: CAM_NEW_PARADIGM // required for LZ-type bases

@@ -2140,8 +2140,8 @@
 		"keyTopic": 1,
 		"msgName": "RES_REPTU1",
 		"name": "Mobile Repair Turret",
-		"researchPoints": 900,
-		"researchPower": 18,
+		"researchPoints": 450,
+		"researchPower": 14,
 		"resultComponents": [
 			"LightRepair1"
 		],

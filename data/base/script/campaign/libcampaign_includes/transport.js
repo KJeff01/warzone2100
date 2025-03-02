@@ -16,13 +16,11 @@ function camIsTransporter(gameObject)
 	{
 		return false;
 	}
-
 	if (gameObject.type !== DROID)
 	{
 		camTrace("Attempted to check if a non-droid object is a transporter.");
 		return false;
 	}
-
 	return gameObject.droidType === DROID_SUPERTRANSPORTER;
 }
 
@@ -110,9 +108,7 @@ function __camDispatchTransporterUnsafe()
 	camTrace("Incoming transport with", droids.length,
 	         "droids for player", __PLAYER +
 	         ", queued transports", __camTransporterQueue.length);
-
 	setNoGoArea(pos.x - __OFFSET, pos.y - __OFFSET, pos.x + __OFFSET, pos.y + __OFFSET, __PLAYER);
-
 	if (__PLAYER !== CAM_HUMAN_PLAYER)
 	{
 		const __DEFINED_BLIP_REMOVAL = camDef(data.ignoreBlipRemoval);
@@ -122,7 +118,6 @@ function __camDispatchTransporterUnsafe()
 		}
 		playSound(cam_sounds.transport.enemyTransportDetected);
 	}
-
 	setTransporterExit(data.exit.x, data.exit.y, __PLAYER);
 	// will guess which transporter to start, automagically
 	startTransporterEntry(data.entry.x, data.entry.y, __PLAYER);

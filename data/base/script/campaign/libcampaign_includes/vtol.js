@@ -158,11 +158,9 @@ function __camSpawnVtols()
 		{
 			__camVtolDataSystem[idx].nextSpawnTime = gameTime + __camVtolDataSystem[idx].timer;
 		}
-
 		// Default VTOL amounts
 		let minVtolAmount = 5;
 		let maxRandomAdditions = 2;
-
 		if (camDef(__camVtolDataSystem[idx].extras))
 		{
 			if (camDef(__camVtolDataSystem[idx].extras.minVTOLs))
@@ -174,11 +172,9 @@ function __camSpawnVtols()
 				maxRandomAdditions = __camVtolDataSystem[idx].extras.maxRandomVTOLs;
 			}
 		}
-
 		const __AMOUNT = minVtolAmount + camRand(maxRandomAdditions + 1);
 		const droids = [];
 		let pos;
-
 		//Make sure to catch multiple start positions also.
 		if (__camVtolDataSystem[idx].startPosition instanceof Array)
 		{
@@ -192,7 +188,6 @@ function __camSpawnVtols()
 		{
 			pos = camGenerateRandomMapEdgeCoordinate();
 		}
-
 		if (!camDef(__camVtolDataSystem[idx].extras))
 		{
 			//Pick some droids randomly.
@@ -225,7 +220,6 @@ function __camSpawnVtols()
 					lim = __camVtolDataSystem[idx].extras.limit;
 				}
 			}
-
 			for (let i = 0; i < lim; ++i)
 			{
 				if (!alternate)
@@ -237,7 +231,6 @@ function __camSpawnVtols()
 					droids.push(__camVtolDataSystem[idx].templates[__camVtolDataSystem[idx].extras.altIdx]);
 				}
 			}
-
 			if (__camVtolDataSystem[idx].extras.altIdx < (__camVtolDataSystem[idx].templates.length - 1))
 			{
 				++__camVtolDataSystem[idx].extras.altIdx;
@@ -247,7 +240,6 @@ function __camSpawnVtols()
 				__camVtolDataSystem[idx].extras.altIdx = 0;
 			}
 		}
-
 		//...And send them.
 		camSendReinforcement(__camVtolDataSystem[idx].player, camMakePos(pos), droids, CAM_REINFORCE_GROUND, {
 			order: CAM_ORDER_ATTACK,

@@ -64,7 +64,6 @@ function __camGetClosestTruck(player, pos, list)
 	{
 		return undefined;
 	}
-
 	// Find out which one is the closest.
 	let minDroid = droids[0];
 	let minDist = camDist(minDroid, pos);
@@ -96,7 +95,6 @@ function __camTruckTick()
 		const __CAPTURE_OIL = ti.grabOil;
 		let freeTrucks = __camEnumFreeTrucks(__PLAYER);
 		let truck;
-
 		// First, build things that were explicitly ordered.
 		while (ti.queue.length > 0)
 		{
@@ -104,7 +102,6 @@ function __camTruckTick()
 			let pos = __QI.pos;
 			let randx = 0;
 			let randy = 0;
-
 			if (camDef(pos))
 			{
 				// Find the truck most suitable for the job.
@@ -126,7 +123,6 @@ function __camTruckTick()
 				randx = (camRand(100) < 50) ? -camRand(2) : camRand(2);
 				randy = (camRand(100) < 50) ? -camRand(2) : camRand(2);
 			}
-
 			enableStructure(__QI.stat, __PLAYER);
 			const loc = pickStructLocation(truck, __QI.stat, pos.x, pos.y);
 			if (camDef(loc) && camDef(truck))
@@ -138,7 +134,6 @@ function __camTruckTick()
 				}
 			}
 		}
-
 		// Then, capture free oils.
 		if (__CAPTURE_OIL)
 		{

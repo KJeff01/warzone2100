@@ -95,7 +95,7 @@ function vtolAttack()
 		mis_Labels.vtolSpawnPos5
 	];
 
-	if (difficulty === INSANE)
+	if (difficulty >= INSANE)
 	{
 		vtolPositions = undefined; //to randomize the spawns each time
 	}
@@ -252,7 +252,7 @@ function eventStartLevel()
 	camPlayVideos([{video: "MB2_DII_MSG", type: CAMP_MSG}, {video: "MB2_DII_MSG2", type: MISS_MSG}]);
 
 	queue("vtolAttack", camSecondsToMilliseconds(30));
-	if (difficulty === INSANE)
+	if (difficulty >= INSANE)
 	{
 		setPower(playerPower(CAM_HUMAN_PLAYER) + 12000);
 		setTimer("insaneTransporterAttack", camMinutesToMilliseconds(5));

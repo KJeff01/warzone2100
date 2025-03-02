@@ -194,7 +194,8 @@ function camDist(x1, y1, x2, y2)
 //;;
 function camPlayerMatchesFilter(playerId, playerFilter)
 {
-	switch (playerFilter) {
+	switch (playerFilter)
+	{
 		case ALL_PLAYERS:
 			return true;
 		case ALLIES:
@@ -217,7 +218,6 @@ function camRemoveDuplicates(items)
 {
 	let prims = {"boolean":{}, "number":{}, "string":{}};
 	const objs = [];
-
 	return items.filter((item) => {
 		const type = typeof item;
 		if (type in prims)
@@ -275,11 +275,9 @@ function camCleanTileOfObstructions(x, y)
 		camDebug("invalid parameters?");
 		return;
 	}
-
 	const __TILE_SWEEP_RADIUS = 1;
 	const pos = (camDef(y)) ? {x: x, y: y} : x;
 	const objects = enumRange(pos.x, pos.y, __TILE_SWEEP_RADIUS, CAM_HUMAN_PLAYER, false);
-
 	for (let i = 0, len = objects.length; i < len; ++i)
 	{
 		const obj = objects[i];
@@ -300,7 +298,6 @@ function camCleanTileOfObstructions(x, y)
 function camChangeOnDiff(numericValue)
 {
 	let modifier = 0;
-
 	switch (difficulty)
 	{
 		case SUPEREASY:
@@ -322,7 +319,6 @@ function camChangeOnDiff(numericValue)
 			modifier = 1;
 			break;
 	}
-
 	return Math.floor(numericValue * modifier);
 }
 
@@ -339,13 +335,11 @@ function camIsSystemDroid(gameObject)
 	{
 		return false;
 	}
-
 	if (gameObject.type !== DROID)
 	{
 		camTrace("Non-droid: " + gameObject.type + " pl: " + gameObject.name);
 		return false;
 	}
-
 	return (gameObject.droidType === DROID_SENSOR || gameObject.droidType === DROID_CONSTRUCT || gameObject.droidType === DROID_REPAIR);
 }
 
@@ -382,7 +376,8 @@ function camMakeGroup(what, playerFilter)
 	}
 	if (camDef(obj))
 	{
-		switch (obj.type) {
+		switch (obj.type)
+		{
 			case POSITION:
 				obj = getObject(obj.x, obj.y);
 				// fall-through
@@ -464,7 +459,6 @@ function camGenerateRandomMapEdgeCoordinate(reachPosition, propulsion, distFromR
 	{
 		distFromReach = 0;
 	}
-
 	const limits = getScrollLimits();
 	const __MAX_ATTEMPTS = 10000;
 	const __DEFINED_POS = (camDef(reachPosition) && reachPosition);
@@ -472,13 +466,11 @@ function camGenerateRandomMapEdgeCoordinate(reachPosition, propulsion, distFromR
 	let attempts = 0;
 	let breakOut = false;
 	let loc;
-
 	while (!breakOut)
 	{
 		++attempts;
 		const location = {x: 0, y: 0};
 		let xWasRandom = false;
-
 		if (camRand(100) < 50)
 		{
 			location.x = camRand(limits.x2 + 1);
@@ -496,7 +488,6 @@ function camGenerateRandomMapEdgeCoordinate(reachPosition, propulsion, distFromR
 		{
 			location.x = (camRand(100) < 50) ? (limits.x2 - __OFFSET) : (limits.x + __OFFSET);
 		}
-
 		if (!xWasRandom && (camRand(100) < 50))
 		{
 			location.y = camRand(limits.y2 + 1);
@@ -513,9 +504,7 @@ function camGenerateRandomMapEdgeCoordinate(reachPosition, propulsion, distFromR
 		{
 			location.y = (camRand(100) < 50) ? (limits.y2 - __OFFSET) : (limits.y + __OFFSET);
 		}
-
 		loc = location;
-
 		if ((attempts > __MAX_ATTEMPTS) ||
 			((!__DEFINED_POS ||
 			(__DEFINED_POS &&
@@ -525,7 +514,6 @@ function camGenerateRandomMapEdgeCoordinate(reachPosition, propulsion, distFromR
 			breakOut = true;
 		}
 	}
-
 	return loc;
 }
 
@@ -563,20 +551,17 @@ function camGenerateRandomMapCoordinate(reachPosition, propulsion, distFromReach
 	{
 		avoidNearbyCliffs = true;
 	}
-
 	const limits = getScrollLimits();
 	const __MAX_ATTEMPTS = 10000;
 	const __OFFSET = 3; // Gives transporters enough space to turn around near map edges.
 	let attempts = 0;
 	let breakOut = false;
 	let pos;
-
 	while (!breakOut)
 	{
 		++attempts;
 		let randomPos = {x: camRand(limits.x2), y: camRand(limits.y2)};
 		let nearPitOrCliff = false;
-
 		if (randomPos.x < (limits.x + __OFFSET))
 		{
 			randomPos.x = limits.x + __OFFSET;
@@ -585,7 +570,6 @@ function camGenerateRandomMapCoordinate(reachPosition, propulsion, distFromReach
 		{
 			randomPos.x = limits.x2 - __OFFSET;
 		}
-
 		if (randomPos.y < (limits.y + __OFFSET))
 		{
 			randomPos.y = limits.y + __OFFSET;
@@ -594,9 +578,7 @@ function camGenerateRandomMapCoordinate(reachPosition, propulsion, distFromReach
 		{
 			randomPos.y = limits.y2 - __OFFSET;
 		}
-
 		pos = randomPos;
-
 		// Scan for nearby pits/hills so transporters don't put units inside inaccessible areas.
 		for (let x = -2; x <= 2; ++x)
 		{
@@ -613,7 +595,6 @@ function camGenerateRandomMapCoordinate(reachPosition, propulsion, distFromReach
 				break;
 			}
 		}
-
 		if ((attempts > __MAX_ATTEMPTS) ||
 			((camDist(pos, reachPosition) >= distFromReach) &&
 			propulsionCanReach(propulsion, reachPosition.x, reachPosition.y, pos.x, pos.y) &&
@@ -623,7 +604,6 @@ function camGenerateRandomMapCoordinate(reachPosition, propulsion, distFromReach
 			breakOut = true;
 		}
 	}
-
 	return pos;
 }
 
@@ -845,7 +825,6 @@ function __camGetExpRangeLevel(useCommanderRanks)
 		hero: camGetRankThreshold("hero", useCommanderRanks)
 	};
 	let exp = [];
-
 	switch (__camExpLevel)
 	{
 		case 0: // fall-through
@@ -880,7 +859,6 @@ function __camGetExpRangeLevel(useCommanderRanks)
 			__camExpLevel = 0;
 			exp = [ranks.rookie, ranks.rookie];
 	}
-
 	return exp;
 }
 
@@ -894,12 +872,10 @@ function camSetDroidExperience(droid)
 	{
 		return;
 	}
-
 	const __CMD_RANK = (droid.droidType === DROID_COMMAND || droid.droidType === DROID_SENSOR);
 	const expRange = __camGetExpRangeLevel(__CMD_RANK);
-	let exp = expRange[camRand(expRange.length)];
-
-	setDroidExperience(droid, exp);
+	const __EXP = expRange[camRand(expRange.length)];
+	setDroidExperience(droid, __EXP);
 }
 
 // Only to prevent prebuilt units from team Gamma on Gamma 6 from having the NavGunSensor.

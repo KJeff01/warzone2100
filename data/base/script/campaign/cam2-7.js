@@ -119,14 +119,14 @@ function truckDefense()
 	camQueueBuilding(CAM_THE_COLLECTIVE, list[camRand(list.length)], camMakePos("buildPos2"));
 }
 
-function wave2()
+function insaneWave2()
 {
 	const list = [cTempl.colhvat, cTempl.colhvat];
 	const ext = {limit: [2, 2], alternate: true, altIdx: 0};
 	camSetVtolData(CAM_THE_COLLECTIVE, mis_vtolAppearPositions, "vtolRemoveZone", list, camMinutesToMilliseconds(4.5), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
 }
 
-function wave3()
+function insaneWave3()
 {
 	const list = [cTempl.commorv, cTempl.comacv];
 	const ext = {limit: [2, 3], alternate: true, altIdx: 0};
@@ -146,8 +146,8 @@ function insaneVtolAttack()
 		const list = [cTempl.commorvt, cTempl.commorvt];
 		const ext = {limit: [2, 2], alternate: true, altIdx: 0};
 		camSetVtolData(CAM_THE_COLLECTIVE, mis_vtolAppearPositions, "vtolRemoveZone", list, camMinutesToMilliseconds(4.5), CAM_REINFORCE_CONDITION_ARTIFACTS, ext);
-		queue("wave2", camChangeOnDiff(camSecondsToMilliseconds(30)));
-		queue("wave3", camChangeOnDiff(camSecondsToMilliseconds(60)));
+		queue("insaneWave2", camChangeOnDiff(camSecondsToMilliseconds(30)));
+		queue("insaneWave3", camChangeOnDiff(camSecondsToMilliseconds(60)));
 	}
 }
 

@@ -45,7 +45,7 @@ function getDroidsForNPLZ(args)
 		lightAttackerLimit = 9;
 		heavyAttackerLimit = (camClassicMode()) ? 4 : 7;
 	}
-	else if (difficulty === INSANE)
+	else if (difficulty >= INSANE)
 	{
 		lightAttackerLimit = 10;
 		heavyAttackerLimit = (camClassicMode()) ? 5 : 8;

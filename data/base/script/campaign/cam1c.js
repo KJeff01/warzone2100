@@ -193,7 +193,8 @@ camAreaEvent("NPLZ1Trigger", function()
 	camSetBaseReinforcements("NPLZ1Group", camChangeOnDiff(camMinutesToMilliseconds((difficulty >= INSANE) ? 4.5 : 5)), "getDroidsForNPLZ",
 		CAM_REINFORCE_TRANSPORT, {
 			entry: { x: 126, y: 76 },
-			exit: { x: 126, y: 36 }
+			exit: { x: 126, y: 36 },
+			posLZ: camMakePos("EastNPLZ")
 		}
 	);
 
@@ -209,7 +210,8 @@ camAreaEvent("NPLZ2Trigger", function()
 	camSetBaseReinforcements("NPLZ2Group", camChangeOnDiff(camMinutesToMilliseconds(5)), "getDroidsForNPLZ",
 		CAM_REINFORCE_TRANSPORT, {
 			entry: { x: 126, y: 76 },
-			exit: { x: 126, y: 36 }
+			exit: { x: 126, y: 36 },
+			posLZ: camMakePos("WestNPLZ")
 		}
 	);
 });
