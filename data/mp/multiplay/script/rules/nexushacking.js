@@ -102,6 +102,11 @@ function nex_nexusAbsorb()
     	}
 
     	const RAND_ENEMY = enemies[syncRandom(enemies.length)];
+        // Enemies of this Nexus AI with Resistance Circuits researched have higher chances to resist hack attempts.
+        if (getResearch("R-Sys-Resistance-Circuits", RAND_ENEMY).done && (syncRandom(100) < 15))
+        {
+            continue;
+        }
     	const ABSORB_TYPE = syncRandom(3);
         const DONATE_CHANCE = 40;
 
