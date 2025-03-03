@@ -2797,6 +2797,23 @@
 		"subgroupIconID": "IMAGE_RES_GRPUPG",
 		"techCode": 1
 	},
+	"R-Struc-Research-Upgrade-Nexus": {
+		"iconID": "IMAGE_RES_COMPUTERTECH",
+		"id": "R-Struc-Research-Upgrade-Nexus",
+		"imdName": "blresch4.PIE",
+		"name": "Nexus Research Boost",
+		"researchPoints": 30000,
+		"researchPower": 450,
+		"results": [
+			{
+				"class": "Building",
+				"parameter": "ResearchPoints",
+				"value": 210
+			}
+		],
+		"subgroupIconID": "IMAGE_RES_GRPUPG"
+	},
+
 	"R-Struc-RprFac-Upgrade01": {
 		"iconID": "IMAGE_RES_SYSTEMTECH",
 		"id": "R-Struc-RprFac-Upgrade01",
