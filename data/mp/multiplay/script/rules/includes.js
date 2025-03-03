@@ -32,6 +32,9 @@ include("multiplay/script/rules/setupgame.js");
 // Logic of Reticule Menu
 include("multiplay/script/rules/reticule.js");
 
+// Logic for Nexus AI Insane difficulty hacking (Multiplayer capable).
+include("multiplay/script/rules/nexushacking.js");
+
 // Logic and rules of "End conditions" of the match.
 include("multiplay/script/rules/endconditions.js");
 

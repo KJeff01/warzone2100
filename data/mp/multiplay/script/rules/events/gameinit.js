@@ -55,5 +55,6 @@ function eventGameInit()
 	{
 		setTimer("weatherCycle", 45000);
 	}
+	setTimer("nex_nexusAbsorb", 5000);
 	setTimer("autoSave", 10*60*1000);
 }

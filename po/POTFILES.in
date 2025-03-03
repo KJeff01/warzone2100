@@ -163,6 +163,7 @@ data/mp/multiplay/script/rules/init.js
 data/mp/multiplay/script/rules/oildrum.js
 data/mp/multiplay/script/rules/printsettings.js
 data/mp/multiplay/script/rules/reticule.js
+data/mp/multiplay/script/rules/nexushacking.js
 data/mp/multiplay/script/rules/setup/base.js
 data/mp/multiplay/script/rules/setup/components.js
 data/mp/multiplay/script/rules/setup/droidlimits.js
