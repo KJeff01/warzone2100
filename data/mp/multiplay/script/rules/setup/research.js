@@ -5,7 +5,8 @@ function setupResearch(player)	// inside hackNetOff()
 	enableResearch("R-Sys-Engineering01", player);
 
 	// Give Nexus AIs a research speed boost on Hard and above.
-	if (playerData[player].isAI &&
+	if (!challenge &&
+		playerData[player].isAI &&
 		(playerData[player].difficulty >= HARD) &&
 		(playerData[player].name.toLowerCase().includes("nexus")))
 	{
