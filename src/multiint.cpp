@@ -5387,6 +5387,17 @@ static void resetPlayerPositions()
 	}
 }
 
+// Makes the NetPlay.players.team script value unique AFTER hosting a non-team match. Switching buttons in
+// the lobby will preserve the previous team layout, if it was customized and returned to. So keep that.
+static void resetPlayerTeamBeforeNonTeamMatch()
+{
+	for (unsigned int i = 0; i < MAX_CONNECTED_PLAYERS; ++i)
+	{
+		NetPlay.players[i].team = i;
+		NETBroadcastPlayerInfo(i);
+	}
+}
+
 static unsigned int repositionHumanSlots()
 {
 	unsigned int pos = 0;
@@ -6127,6 +6138,11 @@ void startMultiplayerGame()
 	cancelOrDismissNotificationIfTag([](const std::string& tag) {
 		return (tag.rfind(SLOTTYPE_TAG_PREFIX, 0) == 0);
 	});
+
+	if (!alliancesSetTeamsBeforeGame(game.alliance))
+	{
+		resetPlayerTeamBeforeNonTeamMatch();
+	}
 
 	decideWRF();										// set up swrf & game.map
 	bMultiPlayer = true;
