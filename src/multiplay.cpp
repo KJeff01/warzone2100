@@ -806,6 +806,19 @@ bool isHumanPlayer(int player)
 	return NetPlay.players[player].allocated;
 }
 
+// Checks if a human player has left the match.
+bool deadPlayer(int player)
+{
+	if ((player >= MAX_CONNECTED_PLAYERS) || (player < 0) || (NetPlay.players[player].isSpectator))
+	{
+		return true;
+	}
+
+	const bool aiPlayer = (static_cast<size_t>(player) < NetPlay.players.size()) && (NetPlay.players[player].ai >= 0) && !NetPlay.players[player].allocated;
+
+	return (!aiPlayer && !isHumanPlayer(player));
+}
+
 // Clear player name data after game quit.
 void clearPlayerName(unsigned int player)
 {

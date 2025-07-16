@@ -246,6 +246,7 @@ bool setPlayerName(int player, const char *sName);
 void clearPlayerName(unsigned int player);
 const char *getPlayerColourName(int player);
 bool isHumanPlayer(int player);				//to tell if the player is a computer or not.
+bool deadPlayer(int player);
 bool myResponsibility(int player);
 bool responsibleFor(int player, int playerinquestion);
 int whosResponsible(int player);

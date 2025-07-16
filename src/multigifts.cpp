@@ -148,6 +148,11 @@ bool sendGift(uint8_t type, uint8_t to)
 
 	ASSERT_OR_RETURN(false, selectedPlayer < MAX_PLAYERS, "Must be a player to send a gift (selectedPlayer: %" PRIu32 "", selectedPlayer);
 
+	if ((type != AUTOGAME_GIFT) && bMultiPlayer && deadPlayer(to))
+	{
+		return false;
+	}
+
 	switch (type)
 	{
 	case RADAR_GIFT:
