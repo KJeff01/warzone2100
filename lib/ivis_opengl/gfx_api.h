@@ -43,6 +43,14 @@
 using nonstd::optional;
 using nonstd::nullopt;
 
+enum class VOLUMETRIC_LIGHT_LEVEL
+{
+	disabled,
+	low,
+	medium,
+	high,
+};
+
 namespace gfx_api
 {
 	// Must be implemented by backend (ex. SDL)
@@ -333,13 +341,15 @@ namespace gfx_api
 		uint32_t shadowFilterSize = 5;
 		uint32_t shadowCascadesCount = WZ_MAX_SHADOW_CASCADES;
 		bool isPointLightPerPixelEnabled = false;
+		VOLUMETRIC_LIGHT_LEVEL isVolumetricLightingEnabled = VOLUMETRIC_LIGHT_LEVEL::disabled;
 
 		bool operator==(const lighting_constants& rhs) const
 		{
 			return shadowMode == rhs.shadowMode
 			&& shadowFilterSize == rhs.shadowFilterSize
 			&& shadowCascadesCount == rhs.shadowCascadesCount
-			&& isPointLightPerPixelEnabled == rhs.isPointLightPerPixelEnabled;
+			&& isPointLightPerPixelEnabled == rhs.isPointLightPerPixelEnabled
+			&& isVolumetricLightingEnabled == rhs.isVolumetricLightingEnabled;
 		}
 	};
 
@@ -773,6 +783,7 @@ namespace gfx_api
 		std::array<glm::ivec4, bucket_dimension * bucket_dimension> bucketOffsetAndSize;
 		std::array<glm::ivec4, max_indexed_lights> indexed_lights;
 		int bucketDimensionUsed;
+		glm::vec4 cameraPos;
 	};
 
 	// Only change per mesh

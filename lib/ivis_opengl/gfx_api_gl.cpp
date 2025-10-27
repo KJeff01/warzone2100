@@ -835,7 +835,7 @@ static const std::map<SHADER_MODE, program_data> shader_to_file_table =
 	std::make_pair(SHADER_COMPONENT_INSTANCED, program_data{ "Component program", "shaders/tcmask_instanced.vert", "shaders/tcmask_instanced.frag",
 		{
 			// per-frame global uniforms
-			"ProjectionMatrix", "ViewMatrix", "ModelUVLightmapMatrix", "ShadowMapMVPMatrix", "lightPosition", "sceneColor", "ambient", "diffuse", "specular", "fogColor", "ShadowMapCascadeSplits", "ShadowMapSize", "fogEnd", "fogStart", "graphicsCycle", "fogEnabled", "PointLightsPosition", "PointLightsColorAndEnergy", "bucketOffsetAndSize", "PointLightsIndex", "bucketDimensionUsed", "viewportWidth", "viewportHeight",
+			"ProjectionMatrix", "ViewMatrix", "ModelUVLightmapMatrix", "ShadowMapMVPMatrix", "lightPosition", "sceneColor", "ambient", "diffuse", "specular", "fogColor", "ShadowMapCascadeSplits", "ShadowMapSize", "fogEnd", "fogStart", "graphicsCycle", "fogEnabled", "PointLightsPosition", "PointLightsColorAndEnergy", "bucketOffsetAndSize", "PointLightsIndex", "bucketDimensionUsed", "viewportWidth", "viewportHeight", "cameraPos",
 			// per-mesh uniforms
 			"tcmask", "normalmap", "specularmap", "hasTangents", "shieldEffect",
 		},
@@ -860,7 +860,7 @@ static const std::map<SHADER_MODE, program_data> shader_to_file_table =
 	std::make_pair(SHADER_NOLIGHT_INSTANCED, program_data{ "Plain program", "shaders/nolight_instanced.vert", "shaders/nolight_instanced.frag",
 		{
 			// per-frame global uniforms
-			"ProjectionMatrix", "ViewMatrix", "ModelUVLightmapMatrix", "ShadowMapMVPMatrix", "lightPosition", "sceneColor", "ambient", "diffuse", "specular", "fogColor", "ShadowMapCascadeSplits", "ShadowMapSize", "fogEnd", "fogStart", "graphicsCycle", "fogEnabled", "PointLightsPosition", "PointLightsColorAndEnergy", "bucketOffsetAndSize", "PointLightsIndex", "bucketDimensionUsed", "viewportWidth", "viewportHeight",
+			"ProjectionMatrix", "ViewMatrix", "ModelUVLightmapMatrix", "ShadowMapMVPMatrix", "lightPosition", "sceneColor", "ambient", "diffuse", "specular", "fogColor", "ShadowMapCascadeSplits", "ShadowMapSize", "fogEnd", "fogStart", "graphicsCycle", "fogEnabled", "PointLightsPosition", "PointLightsColorAndEnergy", "bucketOffsetAndSize", "PointLightsIndex", "bucketDimensionUsed", "viewportWidth", "viewportHeight", "cameraPos",
 			// per-mesh uniforms
 			"tcmask", "normalmap", "specularmap", "hasTangents", "shieldEffect",
 		},
@@ -1678,6 +1678,7 @@ static bool patchFragmentShaderPointLightsDefines(std::string& fragmentShaderStr
 		std::make_pair("WZ_MAX_INDEXED_POINT_LIGHTS", gfx_api::max_indexed_lights),
 		std::make_pair("WZ_BUCKET_DIMENSION", gfx_api::bucket_dimension),
 		std::make_pair("WZ_POINT_LIGHT_ENABLED", static_cast<size_t>(lightingConstants.isPointLightPerPixelEnabled)),
+		std::make_pair("WZ_VOLUMETRIC_LIGHTING_ENABLED", static_cast<size_t>(lightingConstants.isVolumetricLightingEnabled)),
 	};
 
 	const auto& replacer = [&fragmentShaderStr](const std::string& define, const auto& value) -> bool {
@@ -2113,15 +2114,16 @@ void gl_pipeline_state_object::set_constants(const gfx_api::Draw3DShapeInstanced
 	setUniforms(20, cbuf.bucketDimensionUsed);
 	setUniforms(21, cbuf.viewportWidth);
 	setUniforms(22, cbuf.viewportheight);
+	setUniforms(23, cbuf.cameraPos);
 }
 
 void gl_pipeline_state_object::set_constants(const gfx_api::Draw3DShapeInstancedPerMeshUniforms& cbuf)
 {
-	setUniforms(23, cbuf.tcmask);
-	setUniforms(24, cbuf.normalMap);
-	setUniforms(25, cbuf.specularMap);
-	setUniforms(26, cbuf.hasTangents);
-	setUniforms(27, cbuf.shieldEffect);
+	setUniforms(24, cbuf.tcmask);
+	setUniforms(25, cbuf.normalMap);
+	setUniforms(26, cbuf.specularMap);
+	setUniforms(27, cbuf.hasTangents);
+	setUniforms(28, cbuf.shieldEffect);
 }
 
 void gl_pipeline_state_object::set_constants(const gfx_api::Draw3DShapeInstancedDepthOnlyGlobalUniforms& cbuf)

@@ -686,6 +686,11 @@ bool loadConfig()
 		war_setHostConnectionProvider(hostConnProvider);
 	}
 
+	{
+		auto value = iniGetIntegerOpt("volumetricLighting");
+		war_setVolumetricLighting(static_cast<VOLUMETRIC_LIGHT_LEVEL>(value.value_or(0)));
+	}
+
 	ActivityManager::instance().endLoadingSettings();
 	return true;
 }
@@ -862,6 +867,7 @@ bool saveConfig()
 	iniSetBool("pointLightsPerpixel", war_getPointLightPerPixelLighting());
 	iniSetString("defaultSkirmishAI", getDefaultSkirmishAI());
 	iniSetBool("audioCueGroupReporting", war_getPlayAudioCue_GroupReporting());
+	iniSetInteger("volumetricLighting", static_cast<int>(war_getVolumetricLighting()));
 	iniSetInteger("configVersion", CURRCONFVERSION);
 
 	// write out ini file changes

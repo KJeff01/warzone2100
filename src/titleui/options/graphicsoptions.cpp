@@ -264,6 +264,35 @@ std::shared_ptr<OptionsForm> makeGraphicsOptionsForm()
 		);
 		result->addOption(optionInfo, valueChanger, true);
 	}
+	{
+		auto optionInfo = OptionInfo("gfx.volumetric", N_("Volumetric Lighting"), "");
+		optionInfo.addAvailabilityCondition(IsNotInGame);
+		auto valueChanger = OptionsDropdown<uint32_t>::make(
+			[]() {
+				OptionChoices<uint32_t> result;
+				result.choices = {
+					{ _("Off"), "", 0 },
+					{ _("Low"), "", 1 },
+					{ _("Medium"), "", 2 },
+					{ _("High"), "", 3 },
+				};
+				result.setCurrentIdxForValue(static_cast<uint32_t>(war_getVolumetricLighting()));
+				return result;
+			},
+			[](const auto& newValue) -> bool {
+				auto shadowConstants = gfx_api::context::get().getShadowConstants();
+				shadowConstants.isVolumetricLightingEnabled = static_cast<VOLUMETRIC_LIGHT_LEVEL>(newValue);
+				if (!gfx_api::context::get().setShadowConstants(shadowConstants))
+				{
+					debug(LOG_ERROR, "Failed to set volumetric lighting value: %d", (int)newValue);
+					return false;
+				}
+				war_setVolumetricLighting(static_cast<VOLUMETRIC_LIGHT_LEVEL>(newValue));
+				return true;
+			}, false
+		);
+		result->addOption(optionInfo, valueChanger, true);
+	}
 
 	// Effects:
 	result->addSection(OptionsSection(N_("Effects"), ""), true);

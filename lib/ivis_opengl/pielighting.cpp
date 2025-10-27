@@ -271,7 +271,8 @@ void renderingNew::LightingManager::ComputeFrameData(const LightingData& data, L
 		const auto& light = culledLights[lightIndex].light;
 		result.positions[lightIndex].x = light.position.x;
 		result.positions[lightIndex].y = light.position.y;
-		result.positions[lightIndex].z = light.position.z;
+		// z coordinate system require the -1 factor before entering shaders
+		result.positions[lightIndex].z = -light.position.z;
 		result.colorAndEnergy[lightIndex].x = light.colour.x;
 		result.colorAndEnergy[lightIndex].y = light.colour.y;
 		result.colorAndEnergy[lightIndex].z = light.colour.z;
@@ -395,4 +396,3 @@ ILightingManager& getCurrentLightingManager()
 {
 	return *lightingManager;
 }
-

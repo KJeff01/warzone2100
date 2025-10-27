@@ -391,9 +391,12 @@ void main()
 		0., 1., 0.,
 		0., 0., 1.
 	);
+	MaterialInfo materialInfo;
+	materialInfo.albedo = diffuse;
+	materialInfo.gloss = specularMapValue;
 	// Normals are in view space, we need to get back to world space
 	vec3 worldSpaceNormal = -(inverse(ViewMatrix) * vec4(N, 0.f)).xyz;
-	light += iterateOverAllPointLights(clipSpaceCoord, fragPos, worldSpaceNormal, normalize(halfVec - lightDir), diffuse, specularMapValue, identityMat);
+	light += iterateOverAllPointLights(clipSpaceCoord, fragPos, worldSpaceNormal, normalize(halfVec - lightDir), materialInfo, identityMat);
 #endif
 
 	light.rgb *= visibility;
@@ -417,8 +420,14 @@ void main()
 	{
 		fragColour.a = 0.66 + 0.66 * graphicsCycle;
 	}
-	
-	if (fogEnabled > 0)
+
+	if (WZ_VOLUMETRIC_LIGHTING_ENABLED != 0)
+	{
+		vec2 clipSpaceCoord = gl_FragCoord.xy / vec2(viewportWidth, viewportHeight);
+		vec4 volumetric = volumetricLights(clipSpaceCoord, cameraPos.xyz, fragPos, diffuse.xyz);
+		fragColour.xyz = toneMap(fragColour.xyz * volumetric.a + volumetric.xyz) * lightmap_vec4.a;
+	}
+	else if (fogEnabled > 0)
 	{
 		// Calculate linear fog
 		float fogFactor = (fogEnd - vertexDistance) / (fogEnd - fogStart);
