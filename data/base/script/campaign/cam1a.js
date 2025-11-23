@@ -17,7 +17,7 @@ const mis_scavengerRes = [
 function cam1A_doAddHQBuiltTopics()
 {
 	addGuideTopic("wz2100::structures::factory");
-	addGuideTopic("wz2100::units::designing", SHOWTOPIC_FIRSTADD);
+	addGuideTopic("wz2100::units::designing", camShowGuideTopic());
 }
 
 function cam1A_doAddFactoryBuiltTopics()
@@ -25,19 +25,19 @@ function cam1A_doAddFactoryBuiltTopics()
 	addGuideTopic("wz2100::units::designing");
 	addGuideTopic("wz2100::structures::rallypoint");
 	addGuideTopic("wz2100::structures::factory");
-	addGuideTopic("wz2100::units::building", SHOWTOPIC_FIRSTADD);
+	addGuideTopic("wz2100::units::building", camShowGuideTopic());
 }
 
 function cam1A_doAddResearchFacilityBuiltTopics()
 {
-	addGuideTopic("wz2100::structures::researchfacility", SHOWTOPIC_FIRSTADD);
+	addGuideTopic("wz2100::structures::researchfacility", camShowGuideTopic());
 }
 
 function cam1A_doAddOilDerrickBuiltTopics()
 {
 	addGuideTopic("wz2100::general::power");
 	addGuideTopic("wz2100::structures::oilderrick");
-	addGuideTopic("wz2100::structures::powergenerator", SHOWTOPIC_FIRSTADD);
+	addGuideTopic("wz2100::structures::powergenerator", camShowGuideTopic());
 }
 
 // Player zero's droid enters area next to first oil patch.
@@ -189,7 +189,7 @@ function cam1A_doNeedPowerTopics()
 {
 	// inform the user about power (and the need to build an oil derrick)
 	addGuideTopic("wz2100::structures::oilderrick");
-	addGuideTopic("wz2100::general::power", SHOWTOPIC_FIRSTADD);
+	addGuideTopic("wz2100::general::power", camShowGuideTopic());
 }
 
 function eventDroidBuilt(droid, structure)
@@ -207,7 +207,7 @@ function eventDroidBuilt(droid, structure)
 
 function doAddHQGuideTopic()
 {
-	addGuideTopic("wz2100::structures::hq", SHOWTOPIC_FIRSTADD);
+	addGuideTopic("wz2100::structures::hq", camShowGuideTopic());
 }
 
 function eventStartLevel()

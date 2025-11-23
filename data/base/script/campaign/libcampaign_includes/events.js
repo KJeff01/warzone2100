@@ -448,7 +448,7 @@ function cam_eventDroidRankGained(droid, rankNum)
 {
 	if (droid.player === CAM_HUMAN_PLAYER)
 	{
-		addGuideTopic("wz2100::units::experience", SHOWTOPIC_FIRSTADD);
+		addGuideTopic("wz2100::units::experience", camShowGuideTopic());
 	}
 }
 

@@ -3,10 +3,25 @@
 // Guide topics management.
 ////////////////////////////////////////////////////////////////////////////////
 
+//;; ## camShowGuideTopic()
+//;;
+//;; Interrupt gameplay to show a guide topic when it first gets added, depending
+//;; on if the tweak option allows it or not.
+//;;
+//;; @returns {Number}
+//;;
+function camShowGuideTopic()
+{
+	// Temporarily check if not defined for a smooth transition to newer game versions.
+	return ((!camDef(tweakOptions.showGuideTopics) || tweakOptions.showGuideTopics) ? SHOWTOPIC_FIRSTADD : 0);
+}
+
+//////////// privates
+
 function __camDoAddVTOLUseTopicsImpl()
 {
 	addGuideTopic("wz2100::units::propulsions::vtols::defending");
-	addGuideTopic("wz2100::units::propulsions::vtols::attacking", SHOWTOPIC_FIRSTADD);
+	addGuideTopic("wz2100::units::propulsions::vtols::attacking", camShowGuideTopic());
 }
 
 function __camDoAddCommanderUseTopicsImpl()
@@ -14,12 +29,12 @@ function __camDoAddCommanderUseTopicsImpl()
 	addGuideTopic("wz2100::units::commanders::targeting");
 	addGuideTopic("wz2100::units::commanders::detaching");
 	addGuideTopic("wz2100::units::commanders::repairs");
-	addGuideTopic("wz2100::units::commanders::attaching", SHOWTOPIC_FIRSTADD);
+	addGuideTopic("wz2100::units::commanders::attaching", camShowGuideTopic());
 }
 
 function __camDoAddVTOLDefenseTopicsImpl()
 {
-	addGuideTopic("wz2100::units::propulsions::vtols::defendingagainst", SHOWTOPIC_FIRSTADD);
+	addGuideTopic("wz2100::units::propulsions::vtols::defendingagainst", camShowGuideTopic());
 }
 
 function __camDoAddVTOLDefenseTopics()
@@ -40,11 +55,11 @@ function __camDoAddCommanderUseTopics()
 
 function __camGuideTopicCheckResearchComplete(targetResearchName, justResearchedObj = null)
 {
-	if (justResearchedObj && justResearchedObj.name == targetResearchName)
+	if (justResearchedObj && justResearchedObj.name === targetResearchName)
 	{
 		return true;
 	}
-	else if (justResearchedObj == null)
+	else if (justResearchedObj === null)
 	{
 		const res = getResearch(targetResearchName);
 		if (res && res.done)
@@ -57,7 +72,7 @@ function __camGuideTopicCheckResearchComplete(targetResearchName, justResearched
 
 function __camProcessResearchGatedGuideTopics(research = null)
 {
-	const __SHOW_FLAGS = (research == null) ? 0 : SHOWTOPIC_FIRSTADD;
+	const __SHOW_FLAGS = ((camDef(tweakOptions.showGuideTopics) && !tweakOptions.showGuideTopics) || (research === null)) ? 0 : SHOWTOPIC_FIRSTADD;
 	// First "different" weapon type
 	if (__camGuideTopicCheckResearchComplete('R-Wpn-Flamer01Mk1', research))
 	{

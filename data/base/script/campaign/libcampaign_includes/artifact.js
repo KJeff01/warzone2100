@@ -245,7 +245,7 @@ function __camPickupArtifact(artifact)
 	}
 	addGuideTopic("wz2100::structures::researchfacility");
 	addGuideTopic("wz2100::general::researching");
-	addGuideTopic("wz2100::general::artifacts", SHOWTOPIC_FIRSTADD);
+	addGuideTopic("wz2100::general::artifacts", camShowGuideTopic());
 	// bump counter before the callback, so that it was
 	// actual during the callback
 	++__camNumArtifacts;

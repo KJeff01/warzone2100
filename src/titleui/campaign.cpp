@@ -1611,6 +1611,13 @@ static std::vector<WzCampaignTweakOptionSetting> buildTweakOptionSettings(option
 		false, true
 	);
 
+	results.emplace_back(
+		"showGuideTopics",
+		_("Show Guide Topics"),
+		_("Interrupt gameplay to show helpful guide topics (recommended for beginners)."),
+		true, true
+	);
+
 	if (modInfo.has_value())
 	{
 		for (auto it = results.begin(); it != results.end(); )
