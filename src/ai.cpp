@@ -553,6 +553,10 @@ static SDWORD targetAttackWeightIfGreaterThan(SDWORD currentBest, BASE_OBJECT *p
 		{
 			attackWeight /= WEIGHT_NOT_LOS_VISIBLE_F; // Prefer objects not obstructed by terrain
 		}
+		if (visGetBlockingWall(psAttacker, psTarget))
+		{
+			attackWeight /= WEIGHT_NOT_LOS_VISIBLE_F; // And not obstructed by walls
+		}
 	}
 
 	return std::max<int>(1, attackWeight);
