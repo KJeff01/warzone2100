@@ -185,6 +185,13 @@ A means to not auto group some droids.
 @param {number} [playerFilter]
 @returns {void}
 
+## camShowGuideTopic()
+
+Interrupt gameplay to show a guide topic when it first gets added, depending
+on if the tweak option allows it or not.
+
+@returns {Number}
+
 ## camAreaEvent(label, callback(droid))
 
 Implement `eventArea${label}()` in a debugging-friendly way.
