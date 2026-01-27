@@ -1120,6 +1120,112 @@
 		],
 		"techCode": 1
 	},
+	"CAM3-v110-undo": {
+		"iconID": "IMAGE_RES_DROIDTECH",
+		"id": "CAM3-v110-undo",
+		"imdName": "icamrhot.pie",
+		"name": "CAM3 Research v1.10 Fix",
+		"requiredResearch": [
+			"R-Wpn-Howitzer03-Rot"
+		],
+		"researchPoints": 10000,
+		"researchPower": 1000,
+		"results": [
+			{
+				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "Body11ABT",
+				"parameter": "Thermal",
+				"value": -33
+			},
+			{
+				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "Body12SUP",
+				"parameter": "Thermal",
+				"value": -38
+			},
+			{
+				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "Body8MBT",
+				"parameter": "Thermal",
+				"value": -42
+			},
+			{
+				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "Body5REC",
+				"parameter": "Thermal",
+				"value": -50
+			},
+			{
+				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "Body4ABT",
+				"parameter": "Thermal",
+				"value": -38
+			},
+			{
+				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "Body1REC",
+				"parameter": "Thermal",
+				"value": -50
+			},
+			{
+				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "Body2SUP",
+				"parameter": "Thermal",
+				"value": -50
+			},
+			{
+				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "Body6SUPP",
+				"parameter": "Thermal",
+				"value": -33
+			},
+			{
+				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "Body9REC",
+				"parameter": "Thermal",
+				"value": -40
+			},
+			{
+				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "CyborgLightBody",
+				"parameter": "Thermal",
+				"value": -40
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "Cannon1Mk1",
+				"parameter": "Damage",
+				"value": -3
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "Cannon2A-TMk1",
+				"parameter": "Damage",
+				"value": -2
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "Cannon375mmMk1",
+				"parameter": "Damage",
+				"value": -2
+			}
+		],
+		"subgroupIconID": "IMAGE_RES_GRPUPG",
+		"techCode": 1
+	},
 	"CAM3RESEARCH": {
 		"iconID": "IMAGE_RES_COMPUTERTECH",
 		"id": "CAM3RESEARCH",
@@ -1726,6 +1832,20 @@
 			},
 			{
 				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "Body4ABT",
+				"parameter": "Armour",
+				"value": -10
+			},
+			{
+				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "Body8MBT",
+				"parameter": "Armour",
+				"value": -5
+			},
+			{
+				"class": "Body",
 				"filterParameter": "BodyClass",
 				"filterValue": "Droids",
 				"parameter": "HitPointPct",
@@ -1753,6 +1873,27 @@
 				"filterValue": "Droids",
 				"parameter": "Armour",
 				"value": 30
+			},
+			{
+				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "Body12SUP",
+				"parameter": "Armour",
+				"value": -5
+			},
+			{
+				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "Body8MBT",
+				"parameter": "Armour",
+				"value": -5
+			},
+			{
+				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "Body5REC",
+				"parameter": "Armour",
+				"value": -5
 			},
 			{
 				"class": "Body",
@@ -1784,6 +1925,13 @@
 				"filterValue": "Droids",
 				"parameter": "Armour",
 				"value": 30
+			},
+			{
+				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "Body6SUPP",
+				"parameter": "Armour",
+				"value": -5
 			},
 			{
 				"class": "Body",
@@ -1846,6 +1994,20 @@
 			},
 			{
 				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "Body9REC",
+				"parameter": "Armour",
+				"value": -5
+			},
+			{
+				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "Body2SUP",
+				"parameter": "Armour",
+				"value": -12
+			},
+			{
+				"class": "Body",
 				"filterParameter": "BodyClass",
 				"filterValue": "Droids",
 				"parameter": "HitPointPct",
@@ -1877,6 +2039,20 @@
 			},
 			{
 				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "Body8MBT",
+				"parameter": "Armour",
+				"value": 5
+			},
+			{
+				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "Body2SUP",
+				"parameter": "Armour",
+				"value": 8
+			},
+			{
+				"class": "Body",
 				"filterParameter": "BodyClass",
 				"filterValue": "Droids",
 				"parameter": "HitPointPct",
@@ -1903,6 +2079,27 @@
 				"filterValue": "Droids",
 				"parameter": "Armour",
 				"value": 30
+			},
+			{
+				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "Body8MBT",
+				"parameter": "Armour",
+				"value": -8
+			},
+			{
+				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "Body2SUP",
+				"parameter": "Armour",
+				"value": -8
+			},
+			{
+				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "Body7ABT",
+				"parameter": "Armour",
+				"value": -5
 			},
 			{
 				"class": "Body",
@@ -1936,6 +2133,27 @@
 			},
 			{
 				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "Body8MBT",
+				"parameter": "Armour",
+				"value": 8
+			},
+			{
+				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "Body2SUP",
+				"parameter": "Armour",
+				"value": 8
+			},
+			{
+				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "Body10MBT",
+				"parameter": "Armour",
+				"value": -3
+			},
+			{
+				"class": "Body",
 				"filterParameter": "BodyClass",
 				"filterValue": "Droids",
 				"parameter": "HitPointPct",
@@ -1963,6 +2181,62 @@
 				"filterValue": "Droids",
 				"parameter": "Thermal",
 				"value": 40
+			},
+			{
+				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "Body11ABT",
+				"parameter": "Thermal",
+				"value": -10
+			},
+			{
+				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "Body12SUP",
+				"parameter": "Thermal",
+				"value": -5
+			},
+			{
+				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "Body8MBT",
+				"parameter": "Thermal",
+				"value": -10
+			},
+			{
+				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "Body5REC",
+				"parameter": "Thermal",
+				"value": -10
+			},
+			{
+				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "Body6SUPP",
+				"parameter": "Thermal",
+				"value": -10
+			},
+			{
+				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "Body4ABT",
+				"parameter": "Thermal",
+				"value": -5
+			},
+			{
+				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "Body1REC",
+				"parameter": "Thermal",
+				"value": -25
+			},
+			{
+				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "Body2SUP",
+				"parameter": "Thermal",
+				"value": -10
 			}
 		],
 		"subgroupIconID": "IMAGE_RES_GRPUPG"
@@ -2007,6 +2281,20 @@
 				"filterValue": "Droids",
 				"parameter": "Thermal",
 				"value": 40
+			},
+			{
+				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "Body4ABT",
+				"parameter": "Thermal",
+				"value": -12
+			},
+			{
+				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "Body1REC",
+				"parameter": "Thermal",
+				"value": 25
 			}
 		],
 		"subgroupIconID": "IMAGE_RES_GRPUPG",
@@ -2031,6 +2319,69 @@
 				"filterValue": "Droids",
 				"parameter": "Thermal",
 				"value": 40
+			},
+			{
+				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "Body11ABT",
+				"parameter": "Thermal",
+				"value": 33
+			},
+			{
+				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "Body12SUP",
+				"parameter": "Thermal",
+				"value": 35
+			},
+			{
+				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "Body8MBT",
+				"parameter": "Thermal",
+				"value": 50
+			},
+			{
+				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "Body5REC",
+				"parameter": "Thermal",
+				"value": 50
+			},
+			{
+				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "Body4ABT",
+				"parameter": "Thermal",
+				"value": 38
+			},
+			{
+				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "Body1REC",
+				"parameter": "Thermal",
+				"value": 25
+			},
+			{
+				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "Body2SUP",
+				"parameter": "Thermal",
+				"value": 50
+			},
+			{
+				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "Body6SUPP",
+				"parameter": "Thermal",
+				"value": 33
+			},
+			{
+				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "CyborgLightBody",
+				"parameter": "Thermal",
+				"value": 40
 			}
 		],
 		"subgroupIconID": "IMAGE_RES_GRPUPG"
@@ -2053,6 +2404,13 @@
 				"filterValue": "Droids",
 				"parameter": "Thermal",
 				"value": 40
+			},
+			{
+				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "Body12SUP",
+				"parameter": "Thermal",
+				"value": 5
 			}
 		],
 		"subgroupIconID": "IMAGE_RES_GRPUPG",
@@ -2076,6 +2434,20 @@
 				"filterValue": "Droids",
 				"parameter": "Thermal",
 				"value": 40
+			},
+			{
+				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "Body8MBT",
+				"parameter": "Thermal",
+				"value": -8
+			},
+			{
+				"class": "Body",
+				"filterParameter": "Id",
+				"filterValue": "Body4ABT",
+				"parameter": "Thermal",
+				"value": 12
 			}
 		],
 		"subgroupIconID": "IMAGE_RES_GRPUPG",
@@ -3383,6 +3755,20 @@
 				"filterValue": "CANNON",
 				"parameter": "RadiusDamage",
 				"value": 30
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "Cannon2A-TMk1",
+				"parameter": "Damage",
+				"value": -2
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "Cannon2A-TMk1",
+				"parameter": "RadiusDamage",
+				"value": -2
 			}
 		],
 		"statID": "Cannon1Mk1",
@@ -3642,6 +4028,20 @@
 				"filterValue": "MACHINE GUN",
 				"parameter": "Damage",
 				"value": 30
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "MG2Mk1",
+				"parameter": "Damage",
+				"value": -5
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "MG3Mk1",
+				"parameter": "Damage",
+				"value": -5
 			}
 		],
 		"statID": "MG1Mk1",
@@ -4136,6 +4536,20 @@
 				"filterValue": "ROCKET",
 				"parameter": "ReloadTime",
 				"value": -20
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "Rocket-MRL",
+				"parameter": "ReloadTime",
+				"value": 20
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "Rocket-VTOL-BB",
+				"parameter": "FirePause",
+				"value": 20
 			}
 		],
 		"statID": "Rocket-Pod",
@@ -4165,6 +4579,20 @@
 				"filterValue": "ROCKET",
 				"parameter": "ReloadTime",
 				"value": -20
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "Rocket-MRL",
+				"parameter": "ReloadTime",
+				"value": 20
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "Rocket-VTOL-BB",
+				"parameter": "FirePause",
+				"value": 20
 			}
 		],
 		"statID": "Rocket-Pod",
@@ -4194,6 +4622,20 @@
 				"filterValue": "ROCKET",
 				"parameter": "ReloadTime",
 				"value": -20
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "Rocket-MRL",
+				"parameter": "ReloadTime",
+				"value": 20
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "Rocket-VTOL-BB",
+				"parameter": "FirePause",
+				"value": 20
 			}
 		],
 		"statID": "Rocket-Pod",
@@ -4368,22 +4810,6 @@
 		],
 		"researchPoints": 2400,
 		"researchPower": 75,
-		"results": [
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "SLOW ROCKET",
-				"parameter": "Damage",
-				"value": 30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "SLOW ROCKET",
-				"parameter": "RadiusDamage",
-				"value": 30
-			}
-		],
 		"statID": "Rocket-LtA-T",
 		"subgroupIconID": "IMAGE_RES_GRPDAM"
 	},
@@ -4396,22 +4822,6 @@
 		],
 		"researchPoints": 3600,
 		"researchPower": 112,
-		"results": [
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "SLOW ROCKET",
-				"parameter": "Damage",
-				"value": 30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "SLOW ROCKET",
-				"parameter": "RadiusDamage",
-				"value": 30
-			}
-		],
 		"statID": "Rocket-LtA-T",
 		"subgroupIconID": "IMAGE_RES_GRPDAM",
 		"techCode": 1
@@ -4425,22 +4835,6 @@
 		],
 		"researchPoints": 4800,
 		"researchPower": 150,
-		"results": [
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "SLOW ROCKET",
-				"parameter": "Damage",
-				"value": 30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "SLOW ROCKET",
-				"parameter": "RadiusDamage",
-				"value": 30
-			}
-		],
 		"statID": "Rocket-LtA-T",
 		"subgroupIconID": "IMAGE_RES_GRPDAM",
 		"techCode": 1
@@ -4973,7 +5367,7 @@
 			{
 				"class": "Building",
 				"parameter": "PowerPoints",
-				"value": 30
+				"value": -5
 			}
 		],
 		"subgroupIconID": "IMAGE_RES_GRPUPG"
@@ -5596,6 +5990,20 @@
 			},
 			{
 				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "AAGun2Mk1",
+				"parameter": "Damage",
+				"value": -2
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "QuadRotAAGun",
+				"parameter": "Damage",
+				"value": -2
+			},
+			{
+				"class": "Weapon",
 				"filterParameter": "ImpactClass",
 				"filterValue": "A-A GUN",
 				"parameter": "RadiusDamage",
@@ -5631,6 +6039,13 @@
 				"filterValue": "A-A GUN",
 				"parameter": "ReloadTime",
 				"value": -10
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "AAGun2Mk1",
+				"parameter": "ReloadTime",
+				"value": 10
 			}
 		],
 		"statID": "QuadMg1AAGun",
@@ -5659,6 +6074,13 @@
 				"filterValue": "A-A GUN",
 				"parameter": "ReloadTime",
 				"value": -10
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "AAGun2Mk1",
+				"parameter": "ReloadTime",
+				"value": 10
 			}
 		],
 		"statID": "QuadMg1AAGun",
@@ -5689,6 +6111,13 @@
 				"filterValue": "A-A GUN",
 				"parameter": "ReloadTime",
 				"value": -10
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "AAGun2Mk1",
+				"parameter": "ReloadTime",
+				"value": 10
 			}
 		],
 		"statID": "QuadMg1AAGun",
@@ -5764,21 +6193,14 @@
 				"class": "Weapon",
 				"filterParameter": "ImpactClass",
 				"filterValue": "BOMB",
-				"parameter": "Damage",
+				"parameter": "HitChance",
 				"value": 10
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "ImpactClass",
 				"filterValue": "BOMB",
-				"parameter": "RadiusDamage",
-				"value": 10
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "BOMB",
-				"parameter": "RepeatDamage",
+				"parameter": "ShortHitChance",
 				"value": 10
 			}
 		],
@@ -5801,21 +6223,14 @@
 				"class": "Weapon",
 				"filterParameter": "ImpactClass",
 				"filterValue": "BOMB",
-				"parameter": "Damage",
+				"parameter": "HitChance",
 				"value": 10
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "ImpactClass",
 				"filterValue": "BOMB",
-				"parameter": "RadiusDamage",
-				"value": 10
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "BOMB",
-				"parameter": "RepeatDamage",
+				"parameter": "ShortHitChance",
 				"value": 10
 			}
 		],
@@ -5951,6 +6366,20 @@
 			},
 			{
 				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "Cannon4AUTOMk1",
+				"parameter": "Damage",
+				"value": -2
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "Cannon4AUTO-VTOL",
+				"parameter": "Damage",
+				"value": -1
+			},
+			{
+				"class": "Weapon",
 				"filterParameter": "ImpactClass",
 				"filterValue": "CANNON",
 				"parameter": "RadiusDamage",
@@ -5978,6 +6407,20 @@
 				"filterValue": "CANNON",
 				"parameter": "Damage",
 				"value": 30
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "Cannon5VulcanMk1",
+				"parameter": "Damage",
+				"value": -4
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "Cannon5Vulcan-VTOL",
+				"parameter": "Damage",
+				"value": -1
 			},
 			{
 				"class": "Weapon",
@@ -6155,7 +6598,7 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "FLAME",
 				"parameter": "Damage",
-				"value": 30
+				"value": 90
 			},
 			{
 				"class": "Weapon",
@@ -6363,7 +6806,7 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "HOWITZERS",
 				"parameter": "Damage",
-				"value": 25
+				"value": 30
 			},
 			{
 				"class": "Weapon",
@@ -6386,7 +6829,6 @@
 	"R-Wpn-Howitzer-Damage02": {
 		"iconID": "IMAGE_RES_WEAPONTECH",
 		"id": "R-Wpn-Howitzer-Damage02",
-		"keyTopic": 1,
 		"name": "HE Howitzer Shells Mk2",
 		"requiredResearch": [
 			"R-Wpn-Howitzer-Damage01"
@@ -6399,7 +6841,7 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "HOWITZERS",
 				"parameter": "Damage",
-				"value": 25
+				"value": 30
 			},
 			{
 				"class": "Weapon",
@@ -6423,7 +6865,6 @@
 	"R-Wpn-Howitzer-Damage03": {
 		"iconID": "IMAGE_RES_WEAPONTECH",
 		"id": "R-Wpn-Howitzer-Damage03",
-		"keyTopic": 1,
 		"name": "HE Howitzer Shells Mk3",
 		"requiredResearch": [
 			"R-Wpn-HvyHowitzer",
@@ -6437,7 +6878,7 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "HOWITZERS",
 				"parameter": "Damage",
-				"value": 25
+				"value": 30
 			},
 			{
 				"class": "Weapon",
@@ -6659,6 +7100,34 @@
 				"filterValue": "MACHINE GUN",
 				"parameter": "Damage",
 				"value": 30
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "MG4ROTARYMk1",
+				"parameter": "Damage",
+				"value": -5
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "MG2-VTOL",
+				"parameter": "Damage",
+				"value": -2
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "MG3-VTOL",
+				"parameter": "Damage",
+				"value": -2
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "MG4ROTARY-VTOL",
+				"parameter": "Damage",
+				"value": -2
 			}
 		],
 		"statID": "MG1Mk1",
@@ -6939,7 +7408,7 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "MORTARS",
 				"parameter": "FirePause",
-				"value": -10
+				"value": -20
 			},
 			{
 				"class": "Weapon",
@@ -6990,7 +7459,7 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "ROCKET",
 				"parameter": "Damage",
-				"value": 30
+				"value": 50
 			},
 			{
 				"class": "Weapon",
@@ -7018,7 +7487,7 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "ROCKET",
 				"parameter": "Damage",
-				"value": 30
+				"value": 50
 			},
 			{
 				"class": "Weapon",
@@ -7047,7 +7516,7 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "ROCKET",
 				"parameter": "Damage",
-				"value": 30
+				"value": 50
 			},
 			{
 				"class": "Weapon",
@@ -7115,22 +7584,6 @@
 		],
 		"researchPoints": 6000,
 		"researchPower": 187,
-		"results": [
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "SLOW ROCKET",
-				"parameter": "Damage",
-				"value": 30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "SLOW ROCKET",
-				"parameter": "RadiusDamage",
-				"value": 30
-			}
-		],
 		"statID": "Rocket-LtA-T",
 		"subgroupIconID": "IMAGE_RES_GRPDAM"
 	},
@@ -7144,22 +7597,6 @@
 		],
 		"researchPoints": 8000,
 		"researchPower": 250,
-		"results": [
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "SLOW ROCKET",
-				"parameter": "Damage",
-				"value": 30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "SLOW ROCKET",
-				"parameter": "RadiusDamage",
-				"value": 30
-			}
-		],
 		"statID": "Rocket-LtA-T",
 		"subgroupIconID": "IMAGE_RES_GRPDAM",
 		"techCode": 1
@@ -7174,22 +7611,6 @@
 		],
 		"researchPoints": 10000,
 		"researchPower": 312,
-		"results": [
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "SLOW ROCKET",
-				"parameter": "Damage",
-				"value": 30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "SLOW ROCKET",
-				"parameter": "RadiusDamage",
-				"value": 30
-			}
-		],
 		"statID": "Rocket-LtA-T",
 		"subgroupIconID": "IMAGE_RES_GRPDAM",
 		"techCode": 1
@@ -7205,22 +7626,6 @@
 		],
 		"researchPoints": 6000,
 		"researchPower": 187,
-		"results": [
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "SLOW ROCKET",
-				"parameter": "FirePause",
-				"value": -20
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "SLOW ROCKET",
-				"parameter": "ReloadTime",
-				"value": -20
-			}
-		],
 		"statID": "Rocket-LtA-T",
 		"subgroupIconID": "IMAGE_RES_GRPROF"
 	},
@@ -7235,22 +7640,6 @@
 		],
 		"researchPoints": 8000,
 		"researchPower": 250,
-		"results": [
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "SLOW ROCKET",
-				"parameter": "FirePause",
-				"value": -20
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "SLOW ROCKET",
-				"parameter": "ReloadTime",
-				"value": -20
-			}
-		],
 		"statID": "Rocket-LtA-T",
 		"subgroupIconID": "IMAGE_RES_GRPROF",
 		"techCode": 1
@@ -7266,22 +7655,6 @@
 		],
 		"researchPoints": 10000,
 		"researchPower": 312,
-		"results": [
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "SLOW ROCKET",
-				"parameter": "FirePause",
-				"value": -20
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "SLOW ROCKET",
-				"parameter": "ReloadTime",
-				"value": -20
-			}
-		],
 		"statID": "Rocket-LtA-T",
 		"subgroupIconID": "IMAGE_RES_GRPROF",
 		"techCode": 1
@@ -8494,21 +8867,14 @@
 				"class": "Weapon",
 				"filterParameter": "ImpactClass",
 				"filterValue": "BOMB",
-				"parameter": "Damage",
+				"parameter": "HitChance",
 				"value": 10
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "ImpactClass",
 				"filterValue": "BOMB",
-				"parameter": "RadiusDamage",
-				"value": 10
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "BOMB",
-				"parameter": "RepeatDamage",
+				"parameter": "ShortHitChance",
 				"value": 10
 			}
 		],
@@ -8610,6 +8976,13 @@
 				"filterValue": "CANNON",
 				"parameter": "Damage",
 				"value": 30
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "Cannon1-VTOL",
+				"parameter": "Damage",
+				"value": -1
 			},
 			{
 				"class": "Weapon",
@@ -8966,7 +9339,7 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "HOWITZERS",
 				"parameter": "Damage",
-				"value": 25
+				"value": 30
 			},
 			{
 				"class": "Weapon",
@@ -9001,7 +9374,7 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "HOWITZERS",
 				"parameter": "Damage",
-				"value": 25
+				"value": 30
 			},
 			{
 				"class": "Weapon",
@@ -9037,7 +9410,7 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "HOWITZERS",
 				"parameter": "Damage",
-				"value": 25
+				"value": 30
 			},
 			{
 				"class": "Weapon",
@@ -9064,8 +9437,7 @@
 		"msgName": "RES_W_HOWRF4",
 		"name": "Fast Loader",
 		"requiredResearch": [
-			"R-Wpn-Mortar-ROF04",
-			"R-Wpn-Howitzer-ROF03"
+			"R-Wpn-Mortar-ROF04"
 		],
 		"researchPoints": 12000,
 		"researchPower": 375,
@@ -9075,14 +9447,14 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "HOWITZERS",
 				"parameter": "FirePause",
-				"value": -20
+				"value": -60
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "ImpactClass",
 				"filterValue": "HOWITZERS",
 				"parameter": "ReloadTime",
-				"value": -20
+				"value": -60
 			}
 		],
 		"statID": "Howitzer105Mk1",
@@ -9181,6 +9553,48 @@
 				"filterValue": "MACHINE GUN",
 				"parameter": "Damage",
 				"value": 15
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "MG4ROTARYMk1",
+				"parameter": "Damage",
+				"value": 2
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "MG4ROTARY-VTOL",
+				"parameter": "Damage",
+				"value": 1
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "MG2-VTOL",
+				"parameter": "Damage",
+				"value": -2
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "MG3-VTOL",
+				"parameter": "Damage",
+				"value": -2
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "MG1-VTOL",
+				"parameter": "Damage",
+				"value": -5
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "MG1Mk1",
+				"parameter": "Damage",
+				"value": -10
 			}
 		],
 		"statID": "MG1Mk1",
@@ -9400,13 +9814,6 @@
 				"filterValue": "MISSILE",
 				"parameter": "FirePause",
 				"value": -20
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "MISSILE",
-				"parameter": "ReloadTime",
-				"value": -20
 			}
 		],
 		"statID": "Missile-A-T",
@@ -9429,13 +9836,6 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "MISSILE",
 				"parameter": "FirePause",
-				"value": -20
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "MISSILE",
-				"parameter": "ReloadTime",
 				"value": -20
 			}
 		],
@@ -9460,13 +9860,6 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "MISSILE",
 				"parameter": "FirePause",
-				"value": -20
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "MISSILE",
-				"parameter": "ReloadTime",
 				"value": -20
 			}
 		],

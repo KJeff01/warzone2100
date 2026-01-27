@@ -326,6 +326,11 @@ function cam3Setup()
 		camCompleteRequiredResearch(mis_playerResBetaClassic, CAM_HUMAN_PLAYER);
 		camCompleteRequiredResearch(mis_playerResGammaClassic, CAM_HUMAN_PLAYER);
 
+		if (tweakOptions.camClassic_balance110)
+		{
+			completeResearch("CAM3-v110-undo", CAM_HUMAN_PLAYER); // fixme: set keyTopic on this when actually ready and remove the fake requirement
+		}
+
 		if (tweakOptions.camClassic_balance32)
 		{
 			camClassicResearch(mis_gammaStartingResearchClassic, CAM_HUMAN_PLAYER);
