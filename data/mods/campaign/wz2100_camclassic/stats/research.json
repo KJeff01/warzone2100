@@ -6386,7 +6386,6 @@
 	"R-Wpn-Howitzer-Damage02": {
 		"iconID": "IMAGE_RES_WEAPONTECH",
 		"id": "R-Wpn-Howitzer-Damage02",
-		"keyTopic": 1,
 		"name": "HE Howitzer Shells Mk2",
 		"requiredResearch": [
 			"R-Wpn-Howitzer-Damage01"
@@ -6423,7 +6422,6 @@
 	"R-Wpn-Howitzer-Damage03": {
 		"iconID": "IMAGE_RES_WEAPONTECH",
 		"id": "R-Wpn-Howitzer-Damage03",
-		"keyTopic": 1,
 		"name": "HE Howitzer Shells Mk3",
 		"requiredResearch": [
 			"R-Wpn-HvyHowitzer",
@@ -9064,8 +9062,7 @@
 		"msgName": "RES_W_HOWRF4",
 		"name": "Fast Loader",
 		"requiredResearch": [
-			"R-Wpn-Mortar-ROF04",
-			"R-Wpn-Howitzer-ROF03"
+			"R-Wpn-Mortar-ROF04"
 		],
 		"researchPoints": 12000,
 		"researchPower": 375,
