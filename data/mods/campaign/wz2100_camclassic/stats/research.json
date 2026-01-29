@@ -10,382 +10,6 @@
 		"name": "ADVANCED RESEARCH",
 		"techCode": 1
 	},
-	"CAM2RESEARCH-UNDO": {
-		"excludeFromCheats": 1,
-		"iconID": "IMAGE_RES_COMPUTERTECH",
-		"id": "CAM2RESEARCH-UNDO",
-		"imdName": "MICAPSUL.PIE",
-		"keyTopic": 1,
-		"name": "Undo Alpha campaign research to match Original Beta tree",
-		"researchPoints": 1000,
-		"researchPower": 1000,
-		"results": [
-			{
-				"class": "Body",
-				"filterParameter": "BodyClass",
-				"filterValue": "Cyborgs",
-				"parameter": "Armour",
-				"value": -30
-			},
-			{
-				"class": "Body",
-				"filterParameter": "BodyClass",
-				"filterValue": "Cyborgs",
-				"parameter": "HitPointPct",
-				"value": -30
-			},
-			{
-				"class": "Body",
-				"filterParameter": "BodyClass",
-				"filterValue": "Cyborgs",
-				"parameter": "Armour",
-				"value": -30
-			},
-			{
-				"class": "Body",
-				"filterParameter": "BodyClass",
-				"filterValue": "Cyborgs",
-				"parameter": "HitPointPct",
-				"value": -30
-			},
-			{
-				"class": "Building",
-				"filterParameter": "Type",
-				"filterValue": "Wall",
-				"parameter": "Armour",
-				"value": -30
-			},
-			{
-				"class": "Building",
-				"filterParameter": "Type",
-				"filterValue": "Wall",
-				"parameter": "HitPoints",
-				"value": -30
-			},
-			{
-				"class": "Building",
-				"filterParameter": "Type",
-				"filterValue": "Wall",
-				"parameter": "Armour",
-				"value": -30
-			},
-			{
-				"class": "Building",
-				"filterParameter": "Type",
-				"filterValue": "Wall",
-				"parameter": "HitPoints",
-				"value": -30
-			},
-			{
-				"class": "Building",
-				"parameter": "ProductionPoints",
-				"value": -30
-			},
-			{
-				"class": "Building",
-				"parameter": "ProductionPoints",
-				"value": -30
-			},
-			{
-				"class": "Building",
-				"filterParameter": "Type",
-				"filterValue": "Structure",
-				"parameter": "Armour",
-				"value": -30
-			},
-			{
-				"class": "Building",
-				"filterParameter": "Type",
-				"filterValue": "Structure",
-				"parameter": "HitPoints",
-				"value": -30
-			},
-			{
-				"class": "Building",
-				"filterParameter": "Type",
-				"filterValue": "Structure",
-				"parameter": "Armour",
-				"value": -30
-			},
-			{
-				"class": "Building",
-				"filterParameter": "Type",
-				"filterValue": "Structure",
-				"parameter": "HitPoints",
-				"value": -30
-			},
-			{
-				"class": "Building",
-				"parameter": "RepairPoints",
-				"value": -50
-			},
-			{
-				"class": "Building",
-				"parameter": "RepairPoints",
-				"value": -50
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "CANNON",
-				"parameter": "Damage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "CANNON",
-				"parameter": "RadiusDamage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "CANNON",
-				"parameter": "Damage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "CANNON",
-				"parameter": "RadiusDamage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "FLAME",
-				"parameter": "Damage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "FLAME",
-				"parameter": "RepeatDamage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "FLAME",
-				"parameter": "Damage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "FLAME",
-				"parameter": "RepeatDamage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "MACHINE GUN",
-				"parameter": "Damage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "MACHINE GUN",
-				"parameter": "Damage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "MACHINE GUN",
-				"parameter": "Damage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "MORTARS",
-				"parameter": "Damage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "MORTARS",
-				"parameter": "RadiusDamage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "MORTARS",
-				"parameter": "RepeatDamage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "MORTARS",
-				"parameter": "Damage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "MORTARS",
-				"parameter": "RadiusDamage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "MORTARS",
-				"parameter": "RepeatDamage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "ROCKET",
-				"parameter": "FirePause",
-				"value": 20
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "ROCKET",
-				"parameter": "ReloadTime",
-				"value": 20
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "ROCKET",
-				"parameter": "FirePause",
-				"value": 20
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "ROCKET",
-				"parameter": "ReloadTime",
-				"value": 20
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "ROCKET",
-				"parameter": "Damage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "ROCKET",
-				"parameter": "RadiusDamage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "ROCKET",
-				"parameter": "Damage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "ROCKET",
-				"parameter": "RadiusDamage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "ROCKET",
-				"parameter": "Damage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "ROCKET",
-				"parameter": "RadiusDamage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "SLOW ROCKET",
-				"parameter": "Damage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "SLOW ROCKET",
-				"parameter": "RadiusDamage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "SLOW ROCKET",
-				"parameter": "Damage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "SLOW ROCKET",
-				"parameter": "RadiusDamage",
-				"value": -30
-			},
-			{
-				"class": "Body",
-				"filterParameter": "BodyClass",
-				"filterValue": "Droids",
-				"parameter": "Power",
-				"value": -5
-			},
-			{
-				"class": "Body",
-				"filterParameter": "BodyClass",
-				"filterValue": "Droids",
-				"parameter": "Power",
-				"value": -5
-			},
-			{
-				"class": "Body",
-				"filterParameter": "BodyClass",
-				"filterValue": "Droids",
-				"parameter": "Armour",
-				"value": -30
-			},
-			{
-				"class": "Body",
-				"filterParameter": "BodyClass",
-				"filterValue": "Droids",
-				"parameter": "HitPointPct",
-				"value": -30
-			},
-			{
-				"class": "Body",
-				"filterParameter": "BodyClass",
-				"filterValue": "Droids",
-				"parameter": "Armour",
-				"value": -30
-			},
-			{
-				"class": "Body",
-				"filterParameter": "BodyClass",
-				"filterValue": "Droids",
-				"parameter": "HitPointPct",
-				"value": -30
-			}
-		],
-		"techCode": 1
-	},
 	"CAM2RESEARCH-UNDO-Rockets": {
 		"excludeFromCheats": 1,
 		"iconID": "IMAGE_RES_COMPUTERTECH",
@@ -409,713 +33,6 @@
 				"filterValue": "ROCKET",
 				"parameter": "RadiusDamage",
 				"value": -60
-			}
-		],
-		"techCode": 1
-	},
-	"CAM3RESEARCH-UNDO": {
-		"excludeFromCheats": 1,
-		"iconID": "IMAGE_RES_COMPUTERTECH",
-		"id": "CAM3RESEARCH-UNDO",
-		"imdName": "MICAPSUL.PIE",
-		"keyTopic": 1,
-		"name": "Undo Alpha and Beta campaign research to match Original Gamma tree",
-		"researchPoints": 1000,
-		"researchPower": 1000,
-		"results": [
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "CANNON",
-				"parameter": "Damage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "CANNON",
-				"parameter": "RadiusDamage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "CANNON",
-				"parameter": "Damage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "CANNON",
-				"parameter": "RadiusDamage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "CANNON",
-				"parameter": "Damage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "CANNON",
-				"parameter": "RadiusDamage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "CANNON",
-				"parameter": "FirePause",
-				"value": 10
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "CANNON",
-				"parameter": "ReloadTime",
-				"value": 10
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "CANNON",
-				"parameter": "FirePause",
-				"value": 10
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "CANNON",
-				"parameter": "ReloadTime",
-				"value": 10
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "FLAME",
-				"parameter": "Damage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "FLAME",
-				"parameter": "RepeatDamage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "FLAME",
-				"parameter": "Damage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "FLAME",
-				"parameter": "RepeatDamage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "FLAME",
-				"parameter": "Damage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "FLAME",
-				"parameter": "RepeatDamage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "HOWITZERS",
-				"parameter": "HitChance",
-				"value": -10
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "HOWITZERS",
-				"parameter": "ShortHitChance",
-				"value": -10
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "HOWITZERS",
-				"parameter": "Damage",
-				"value": -25
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "HOWITZERS",
-				"parameter": "RepeatDamage",
-				"value": -25
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "HOWITZERS",
-				"parameter": "RadiusDamage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "HOWITZERS",
-				"parameter": "Damage",
-				"value": -25
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "HOWITZERS",
-				"parameter": "RepeatDamage",
-				"value": -25
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "HOWITZERS",
-				"parameter": "RadiusDamage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "MACHINE GUN",
-				"parameter": "Damage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "MACHINE GUN",
-				"parameter": "Damage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "MACHINE GUN",
-				"parameter": "Damage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "MACHINE GUN",
-				"parameter": "FirePause",
-				"value": 20
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "MACHINE GUN",
-				"parameter": "ReloadTime",
-				"value": 20
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "MACHINE GUN",
-				"parameter": "FirePause",
-				"value": 20
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "MACHINE GUN",
-				"parameter": "ReloadTime",
-				"value": 20
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "MORTARS",
-				"parameter": "Damage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "MORTARS",
-				"parameter": "RadiusDamage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "MORTARS",
-				"parameter": "RepeatDamage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "ROCKET",
-				"parameter": "Damage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "ROCKET",
-				"parameter": "RadiusDamage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "ROCKET",
-				"parameter": "Damage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "ROCKET",
-				"parameter": "RadiusDamage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "SLOW ROCKET",
-				"parameter": "HitChance",
-				"value": -10
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "SLOW ROCKET",
-				"parameter": "ShortHitChance",
-				"value": -10
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "SLOW ROCKET",
-				"parameter": "Damage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "SLOW ROCKET",
-				"parameter": "RadiusDamage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "SLOW ROCKET",
-				"parameter": "Damage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "SLOW ROCKET",
-				"parameter": "RadiusDamage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "SLOW ROCKET",
-				"parameter": "FirePause",
-				"value": 20
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "SLOW ROCKET",
-				"parameter": "ReloadTime",
-				"value": 20
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "SLOW ROCKET",
-				"parameter": "FirePause",
-				"value": 20
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "SLOW ROCKET",
-				"parameter": "ReloadTime",
-				"value": 20
-			},
-			{
-				"class": "Body",
-				"filterParameter": "BodyClass",
-				"filterValue": "Droids",
-				"parameter": "Thermal",
-				"value": -40
-			},
-			{
-				"class": "Body",
-				"filterParameter": "BodyClass",
-				"filterValue": "Droids",
-				"parameter": "Thermal",
-				"value": -40
-			},
-			{
-				"class": "Body",
-				"filterParameter": "BodyClass",
-				"filterValue": "Droids",
-				"parameter": "Power",
-				"value": -5
-			},
-			{
-				"class": "Body",
-				"filterParameter": "BodyClass",
-				"filterValue": "Droids",
-				"parameter": "Power",
-				"value": -5
-			},
-			{
-				"class": "Body",
-				"filterParameter": "BodyClass",
-				"filterValue": "Droids",
-				"parameter": "Power",
-				"value": -5
-			},
-			{
-				"class": "Body",
-				"filterParameter": "BodyClass",
-				"filterValue": "Droids",
-				"parameter": "Armour",
-				"value": -30
-			},
-			{
-				"class": "Body",
-				"filterParameter": "BodyClass",
-				"filterValue": "Droids",
-				"parameter": "HitPointPct",
-				"value": -30
-			},
-			{
-				"class": "Body",
-				"filterParameter": "BodyClass",
-				"filterValue": "Droids",
-				"parameter": "Armour",
-				"value": -30
-			},
-			{
-				"class": "Body",
-				"filterParameter": "BodyClass",
-				"filterValue": "Droids",
-				"parameter": "HitPointPct",
-				"value": -30
-			},
-			{
-				"class": "Body",
-				"filterParameter": "BodyClass",
-				"filterValue": "Droids",
-				"parameter": "Armour",
-				"value": -30
-			},
-			{
-				"class": "Body",
-				"filterParameter": "BodyClass",
-				"filterValue": "Droids",
-				"parameter": "HitPointPct",
-				"value": -30
-			},
-			{
-				"class": "Building",
-				"filterParameter": "Type",
-				"filterValue": "Structure",
-				"parameter": "Armour",
-				"value": -30
-			},
-			{
-				"class": "Building",
-				"filterParameter": "Type",
-				"filterValue": "Structure",
-				"parameter": "HitPoints",
-				"value": -30
-			},
-			{
-				"class": "Building",
-				"filterParameter": "Type",
-				"filterValue": "Structure",
-				"parameter": "Armour",
-				"value": -30
-			},
-			{
-				"class": "Building",
-				"filterParameter": "Type",
-				"filterValue": "Structure",
-				"parameter": "HitPoints",
-				"value": -30
-			},
-			{
-				"class": "Building",
-				"filterParameter": "Type",
-				"filterValue": "Structure",
-				"parameter": "Armour",
-				"value": -30
-			},
-			{
-				"class": "Building",
-				"filterParameter": "Type",
-				"filterValue": "Structure",
-				"parameter": "HitPoints",
-				"value": -30
-			},
-			{
-				"class": "Building",
-				"filterParameter": "Type",
-				"filterValue": "Wall",
-				"parameter": "Armour",
-				"value": -30
-			},
-			{
-				"class": "Building",
-				"filterParameter": "Type",
-				"filterValue": "Wall",
-				"parameter": "HitPoints",
-				"value": -30
-			},
-			{
-				"class": "Building",
-				"filterParameter": "Type",
-				"filterValue": "Wall",
-				"parameter": "Armour",
-				"value": -30
-			},
-			{
-				"class": "Building",
-				"filterParameter": "Type",
-				"filterValue": "Wall",
-				"parameter": "HitPoints",
-				"value": -30
-			},
-			{
-				"class": "Building",
-				"filterParameter": "Type",
-				"filterValue": "Wall",
-				"parameter": "Armour",
-				"value": -30
-			},
-			{
-				"class": "Building",
-				"filterParameter": "Type",
-				"filterValue": "Wall",
-				"parameter": "HitPoints",
-				"value": -30
-			},
-			{
-				"class": "Building",
-				"parameter": "ProductionPoints",
-				"value": -30
-			},
-			{
-				"class": "Building",
-				"parameter": "ProductionPoints",
-				"value": -30
-			},
-			{
-				"class": "Building",
-				"parameter": "RearmPoints",
-				"value": -30
-			},
-			{
-				"class": "Building",
-				"parameter": "RearmPoints",
-				"value": -30
-			},
-			{
-				"class": "Body",
-				"filterParameter": "BodyClass",
-				"filterValue": "Cyborgs",
-				"parameter": "Armour",
-				"value": -30
-			},
-			{
-				"class": "Body",
-				"filterParameter": "BodyClass",
-				"filterValue": "Cyborgs",
-				"parameter": "HitPointPct",
-				"value": -30
-			},
-			{
-				"class": "Body",
-				"filterParameter": "BodyClass",
-				"filterValue": "Cyborgs",
-				"parameter": "Armour",
-				"value": -30
-			},
-			{
-				"class": "Body",
-				"filterParameter": "BodyClass",
-				"filterValue": "Cyborgs",
-				"parameter": "HitPointPct",
-				"value": -30
-			},
-			{
-				"class": "Body",
-				"filterParameter": "BodyClass",
-				"filterValue": "Cyborgs",
-				"parameter": "Armour",
-				"value": -30
-			},
-			{
-				"class": "Body",
-				"filterParameter": "BodyClass",
-				"filterValue": "Cyborgs",
-				"parameter": "HitPointPct",
-				"value": -30
-			},
-			{
-				"class": "Body",
-				"filterParameter": "BodyClass",
-				"filterValue": "Cyborgs",
-				"parameter": "Thermal",
-				"value": -40
-			},
-			{
-				"class": "Body",
-				"filterParameter": "BodyClass",
-				"filterValue": "Cyborgs",
-				"parameter": "Thermal",
-				"value": -40
-			},
-			{
-				"class": "Building",
-				"parameter": "ResearchPoints",
-				"value": -30
-			},
-			{
-				"class": "Building",
-				"parameter": "ResearchPoints",
-				"value": -30
-			},
-			{
-				"class": "Building",
-				"parameter": "ResearchPoints",
-				"value": -30
-			},
-			{
-				"class": "Building",
-				"parameter": "RepairPoints",
-				"value": -50
-			},
-			{
-				"class": "Building",
-				"parameter": "RepairPoints",
-				"value": -50
-			},
-			{
-				"class": "Construct",
-				"parameter": "ConstructorPoints",
-				"value": -20
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "A-A GUN",
-				"parameter": "HitChance",
-				"value": -10
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "A-A GUN",
-				"parameter": "ShortHitChance",
-				"value": -10
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "A-A GUN",
-				"parameter": "Damage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "A-A GUN",
-				"parameter": "RadiusDamage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "A-A GUN",
-				"parameter": "Damage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "A-A GUN",
-				"parameter": "RadiusDamage",
-				"value": -30
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "A-A GUN",
-				"parameter": "FirePause",
-				"value": 10
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "A-A GUN",
-				"parameter": "ReloadTime",
-				"value": 10
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "A-A GUN",
-				"parameter": "FirePause",
-				"value": 10
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "A-A GUN",
-				"parameter": "ReloadTime",
-				"value": 10
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "BOMB",
-				"parameter": "Damage",
-				"value": -10
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "BOMB",
-				"parameter": "RadiusDamage",
-				"value": -10
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "BOMB",
-				"parameter": "RepeatDamage",
-				"value": -10
 			}
 		],
 		"techCode": 1
@@ -3938,13 +2855,6 @@
 				"filterValue": "FLAME",
 				"parameter": "FirePause",
 				"value": -20
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "FLAME",
-				"parameter": "ReloadTime",
-				"value": -20
 			}
 		],
 		"statID": "Flame1Mk1",
@@ -4039,7 +2949,21 @@
 			{
 				"class": "Weapon",
 				"filterParameter": "Id",
+				"filterValue": "MG2-Pillbox",
+				"parameter": "Damage",
+				"value": -5
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
 				"filterValue": "MG3Mk1",
+				"parameter": "Damage",
+				"value": -5
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "MG3-Pillbox",
 				"parameter": "Damage",
 				"value": -5
 			}
@@ -4092,10 +3016,66 @@
 			},
 			{
 				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "MACHINE GUN",
-				"parameter": "ReloadTime",
-				"value": -20
+				"filterParameter": "Id",
+				"filterValue": "MG1-Pillbox",
+				"parameter": "FirePause",
+				"value": 6
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "MG1Mk1",
+				"parameter": "FirePause",
+				"value": 6
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "MG1-VTOL",
+				"parameter": "FirePause",
+				"value": 6
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "MG2-Pillbox",
+				"parameter": "FirePause",
+				"value": 6
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "MG2Mk1",
+				"parameter": "FirePause",
+				"value": 6
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "MG2-VTOL",
+				"parameter": "FirePause",
+				"value": 6
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "MG4ROTARY-Pillbox",
+				"parameter": "FirePause",
+				"value": 7
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "MG4ROTARYMk1",
+				"parameter": "FirePause",
+				"value": 7
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "MG4ROTARY-VTOL",
+				"parameter": "FirePause",
+				"value": 7
 			}
 		],
 		"statID": "MG1Mk1",
@@ -4313,13 +3293,6 @@
 				"filterValue": "MORTARS",
 				"parameter": "FirePause",
 				"value": -10
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "MORTARS",
-				"parameter": "ReloadTime",
-				"value": -10
 			}
 		],
 		"statID": "Mortar1Mk1",
@@ -4532,24 +3505,24 @@
 			},
 			{
 				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "ROCKET",
-				"parameter": "ReloadTime",
-				"value": -20
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "Id",
-				"filterValue": "Rocket-MRL",
-				"parameter": "ReloadTime",
-				"value": 20
-			},
-			{
-				"class": "Weapon",
 				"filterParameter": "Id",
 				"filterValue": "Rocket-VTOL-BB",
 				"parameter": "FirePause",
 				"value": 20
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "Rocket-VTOL-Pod",
+				"parameter": "FirePause",
+				"value": 6
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "Rocket-Pod",
+				"parameter": "FirePause",
+				"value": 1
 			}
 		],
 		"statID": "Rocket-Pod",
@@ -4575,24 +3548,24 @@
 			},
 			{
 				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "ROCKET",
-				"parameter": "ReloadTime",
-				"value": -20
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "Id",
-				"filterValue": "Rocket-MRL",
-				"parameter": "ReloadTime",
-				"value": 20
-			},
-			{
-				"class": "Weapon",
 				"filterParameter": "Id",
 				"filterValue": "Rocket-VTOL-BB",
 				"parameter": "FirePause",
 				"value": 20
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "Rocket-VTOL-Pod",
+				"parameter": "FirePause",
+				"value": 7
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "Rocket-Pod",
+				"parameter": "FirePause",
+				"value": 1
 			}
 		],
 		"statID": "Rocket-Pod",
@@ -4618,24 +3591,24 @@
 			},
 			{
 				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "ROCKET",
-				"parameter": "ReloadTime",
-				"value": -20
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "Id",
-				"filterValue": "Rocket-MRL",
-				"parameter": "ReloadTime",
-				"value": 20
-			},
-			{
-				"class": "Weapon",
 				"filterParameter": "Id",
 				"filterValue": "Rocket-VTOL-BB",
 				"parameter": "FirePause",
 				"value": 20
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "Rocket-VTOL-Pod",
+				"parameter": "FirePause",
+				"value": 7
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "Rocket-Pod",
+				"parameter": "FirePause",
+				"value": 2
 			}
 		],
 		"statID": "Rocket-Pod",
@@ -6031,21 +5004,7 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "A-A GUN",
 				"parameter": "FirePause",
-				"value": -10
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "A-A GUN",
-				"parameter": "ReloadTime",
-				"value": -10
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "Id",
-				"filterValue": "AAGun2Mk1",
-				"parameter": "ReloadTime",
-				"value": 10
+				"value": -5
 			}
 		],
 		"statID": "QuadMg1AAGun",
@@ -6066,21 +5025,7 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "A-A GUN",
 				"parameter": "FirePause",
-				"value": -10
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "A-A GUN",
-				"parameter": "ReloadTime",
-				"value": -10
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "Id",
-				"filterValue": "AAGun2Mk1",
-				"parameter": "ReloadTime",
-				"value": 10
+				"value": -5
 			}
 		],
 		"statID": "QuadMg1AAGun",
@@ -6103,21 +5048,7 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "A-A GUN",
 				"parameter": "FirePause",
-				"value": -10
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "A-A GUN",
-				"parameter": "ReloadTime",
-				"value": -10
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "Id",
-				"filterValue": "AAGun2Mk1",
-				"parameter": "ReloadTime",
-				"value": 10
+				"value": -5
 			}
 		],
 		"statID": "QuadMg1AAGun",
@@ -6249,6 +5180,22 @@
 		"researchPower": 171,
 		"resultComponents": [
 			"Bomb1-VTOL-LtHE"
+		],
+		"results": [
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "Bomb2-VTOL-HvHE",
+				"parameter": "ReloadTime",
+				"value": 100
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "Bomb3-VTOL-LtINC",
+				"parameter": "ReloadTime",
+				"value": 50
+			}
 		]
 	},
 	"R-Wpn-Bomb02": {
@@ -6451,13 +5398,6 @@
 				"filterValue": "CANNON",
 				"parameter": "FirePause",
 				"value": -10
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "CANNON",
-				"parameter": "ReloadTime",
-				"value": -10
 			}
 		],
 		"statID": "Cannon1Mk1",
@@ -6479,13 +5419,6 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "CANNON",
 				"parameter": "FirePause",
-				"value": -10
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "CANNON",
-				"parameter": "ReloadTime",
 				"value": -10
 			}
 		],
@@ -6509,13 +5442,6 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "CANNON",
 				"parameter": "FirePause",
-				"value": -10
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "CANNON",
-				"parameter": "ReloadTime",
 				"value": -10
 			}
 		],
@@ -6688,13 +5614,6 @@
 				"filterValue": "FLAME",
 				"parameter": "FirePause",
 				"value": -20
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "FLAME",
-				"parameter": "ReloadTime",
-				"value": -20
 			}
 		],
 		"statID": "Flame1Mk1",
@@ -6717,13 +5636,6 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "FLAME",
 				"parameter": "FirePause",
-				"value": -20
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "FLAME",
-				"parameter": "ReloadTime",
 				"value": -20
 			}
 		],
@@ -6917,13 +5829,6 @@
 				"filterValue": "HOWITZERS",
 				"parameter": "FirePause",
 				"value": -10
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "HOWITZERS",
-				"parameter": "ReloadTime",
-				"value": -10
 			}
 		],
 		"statID": "Howitzer105Mk1",
@@ -6946,13 +5851,6 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "HOWITZERS",
 				"parameter": "FirePause",
-				"value": -10
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "HOWITZERS",
-				"parameter": "ReloadTime",
 				"value": -10
 			}
 		],
@@ -6977,13 +5875,6 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "HOWITZERS",
 				"parameter": "FirePause",
-				"value": -20
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "HOWITZERS",
-				"parameter": "ReloadTime",
 				"value": -20
 			}
 		],
@@ -7155,10 +6046,87 @@
 			},
 			{
 				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "MACHINE GUN",
-				"parameter": "ReloadTime",
-				"value": -20
+				"filterParameter": "Id",
+				"filterValue": "MG1-Pillbox",
+				"parameter": "FirePause",
+				"value": 8
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "MG1Mk1",
+				"parameter": "FirePause",
+				"value": 8
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "MG1-VTOL",
+				"parameter": "FirePause",
+				"value": 8
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "MG2-Pillbox",
+				"parameter": "FirePause",
+				"value": 8
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "MG2Mk1",
+				"parameter": "FirePause",
+				"value": 8
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "MG2-VTOL",
+				"parameter": "FirePause",
+				"value": 8
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "MG3-Pillbox",
+				"parameter": "FirePause",
+				"value": 14
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "MG3Mk1",
+				"parameter": "FirePause",
+				"value": 14
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "MG3-VTOL",
+				"parameter": "FirePause",
+				"value": 14
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "MG4ROTARY-Pillbox",
+				"parameter": "FirePause",
+				"value": 7
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "MG4ROTARYMk1",
+				"parameter": "FirePause",
+				"value": 7
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "MG4ROTARY-VTOL",
+				"parameter": "FirePause",
+				"value": 7
 			}
 		],
 		"statID": "MG1Mk1",
@@ -7185,10 +6153,87 @@
 			},
 			{
 				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "MACHINE GUN",
-				"parameter": "ReloadTime",
-				"value": -20
+				"filterParameter": "Id",
+				"filterValue": "MG1-Pillbox",
+				"parameter": "FirePause",
+				"value": 6
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "MG1Mk1",
+				"parameter": "FirePause",
+				"value": 6
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "MG1-VTOL",
+				"parameter": "FirePause",
+				"value": 6
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "MG2-Pillbox",
+				"parameter": "FirePause",
+				"value": 6
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "MG2Mk1",
+				"parameter": "FirePause",
+				"value": 6
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "MG2-VTOL",
+				"parameter": "FirePause",
+				"value": 6
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "MG3-Pillbox",
+				"parameter": "FirePause",
+				"value": 6
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "MG3Mk1",
+				"parameter": "FirePause",
+				"value": 6
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "MG3-VTOL",
+				"parameter": "FirePause",
+				"value": 6
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "MG4ROTARY-Pillbox",
+				"parameter": "FirePause",
+				"value": 6
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "MG4ROTARYMk1",
+				"parameter": "FirePause",
+				"value": 6
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "MG4ROTARY-VTOL",
+				"parameter": "FirePause",
+				"value": 6
 			}
 		],
 		"statID": "MG1Mk1",
@@ -7379,13 +6424,6 @@
 				"filterValue": "MORTARS",
 				"parameter": "FirePause",
 				"value": -10
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "MORTARS",
-				"parameter": "ReloadTime",
-				"value": -10
 			}
 		],
 		"statID": "Mortar1Mk1",
@@ -7409,13 +6447,6 @@
 				"filterValue": "MORTARS",
 				"parameter": "FirePause",
 				"value": -20
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "MORTARS",
-				"parameter": "ReloadTime",
-				"value": -10
 			}
 		],
 		"statID": "Mortar2Mk1",
@@ -8779,14 +7810,7 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "A-A GUN",
 				"parameter": "FirePause",
-				"value": -10
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "A-A GUN",
-				"parameter": "ReloadTime",
-				"value": -10
+				"value": -5
 			}
 		],
 		"statID": "QuadMg1AAGun",
@@ -8807,14 +7831,7 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "A-A GUN",
 				"parameter": "FirePause",
-				"value": -10
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "A-A GUN",
-				"parameter": "ReloadTime",
-				"value": -10
+				"value": -5
 			}
 		],
 		"statID": "QuadMg1AAGun",
@@ -8836,14 +7853,7 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "A-A GUN",
 				"parameter": "FirePause",
-				"value": -10
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "A-A GUN",
-				"parameter": "ReloadTime",
-				"value": -10
+				"value": -5
 			}
 		],
 		"statID": "QuadMg1AAGun",
@@ -9014,13 +8024,6 @@
 				"filterValue": "CANNON",
 				"parameter": "FirePause",
 				"value": -15
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "CANNON",
-				"parameter": "ReloadTime",
-				"value": -15
 			}
 		],
 		"statID": "Cannon1Mk1",
@@ -9041,13 +8044,6 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "CANNON",
 				"parameter": "FirePause",
-				"value": -15
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "CANNON",
-				"parameter": "ReloadTime",
 				"value": -15
 			}
 		],
@@ -9070,13 +8066,6 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "CANNON",
 				"parameter": "FirePause",
-				"value": -10
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "CANNON",
-				"parameter": "ReloadTime",
 				"value": -10
 			}
 		],
@@ -9219,13 +8208,6 @@
 				"filterValue": "ENERGY",
 				"parameter": "FirePause",
 				"value": -20
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "ENERGY",
-				"parameter": "ReloadTime",
-				"value": -20
 			}
 		],
 		"statID": "Laser2PULSEMk1",
@@ -9247,13 +8229,6 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "ENERGY",
 				"parameter": "FirePause",
-				"value": -20
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "ENERGY",
-				"parameter": "ReloadTime",
 				"value": -20
 			}
 		],
@@ -9277,13 +8252,6 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "ENERGY",
 				"parameter": "FirePause",
-				"value": -20
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "ENERGY",
-				"parameter": "ReloadTime",
 				"value": -20
 			}
 		],
@@ -9448,13 +8416,6 @@
 				"filterValue": "HOWITZERS",
 				"parameter": "FirePause",
 				"value": -60
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "HOWITZERS",
-				"parameter": "ReloadTime",
-				"value": -60
 			}
 		],
 		"statID": "Howitzer105Mk1",
@@ -9593,6 +8554,13 @@
 				"class": "Weapon",
 				"filterParameter": "Id",
 				"filterValue": "MG1Mk1",
+				"parameter": "Damage",
+				"value": -10
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "MG1-Pillbox",
 				"parameter": "Damage",
 				"value": -10
 			}
@@ -9934,13 +8902,6 @@
 				"filterValue": "MORTARS",
 				"parameter": "FirePause",
 				"value": -10
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "MORTARS",
-				"parameter": "ReloadTime",
-				"value": -10
 			}
 		],
 		"statID": "Mortar2Mk1",
@@ -10081,13 +9042,6 @@
 				"filterValue": "GAUSS",
 				"parameter": "FirePause",
 				"value": -20
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "GAUSS",
-				"parameter": "ReloadTime",
-				"value": -20
 			}
 		],
 		"statID": "RailGun1Mk1",
@@ -10109,13 +9063,6 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "GAUSS",
 				"parameter": "FirePause",
-				"value": -20
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "GAUSS",
-				"parameter": "ReloadTime",
 				"value": -20
 			}
 		],
@@ -10139,13 +9086,6 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "GAUSS",
 				"parameter": "FirePause",
-				"value": -20
-			},
-			{
-				"class": "Weapon",
-				"filterParameter": "ImpactClass",
-				"filterValue": "GAUSS",
-				"parameter": "ReloadTime",
 				"value": -20
 			}
 		],
