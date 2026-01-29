@@ -6002,6 +6002,13 @@
 			{
 				"class": "Weapon",
 				"filterParameter": "Id",
+				"filterValue": "MG4ROTARY-Pillbox",
+				"parameter": "Damage",
+				"value": -5
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
 				"filterValue": "MG2-VTOL",
 				"parameter": "Damage",
 				"value": -2
@@ -8519,6 +8526,13 @@
 				"class": "Weapon",
 				"filterParameter": "Id",
 				"filterValue": "MG4ROTARYMk1",
+				"parameter": "Damage",
+				"value": 2
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "MG4ROTARY-Pillbox",
 				"parameter": "Damage",
 				"value": 2
 			},
