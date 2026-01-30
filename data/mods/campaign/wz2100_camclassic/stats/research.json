@@ -128,6 +128,13 @@
 			{
 				"class": "Weapon",
 				"filterParameter": "Id",
+				"filterValue": "CyborgCannon",
+				"parameter": "Damage",
+				"value": -3
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
 				"filterValue": "Cannon2A-TMk1",
 				"parameter": "Damage",
 				"value": -2
@@ -3076,6 +3083,20 @@
 				"filterValue": "MG4ROTARY-VTOL",
 				"parameter": "FirePause",
 				"value": 7
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "CyborgChaingun",
+				"parameter": "FirePause",
+				"value": 6
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "CyborgRotMG",
+				"parameter": "FirePause",
+				"value": 6
 			}
 		],
 		"statID": "MG1Mk1",
@@ -6134,6 +6155,20 @@
 				"filterValue": "MG4ROTARY-VTOL",
 				"parameter": "FirePause",
 				"value": 7
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "CyborgChaingun",
+				"parameter": "FirePause",
+				"value": 8
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "CyborgRotMG",
+				"parameter": "FirePause",
+				"value": 8
 			}
 		],
 		"statID": "MG1Mk1",
@@ -6239,6 +6274,20 @@
 				"class": "Weapon",
 				"filterParameter": "Id",
 				"filterValue": "MG4ROTARY-VTOL",
+				"parameter": "FirePause",
+				"value": 6
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "CyborgChaingun",
+				"parameter": "FirePause",
+				"value": 6
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "CyborgRotMG",
 				"parameter": "FirePause",
 				"value": 6
 			}
