@@ -3026,42 +3026,42 @@
 				"filterParameter": "Id",
 				"filterValue": "MG1-Pillbox",
 				"parameter": "FirePause",
-				"value": 6
+				"value": 4
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "Id",
 				"filterValue": "MG1Mk1",
 				"parameter": "FirePause",
-				"value": 6
+				"value": 4
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "Id",
 				"filterValue": "MG1-VTOL",
 				"parameter": "FirePause",
-				"value": 6
+				"value": 4
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "Id",
 				"filterValue": "MG2-Pillbox",
 				"parameter": "FirePause",
-				"value": 6
+				"value": 5
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "Id",
 				"filterValue": "MG2Mk1",
 				"parameter": "FirePause",
-				"value": 6
+				"value": 5
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "Id",
 				"filterValue": "MG2-VTOL",
 				"parameter": "FirePause",
-				"value": 6
+				"value": 5
 			},
 			{
 				"class": "Weapon",
@@ -3089,14 +3089,14 @@
 				"filterParameter": "Id",
 				"filterValue": "CyborgChaingun",
 				"parameter": "FirePause",
-				"value": 6
+				"value": 5
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "Id",
 				"filterValue": "CyborgRotMG",
 				"parameter": "FirePause",
-				"value": 6
+				"value": 5
 			}
 		],
 		"statID": "MG1Mk1",
@@ -3536,14 +3536,14 @@
 				"filterParameter": "Id",
 				"filterValue": "Rocket-VTOL-Pod",
 				"parameter": "FirePause",
-				"value": 6
+				"value": 5
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "Id",
 				"filterValue": "Rocket-Pod",
 				"parameter": "FirePause",
-				"value": 1
+				"value": 2
 			}
 		],
 		"statID": "Rocket-Pod",
@@ -3579,14 +3579,14 @@
 				"filterParameter": "Id",
 				"filterValue": "Rocket-VTOL-Pod",
 				"parameter": "FirePause",
-				"value": 7
+				"value": 5
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "Id",
 				"filterValue": "Rocket-Pod",
 				"parameter": "FirePause",
-				"value": 1
+				"value": 2
 			}
 		],
 		"statID": "Rocket-Pod",
@@ -3622,14 +3622,14 @@
 				"filterParameter": "Id",
 				"filterValue": "Rocket-VTOL-Pod",
 				"parameter": "FirePause",
-				"value": 7
+				"value": 4
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "Id",
 				"filterValue": "Rocket-Pod",
 				"parameter": "FirePause",
-				"value": 2
+				"value": 3
 			}
 		],
 		"statID": "Rocket-Pod",
@@ -5025,7 +5025,14 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "A-A GUN",
 				"parameter": "FirePause",
-				"value": -5
+				"value": -10
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "QuadRotAAGun",
+				"parameter": "FirePause",
+				"value": 5
 			}
 		],
 		"statID": "QuadMg1AAGun",
@@ -5046,7 +5053,21 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "A-A GUN",
 				"parameter": "FirePause",
-				"value": -5
+				"value": -10
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "QuadRotAAGun",
+				"parameter": "FirePause",
+				"value": 5
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "QuadMg1AAGun",
+				"parameter": "FirePause",
+				"value": 5
 			}
 		],
 		"statID": "QuadMg1AAGun",
@@ -5069,7 +5090,21 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "A-A GUN",
 				"parameter": "FirePause",
-				"value": -5
+				"value": -10
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "QuadRotAAGun",
+				"parameter": "FirePause",
+				"value": 5
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "QuadMg1AAGun",
+				"parameter": "FirePause",
+				"value": 2
 			}
 		],
 		"statID": "QuadMg1AAGun",
@@ -6077,63 +6112,63 @@
 				"filterParameter": "Id",
 				"filterValue": "MG1-Pillbox",
 				"parameter": "FirePause",
-				"value": 8
+				"value": 6
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "Id",
 				"filterValue": "MG1Mk1",
 				"parameter": "FirePause",
-				"value": 8
+				"value": 6
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "Id",
 				"filterValue": "MG1-VTOL",
 				"parameter": "FirePause",
-				"value": 8
+				"value": 6
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "Id",
 				"filterValue": "MG2-Pillbox",
 				"parameter": "FirePause",
-				"value": 8
+				"value": 5
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "Id",
 				"filterValue": "MG2Mk1",
 				"parameter": "FirePause",
-				"value": 8
+				"value": 5
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "Id",
 				"filterValue": "MG2-VTOL",
 				"parameter": "FirePause",
-				"value": 8
+				"value": 5
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "Id",
 				"filterValue": "MG3-Pillbox",
 				"parameter": "FirePause",
-				"value": 14
+				"value": 10
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "Id",
 				"filterValue": "MG3Mk1",
 				"parameter": "FirePause",
-				"value": 14
+				"value": 10
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "Id",
 				"filterValue": "MG3-VTOL",
 				"parameter": "FirePause",
-				"value": 14
+				"value": 10
 			},
 			{
 				"class": "Weapon",
@@ -6161,14 +6196,14 @@
 				"filterParameter": "Id",
 				"filterValue": "CyborgChaingun",
 				"parameter": "FirePause",
-				"value": 8
+				"value": 5
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "Id",
 				"filterValue": "CyborgRotMG",
 				"parameter": "FirePause",
-				"value": 8
+				"value": 5
 			}
 		],
 		"statID": "MG1Mk1",
@@ -6198,63 +6233,63 @@
 				"filterParameter": "Id",
 				"filterValue": "MG1-Pillbox",
 				"parameter": "FirePause",
-				"value": 6
+				"value": 4
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "Id",
 				"filterValue": "MG1Mk1",
 				"parameter": "FirePause",
-				"value": 6
+				"value": 4
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "Id",
 				"filterValue": "MG1-VTOL",
 				"parameter": "FirePause",
-				"value": 6
+				"value": 4
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "Id",
 				"filterValue": "MG2-Pillbox",
 				"parameter": "FirePause",
-				"value": 6
+				"value": 4
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "Id",
 				"filterValue": "MG2Mk1",
 				"parameter": "FirePause",
-				"value": 6
+				"value": 4
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "Id",
 				"filterValue": "MG2-VTOL",
 				"parameter": "FirePause",
-				"value": 6
+				"value": 4
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "Id",
 				"filterValue": "MG3-Pillbox",
 				"parameter": "FirePause",
-				"value": 6
+				"value": 4
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "Id",
 				"filterValue": "MG3Mk1",
 				"parameter": "FirePause",
-				"value": 6
+				"value": 4
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "Id",
 				"filterValue": "MG3-VTOL",
 				"parameter": "FirePause",
-				"value": 6
+				"value": 4
 			},
 			{
 				"class": "Weapon",
@@ -6282,14 +6317,14 @@
 				"filterParameter": "Id",
 				"filterValue": "CyborgChaingun",
 				"parameter": "FirePause",
-				"value": 6
+				"value": 4
 			},
 			{
 				"class": "Weapon",
 				"filterParameter": "Id",
 				"filterValue": "CyborgRotMG",
 				"parameter": "FirePause",
-				"value": 6
+				"value": 4
 			}
 		],
 		"statID": "MG1Mk1",
@@ -7866,7 +7901,21 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "A-A GUN",
 				"parameter": "FirePause",
-				"value": -5
+				"value": -10
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "QuadRotAAGun",
+				"parameter": "FirePause",
+				"value": 5
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "QuadMg1AAGun",
+				"parameter": "FirePause",
+				"value": 3
 			}
 		],
 		"statID": "QuadMg1AAGun",
@@ -7887,7 +7936,21 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "A-A GUN",
 				"parameter": "FirePause",
-				"value": -5
+				"value": -10
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "QuadRotAAGun",
+				"parameter": "FirePause",
+				"value": 5
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "QuadMg1AAGun",
+				"parameter": "FirePause",
+				"value": 2
 			}
 		],
 		"statID": "QuadMg1AAGun",
@@ -7909,7 +7972,21 @@
 				"filterParameter": "ImpactClass",
 				"filterValue": "A-A GUN",
 				"parameter": "FirePause",
-				"value": -5
+				"value": -10
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "QuadRotAAGun",
+				"parameter": "FirePause",
+				"value": 5
+			},
+			{
+				"class": "Weapon",
+				"filterParameter": "Id",
+				"filterValue": "QuadMg1AAGun",
+				"parameter": "FirePause",
+				"value": 2
 			}
 		],
 		"statID": "QuadMg1AAGun",
