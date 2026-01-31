@@ -326,9 +326,9 @@ function cam3Setup()
 		camCompleteRequiredResearch(mis_playerResBetaClassic, CAM_HUMAN_PLAYER);
 		camCompleteRequiredResearch(mis_playerResGammaClassic, CAM_HUMAN_PLAYER);
 
-		if (tweakOptions.camClassic_balance110)
+		if (tweakOptions.camClassic_balance110) // FIXME: Either an always true invisible tweak option or some other method if v1.10 balance mode.
 		{
-			completeResearch("CAM3-v110-undo", CAM_HUMAN_PLAYER); // fixme: set keyTopic on this when actually ready and remove the fake requirement
+			completeResearch("CAM3-v110-undo", CAM_HUMAN_PLAYER);
 		}
 
 		if (tweakOptions.camClassic_balance32)

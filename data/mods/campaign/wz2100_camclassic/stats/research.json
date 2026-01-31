@@ -41,10 +41,8 @@
 		"iconID": "IMAGE_RES_DROIDTECH",
 		"id": "CAM3-v110-undo",
 		"imdName": "icamrhot.pie",
+		"keyTopic": 1,
 		"name": "CAM3 Research v1.10 Fix",
-		"requiredResearch": [
-			"R-Wpn-Howitzer03-Rot"
-		],
 		"researchPoints": 10000,
 		"researchPower": 1000,
 		"results": [
