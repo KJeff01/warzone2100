@@ -329,6 +329,7 @@ function cam3Setup()
 		if (tweakOptions.camClassic_balance110) // FIXME: Either an always true invisible tweak option or some other method if v1.10 balance mode.
 		{
 			completeResearch("CAM3-v110-undo", CAM_HUMAN_PLAYER);
+			completeResearch("CAM3-v110-undo", CAM_NEXUS);
 		}
 
 		if (tweakOptions.camClassic_balance32)
