@@ -39,6 +39,7 @@
 #include <glm/gtx/transform.hpp>
 
 #include <algorithm>
+#include "src/warzoneconfig.h"
 
 /*
  *	Global Variables
@@ -49,6 +50,7 @@ static RENDER_STATE rendStates;
 static gfx_api::gfxFloat timeState = 0.0f;
 
 const Vector3f defaultSunPosition(225.0f, -600.0f, 450.0f);
+const Vector3f defaultSunPositionTweaked(250.0f, -400.0f, 250.0f); // Fits original models better with baked in shadows (see skyscrapers).
 
 void rendStatesRendModeHack()
 {
@@ -197,7 +199,7 @@ int pie_GetMaxAntialiasing()
 	return maxSamples;
 }
 
-const Vector3f& getDefaultSunPosition()
+const Vector3f& getDefaultSunPosition(const bool& button /*= false*/)
 {
-	return defaultSunPosition;
+	return (button || (war_getSunType() == 0)) ? defaultSunPosition : defaultSunPositionTweaked;
 }

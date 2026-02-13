@@ -87,6 +87,7 @@ struct WARZONE_GLOBALS
 	PLAYER_LEAVE_MODE MPplayerLeaveMode = PLAYER_LEAVE_MODE_DEFAULT;
 	int fogStart = 4000;
 	int fogEnd = 8000;
+	int sunType = 0;
 	int lodDistanceBiasPercentage = WZ_LODDISTANCEPERCENTAGE_HIGH; // default to "High" to best match prior version behavior
 	int minimizeOnFocusLoss = -1; // see enum class MinimizeOnFocusLossBehavior
 	// fullscreen mode settings
@@ -638,6 +639,16 @@ void war_setFogEnd(int end)
 void war_setFogStart(int start)
 {
 	 warGlobs.fogStart = start;
+}
+
+void war_setSunType(int type)
+{
+	 warGlobs.sunType = type;
+}
+
+int war_getSunType()
+{
+	 return warGlobs.sunType;
 }
 
 void war_SetFullscreenModeWidth(UDWORD width)

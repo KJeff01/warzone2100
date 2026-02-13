@@ -285,6 +285,25 @@ std::shared_ptr<OptionsForm> makeGraphicsOptionsForm()
 		);
 		result->addOption(optionInfo, valueChanger, true);
 	}
+	{
+		auto optionInfo = OptionInfo("gfx.sunPosition", N_("Sun Position"), "");
+		auto valueChanger = OptionsDropdown<int>::make(
+			[]() {
+				OptionChoices<int> result;
+				result.choices = {
+					{ _("Default"), "Sun position used for many releases.", 0 },
+					{ _("Tweaked"), "Sun position that fits baked in shadows better such as those from skyscrapers.", 1 },
+				};
+				result.setCurrentIdxForValue(war_getSunType());
+				return result;
+			},
+			[](const auto& newValue) -> int {
+				war_setSunType(newValue);
+				return true;
+			}, true
+		);
+		result->addOption(optionInfo, valueChanger, true);
+	}
 
 	// Effects:
 	result->addSection(OptionsSection(N_("Effects"), ""), true);

@@ -78,7 +78,7 @@ PIELIGHT pie_GetFogColour() WZ_DECL_PURE;
 void pie_UpdateFogDistance(float begin, float end);
 //render states
 RENDER_STATE getCurrentRenderState();
-const Vector3f& getDefaultSunPosition();
+const Vector3f& getDefaultSunPosition(const bool& button = false);
 
 int pie_GetMaxAntialiasing();
 

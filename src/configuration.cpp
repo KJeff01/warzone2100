@@ -676,6 +676,7 @@ bool loadConfig()
 	war_setMPopenSpectatorSlots(static_cast<uint16_t>(std::max<int>(0, std::min<int>(openSpecSlotsIntValue, MAX_SPECTATOR_SLOTS))));
 	war_setFogEnd(iniGetInteger("fogEnd", 8000).value());
 	war_setFogStart(iniGetInteger("fogStart", 4000).value());
+	war_setSunType(iniGetInteger("sunType", 0).value());
 	if (auto value = iniGetIntegerOpt("terrainMode"))
 	{
 		auto intValue = value.value();
@@ -901,6 +902,7 @@ bool saveConfig()
 	iniSetInteger("oldLogsLimit", war_getOldLogsLimit());
 	iniSetInteger("fogEnd", war_getFogEnd());
 	iniSetInteger("fogStart", war_getFogStart());
+	iniSetInteger("sunType", war_getSunType());
 	iniSetInteger("terrainMode", getTerrainShaderQuality());
 	iniSetInteger("terrainShadingQuality", getTerrainMappingTexturesMaxSize());
 	iniSetInteger("terrainShadows", (int)(getDrawTerrainShadows()));

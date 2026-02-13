@@ -168,6 +168,8 @@ int war_getFogEnd();
 int war_getFogStart();
 void war_setFogEnd(int end);
 void war_setFogStart(int start);
+void war_setSunType(int type);
+int war_getSunType();
 int war_getLODDistanceBiasPercentage();
 void war_setLODDistanceBiasPercentage(int bias);
 int war_getMinimizeOnFocusLoss();
