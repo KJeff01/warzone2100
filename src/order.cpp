@@ -577,6 +577,10 @@ bool orderUpdateDroid(DROID *psDroid)
 		break;
 	case DORDER_SCOUT:
 	case DORDER_PATROL:
+		if (psDroid->isVtol() && psDroid->isVtolRearming())
+		{
+			break; // Wait to completely rearm before going any further here.
+		}
 		// if there is an enemy around, attack it
 		if (psDroid->action == DACTION_MOVE || psDroid->action == DACTION_MOVEFIRE || (psDroid->action == DACTION_NONE && psDroid->isVtol()))
 		{
@@ -1489,6 +1493,11 @@ void orderDroidBase(DROID *psDroid, DROID_ORDER_DATA *psOrder)
 		if (psDroid->isVtol()
 		    && fpathBlockingTile(map_coord(psOrder->pos), psDroid->getPropulsionStats()->propulsionType))
 		{
+			break;
+		}
+		if (psOrder->type == DORDER_SCOUT && psDroid->isVtol() && psDroid->isVtolRearming())
+		{
+			psDroid->order = *psOrder;
 			break;
 		}
 		//in multiPlayer, cannot move Transporter to blocking tile either
