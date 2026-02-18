@@ -326,6 +326,13 @@ function cam3Setup()
 		camCompleteRequiredResearch(mis_playerResBetaClassic, CAM_HUMAN_PLAYER);
 		camCompleteRequiredResearch(mis_playerResGammaClassic, CAM_HUMAN_PLAYER);
 
+		if (tweakOptions.camPumpkin_identifier)
+		{
+			const researchFix = ["CAM2RESEARCH-UNDO-Rockets", "CAM3-v110-Undo"];
+			camCompleteRequiredResearch(researchFix, CAM_HUMAN_PLAYER);
+			camCompleteRequiredResearch(researchFix, CAM_NEXUS);
+		}
+
 		if (tweakOptions.camClassic_balance32)
 		{
 			camClassicResearch(mis_gammaStartingResearchClassic, CAM_HUMAN_PLAYER);
