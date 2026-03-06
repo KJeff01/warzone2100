@@ -115,12 +115,13 @@ static bool selCombatLand(DROID *droid)
 	                                       type == PROPULSION_TYPE_HALF_TRACKED ||
 	                                       type == PROPULSION_TYPE_TRACKED ||
 	                                       type == PROPULSION_TYPE_HOVER ||
-	                                       type == PROPULSION_TYPE_LEGGED);
+										   type == PROPULSION_TYPE_LEGGED ||
+										   type == PROPULSION_TYPE_LEGGED_SUPER);
 }
 static bool selCombatCyborg(DROID *droid)
 {
 	PROPULSION_TYPE type = droid->getPropulsionStats()->propulsionType;
-	return droid->asWeaps[0].nStat > 0 && type == PROPULSION_TYPE_LEGGED;
+	return droid->asWeaps[0].nStat > 0 && (type == PROPULSION_TYPE_LEGGED || type == PROPULSION_TYPE_LEGGED_SUPER);
 }
 static bool selDamaged(DROID *droid)
 {
@@ -663,6 +664,9 @@ unsigned int selDroidSelection(unsigned int player, SELECTION_CLASS droidClass, 
 			break;
 		case DST_ALL_LAND_MILDLY_OR_NOT_DAMAGED:
 			retVal = selSelectUnitsIf(player, selCombatLandMildlyOrNotDamaged, bOnScreen);
+			break;
+		case DST_CYBORG_SUPER:
+			retVal = selSelectUnitsIf(player, selProp, PROPULSION_TYPE_LEGGED_SUPER, bOnScreen);
 			break;
 		default:
 			ASSERT(false, "Invalid selection type");
