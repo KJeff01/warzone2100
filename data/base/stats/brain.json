@@ -8,6 +8,7 @@
 		"maxDroidsMult": 2,
 		"name": "Command Turret",
 		"ranks": [ "Rookie", "Green", "Trained", "Regular", "Professional", "Veteran", "Elite", "Special", "Hero" ],
+		"scavengersGiveExpUntilLevel": -1,
 		"thresholds": [ 0, 24, 48, 96, 192, 384, 768, 1536, 2048 ],
 		"turret": "CommandTurret1"
 	},
@@ -15,6 +16,7 @@
 		"id": "ZNULLBRAIN",
 		"name": "Z NULL BRAIN",
 		"ranks": [ "Rookie", "Green", "Trained", "Regular", "Professional", "Veteran", "Elite", "Special", "Hero" ],
+		"scavengersGiveExpUntilLevel": -1,
 		"thresholds": [ 0, 4, 8, 16, 32, 64, 128, 256, 512 ],
 		"turret": "ZNULLWEAPON"
 	}
