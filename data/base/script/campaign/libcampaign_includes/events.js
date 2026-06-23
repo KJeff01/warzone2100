@@ -134,7 +134,7 @@ function cam_eventStartLevel()
 	__camNumTransporterExits = 0;
 	__camAllowVictoryMsgClear = true;
 	__camExpLevel = 0;
-	camSetPropulsionTypeLimit(); //disable the propulsion changer by default
+	__camSetupPropulsionLimits(); //disable the propulsion changer by default
 	__camAiPowerReset(); //grant power to the AI
 	setTimer("__camSpawnVtols", camSecondsToMilliseconds(0.5));
 	setTimer("__camRetreatVtols", camSecondsToMilliseconds(0.9));

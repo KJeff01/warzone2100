@@ -1735,6 +1735,27 @@ static std::vector<WzCampaignTweakOptionSetting> buildTweakOptionSettings(option
 		false, true
 	);
 
+	results.emplace_back(
+		"forceTypeOnePropulsion",
+		_("Type I Enemy Propulsions"),
+		_("Gamma campaign becomes easier by forcing Type I propulsions on spawned/produced units."),
+		false, true
+	);
+
+	results.emplace_back(
+		"forceTypeTwoPropulsion",
+		_("Type II Enemy Propulsions"),
+		_("Alpha and Beta campaign become harder by forcing type II propulsions on spawned/produced units."),
+		false, true
+	);
+
+	results.emplace_back(
+		"forceTypeThreePropulsion",
+		_("Type III Enemy Propulsions"),
+		_("Every campaign becomes much harder by forcing type III Propulsions on spawned/produced units."),
+		false, true
+	);
+
 	if (modInfo.has_value())
 	{
 		for (auto it = results.begin(); it != results.end(); )

@@ -981,3 +981,20 @@ function __camRemoveNavGunSensorResearch()
 		}
 	}
 }
+
+function __camSetupPropulsionLimits()
+{
+	camSetPropulsionTypeLimit(); // Disable the propulsion changer by default
+	if (tweakOptions.forceTypeOnePropulsion)
+	{
+		camSetPropulsionTypeLimit(1); // Force type 1. Substantially weaken Nexus units.
+	}
+	if (tweakOptions.forceTypeTwoPropulsion)
+	{
+		camSetPropulsionTypeLimit(2); // Force type 2. Substantially Buff Alpha and Beta.
+	}
+	if (tweakOptions.forceTypeThreePropulsion)
+	{
+		camSetPropulsionTypeLimit(3); // Force type 3. Substantially Buff them all.
+	}
+}

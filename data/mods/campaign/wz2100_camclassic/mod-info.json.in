@@ -95,6 +95,21 @@
             "id": "noCommander",
             "default": false,
             "userEditable": true
+        },
+        {
+            "id": "forceTypeOnePropulsion",
+            "default": false,
+            "userEditable": true
+        },
+        {
+            "id": "forceTypeTwoPropulsion",
+            "default": false,
+            "userEditable": true
+        },
+        {
+            "id": "forceTypeThreePropulsion",
+            "default": false,
+            "userEditable": true
         }
     ],
     "customTweakOptions": [
