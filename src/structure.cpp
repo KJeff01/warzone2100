@@ -4462,7 +4462,7 @@ bool validLocation(GameWorld& world, BASE_STATS *psStats, Vector2i pos, uint16_t
 							if (TileHasWall(psTile) && (psBuilding->type == REF_DEFENSE || psBuilding->type == REF_GATE || psBuilding->type == REF_WALL))
 							{
 								STRUCTURE const *psStruct = getTileStructure(world.map, b.map.x + i, b.map.y + j);
-								if (psStruct != nullptr && psStruct->player != player)
+								if (psStruct != nullptr && !aiCheckAlliances(psStruct->player, player))
 								{
 									return false;
 								}

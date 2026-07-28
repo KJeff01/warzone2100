@@ -1505,6 +1505,7 @@ void actionUpdateDroid(DROID *psDroid)
 			if (nullptr != structureAtBuildPosition)
 			{
 				bool droidCannotBuild = false;
+				bool tryingToBuildWallsOnMyWalls = false;
 
 				if (!aiCheckAlliances(structureAtBuildPosition->player, psDroid->player))
 				{
@@ -1514,10 +1515,11 @@ void actionUpdateDroid(DROID *psDroid)
 				else
 				// There's an allied structure already there.  Is it a wall, and can the droid upgrade it to a defence or gate?
 				if (isWall(structureAtBuildPosition->pStructureType->type) &&
-					(desiredStructure->type == REF_DEFENSE || desiredStructure->type == REF_GATE))
+					(desiredStructure->type == REF_DEFENSE || desiredStructure->type == REF_GATE || desiredStructure->type == REF_WALL || desiredStructure->type == REF_WALLCORNER))
 				{
 					// It's always valid to upgrade a wall to a defence or gate
 					droidCannotBuild = false; // Just to avoid an empty branch
+					tryingToBuildWallsOnMyWalls = desiredStructure->type == REF_WALL || desiredStructure->type == REF_WALLCORNER;
 				}
 				else
 				if ((structureAtBuildPosition->pStructureType != desiredStructure) && // ... it's not the exact same type as the droid was ordered to build
@@ -1535,7 +1537,7 @@ void actionUpdateDroid(DROID *psDroid)
 					droidCannotBuild = true;
 				}
 
-				if (droidCannotBuild)
+				if (droidCannotBuild || tryingToBuildWallsOnMyWalls)
 				{
 					if (order->type == DORDER_LINEBUILD && map_coord(psDroid->order.pos) != map_coord(psDroid->order.pos2))
 					{
